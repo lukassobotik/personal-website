@@ -15,27 +15,30 @@ export default function Home() {
               Full Stack Developer
             </h1>
             <p>
-              Java & JavaScript full stack developer with a passion for learning and creating new things.
+              Student at Akademie VŠEM studying economics. Full stack developer of web and mobile applications.
+            </p>
+            <p>
+              I am currently learning Java, and I have had a bit of experience with JavaScript and C# as well.
             </p>
           </div>
         </div>
 
         <div className={styles.grid}>
-          <a href="" className={styles.card}>
+          <a href="https://github.com/PuckyEU/puckyeu.github.io" className={styles.card}>
             <h2 className={inter.className}>
-              Card <span>-&gt;</span>
+              Source Code <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget
+                Here you can find all of my source code for this website. If you have any questions or suggestions, feel free to contact me!
             </p>
           </a>
 
-          <a href="" className={styles.card}>
+          <a href="https://www.buymeacoffee.com/puckyeu" className={styles.card}>
             <h2 className={inter.className}>
-              Card <span>-&gt;</span>
+              Buy Me A Coffee <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget
+              You can buy me a coffee if you want to support me! I would really appreciate it!
             </p>
           </a>
 
