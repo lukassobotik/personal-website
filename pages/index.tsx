@@ -1,8 +1,5 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
+import {Inter} from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import Link from "next/link";
 import Navbar from "./navbar";
 
 const inter = Inter({ subsets: ['latin'] })
@@ -42,21 +39,21 @@ export default function Home() {
             </p>
           </a>
 
-          <a href="" className={styles.card}>
+          <a href="https://github.com/PuckyEU" className={styles.card}>
             <h2 className={inter.className}>
-              Card <span>-&gt;</span>
+              Github <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget
+              Take a look at my Github! You can find all of my projects there. This website is also open source, you can find it there too!
             </p>
           </a>
 
-          <a href="" className={styles.card}>
+          <a href="https://www.linkedin.com/in/lukassobotik/" className={styles.card}>
             <h2 className={inter.className}>
-              Card <span>-&gt;</span>
+              LinkedIn <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nisl eget
+              Here you can find my LinkedIn profile. You can also contact me there.
             </p>
           </a>
         </div>
