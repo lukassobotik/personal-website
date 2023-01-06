@@ -8,22 +8,22 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
+      <div className={styles.background}>
+      </div>
       <main className={styles.main}>
         <Navbar/>
-        <div className={styles.center}>
-          <div className={styles.centerText}>
-            <h1>
-              Full Stack Developer
-            </h1>
-            <p>
-              Student at Akademie VŠEM studying economics. Full stack developer of web and mobile applications.
-            </p>
-            <p>
-              I am currently learning Java, and I have had a bit of experience with JavaScript and C# as well.
-            </p>
-          </div>
+        <div className={styles.title}>
+          <h1>
+            Hi, I am <span className={styles.name}>Lukáš</span>, a <span className={styles.name}>Full-Stack </span>developer.
+          </h1>
         </div>
-
+        <h2 className={styles.featured}>
+          Overview
+        </h2>
+        <div className={styles.overview}>
+          <p>I am a student at Akademie VŠEM studying economics. Programming is my passion and it will most likely be my full time job after I graduate, so I am open to any job offers or internships.</p>
+          <p>I am currently learning Java, and I have had a bit of experience with JavaScript and C# as well.</p>
+        </div>
         <h2 className={styles.featured}>
           Featured Projects
         </h2>
