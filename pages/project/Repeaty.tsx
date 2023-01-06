@@ -6,8 +6,8 @@ export default function Repeaty() {
         <>
             <main className={styles.main}>
                 <Navbar/>
-                <div className={styles.center}>
-                    <div className={styles.centerText}>
+                <div className={styles.title}>
+                    <div className={styles.titleText}>
                         <h1>
                             Repeaty
                         </h1>
