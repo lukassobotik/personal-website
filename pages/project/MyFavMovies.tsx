@@ -4,7 +4,8 @@ import Navbar from "../navbar";
 export default function MyFavMovies() {
     return (
         <>
-        <main className={styles.main}>
+            <div className={styles.background}/>
+            <main className={styles.main}>
             <Navbar/>
             <div className={styles.title}>
             <div className={styles.titleText}>

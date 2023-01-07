@@ -4,6 +4,7 @@ import Navbar from "../navbar";
 export default function Repeaty() {
     return (
         <>
+            <div className={styles.background}/>
             <main className={styles.main}>
                 <Navbar/>
                 <div className={styles.title}>

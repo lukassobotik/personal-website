@@ -4,6 +4,7 @@ import Navbar from "../navbar";
 export default function VsemScheduleChangeNotifier() {
     return (
         <>
+            <div className={styles.background}/>
             <main className={styles.main}>
                 <Navbar/>
                 <div className={styles.title}>
