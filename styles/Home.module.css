@@ -211,6 +211,10 @@
     padding: 2rem;
   }
 
+  .featured {
+    margin-top: 10vh;
+  }
+
   .grid {
     grid-template-columns: 1fr;
     margin-bottom: 120px;
