@@ -2,12 +2,18 @@ import {Inter} from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import Navbar from "./navbar";
 import Link from "next/link";
+import GetRandomLine from "../GetRandomLine";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  console.log(GetRandomLine());
   return (
     <>
+      <Head>
+        <title>Lukáš Sobotík</title>
+      </Head>
       <div className={styles.background}/>
       <main className={styles.main}>
         <Navbar/>
