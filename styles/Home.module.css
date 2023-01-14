@@ -73,7 +73,6 @@
   grid-template-columns: repeat(4, minmax(25%, auto));
   width: var(--max-width);
   max-width: 100%;
-  margin-bottom: 25vh;
 }
 
 .skill {
@@ -283,6 +282,13 @@
     text-align: center;
   }
 
+  .skills {
+    grid-template-columns: 1fr;
+    margin-bottom: 120px;
+    max-width: 320px;
+    text-align: center;
+  }
+
   .card {
     padding: 1rem 2.5rem;
   }
@@ -353,6 +359,10 @@
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .skills {
     grid-template-columns: repeat(2, 50%);
   }
 
