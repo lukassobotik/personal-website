@@ -60,6 +60,35 @@
   margin-bottom: 25vh;
 }
 
+.personal_details {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(50%, auto));
+  grid-template-columns: repeat(2, minmax(1%, auto));
+  width: 100%;
+  max-width: 100%;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(25%, auto));
+  width: var(--max-width);
+  max-width: 100%;
+  margin-bottom: 25vh;
+}
+
+.skill {
+  padding: 1rem 1.2rem;
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0);
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+}
+
+.skill span {
+  display: inline-block;
+  transition: transform 200ms;
+}
+
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
@@ -98,6 +127,7 @@
   width: var(--max-width);
   max-width: 100%;
   min-height: 80vh;
+  margin-bottom: 10vh;
   margin-top: -5vh;
 }
 
@@ -109,11 +139,27 @@
   -webkit-text-fill-color: transparent;
 }
 
+.overview_section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin-bottom: 25vh;
+  max-width: 100%;
+}
+
+.overview_section h2 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  text-align: left;
+}
+
 .overview {
   width: var(--max-width);
   max-width: 100%;
-  text-align: center;
-  margin-bottom: 25vh;
+  text-align: left;
 }
 
 .featured {
@@ -197,10 +243,25 @@
   .project:hover span {
     transform: translateX(4px);
   }
+
+  .skill:hover {
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+  }
+
+  .skill:hover span {
+    transform: translateX(4px);
+  }
 }
 
 @media (prefers-reduced-motion) {
   .card:hover span {
+    transform: none;
+  }
+  .project:hover span {
+    transform: none;
+  }
+  .skill:hover span {
     transform: none;
   }
 }
