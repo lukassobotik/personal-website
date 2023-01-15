@@ -138,6 +138,23 @@
   -webkit-text-fill-color: transparent;
 }
 
+.project_overview_section {
+  min-height: 100vh;
+  margin-bottom: 25vh;
+  max-width: 100%;
+  padding: 1.5rem;
+}
+
+.project_overview_section h3{
+  margin-bottom: 0.2rem;
+  font-style: italic;
+}
+
+.project_overview_section a{
+  font-style: italic;
+  font-weight: 700;
+}
+
 .overview_section {
   display: flex;
   flex-direction: column;

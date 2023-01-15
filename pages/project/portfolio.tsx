@@ -1,21 +1,29 @@
 import styles from '../../styles/Home.module.css'
 import Navbar from "../navbar";
+import Head from "next/head";
 
 export default function portfolio() {
     return (
         <>
+            <Head>
+                <title>Portfolio Website</title>
+            </Head>
             <div className={styles.background}/>
             <main className={styles.main}>
                 <Navbar/>
-                <div className={styles.title}>
-                    <div className={styles.titleText}>
+                <div className={styles.project_overview_section}>
+                    <div className={styles.overview}>
                         <h1>
                             Portfolio Website
                         </h1>
+                        <h3>
+                            TypeScript, Next.js, React
+                        </h3>
                         <p>
                             This website is built using TypeScript, Next.js and React.
                         </p>
                     </div>
+                    <a href="https://github.com/PuckyEU/puckyeu.github.io">Source Code</a>
                 </div>
             </main>
         </>
