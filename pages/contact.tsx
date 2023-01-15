@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Navbar from "./navbar";
 import styles from "../styles/Home.module.css";
 import {Inter} from "@next/font/google";
@@ -7,6 +8,9 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Contact() {
     return (
         <>
+            <Head>
+                <title>Contact</title>
+            </Head>
             <div className={styles.background}/>
             <main className={styles.main}>
                 <Navbar/>

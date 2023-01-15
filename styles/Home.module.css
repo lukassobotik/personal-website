@@ -168,6 +168,12 @@
   margin-bottom: 0.7rem;
 }
 
+.featured_no_margin {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
 .project {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
