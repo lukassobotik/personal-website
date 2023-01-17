@@ -34,7 +34,7 @@ export default function Contact() {
                             Email <span>-&gt;</span>
                         </h2>
                         <p className={inter.className}>
-                            Here you can find all of my source code for this website. If you have any questions or suggestions, feel free to contact me!
+                            This is my email address. You can contact me here. I will try to respond as soon as possible.
                         </p>
                     </a>
 
