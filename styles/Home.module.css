@@ -155,6 +155,15 @@
   font-weight: 700;
 }
 
+.project_link {
+  margin-top: 2rem;
+}
+
+.project_image {
+  border-radius: 20%;
+  background: white;
+}
+
 .overview_section {
   display: flex;
   flex-direction: column;
@@ -376,6 +385,10 @@
 
   .titleText {
     width: 100%;
+  }
+
+  .project_image {
+    margin-top: 10vh;
   }
 }
 

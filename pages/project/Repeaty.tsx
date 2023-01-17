@@ -25,7 +25,7 @@ export default function Repeaty() {
                         <p>
                             The application is built using Java and Firebase.
                         </p>
-                        <a href="https://github.com/PuckyEU/habit-manager">Source Code</a>
+                        <div className={styles.project_link}><a href="https://github.com/PuckyEU/habit-manager">Source Code</a></div>
                     </div>
                 </div>
             </main>

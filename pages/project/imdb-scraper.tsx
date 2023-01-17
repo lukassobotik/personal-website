@@ -22,7 +22,7 @@ export default function imdbScraper() {
                         <p>
                             IMDb Scraper is a simple Java application that scrapes the top 250 section on the IMDb website.
                         </p>
-                        <a href="https://github.com/PuckyEU/imdb-scraper">Source Code</a>
+                        <div className={styles.project_link}><a href="https://github.com/PuckyEU/imdb-scraper">Source Code</a></div>
                     </div>
                 </div>
             </main>

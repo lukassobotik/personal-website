@@ -1,6 +1,7 @@
 import styles from '../../styles/Home.module.css'
 import Navbar from "../navbar";
 import Head from "next/head";
+import Image from "next/image";
 
 export default function MyQuotes() {
     return (
@@ -13,6 +14,7 @@ export default function MyQuotes() {
                 <Navbar/>
                 <div className={styles.project_overview_section}>
                     <div className={styles.overview}>
+                        <Image src="/myQuotes.png" alt="" width={150} height={150} className={styles.project_image}/>
                         <h1>
                             myQuotes
                         </h1>
@@ -25,7 +27,9 @@ export default function MyQuotes() {
                         <p>
                             The application is built using Java and Firebase.
                         </p>
-                        <a href="https://github.com/PuckyEU/Quotes">Source Code</a>
+                        <div className={styles.project_link}><a href="https://github.com/PuckyEU/Quotes">Source Code</a></div>
+                        <p></p>
+                        <a href="https://play.google.com/store/apps/details?id=com.sforge.quotes">Try it Out</a>
                     </div>
                 </div>
             </main>

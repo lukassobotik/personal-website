@@ -23,7 +23,7 @@ export default function portfolio() {
                             This website is built using TypeScript, Next.js and React.
                         </p>
                     </div>
-                    <a href="https://github.com/PuckyEU/puckyeu.github.io">Source Code</a>
+                    <div className={styles.project_link}><a href="https://github.com/PuckyEU/puckyeu.github.io">Source Code</a></div>
                 </div>
             </main>
         </>

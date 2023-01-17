@@ -22,7 +22,7 @@ export default function rollTwoOfKind() {
                         <p>
                             Roll Two of a Kind is a simple C# where you can test your luck by rolling two dice.
                         </p>
-                        <a href="https://github.com/PuckyEU/roll-two-of-kind">Source Code</a>
+                        <div className={styles.project_link}><a href="https://github.com/PuckyEU/roll-two-of-kind">Source Code</a></div>
                     </div>
                 </div>
             </main>

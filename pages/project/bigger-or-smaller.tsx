@@ -25,7 +25,7 @@ export default function biggerOrSmaller() {
                         <p>
                             The application is built using Java and Java GUIs.
                         </p>
-                        <a href="https://github.com/PuckyEU/bigger-or-smaller">Source Code</a>
+                        <div className={styles.project_link}><a href="https://github.com/PuckyEU/bigger-or-smaller">Source Code</a></div>
                     </div>
                 </div>
             </main>

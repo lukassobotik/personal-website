@@ -25,7 +25,7 @@ export default function VsemScheduleChangeNotifier() {
                         <p>
                             The application is built using Java, JavaMail and Jsoup.
                         </p>
-                        <a href="https://github.com/PuckyEU/vsem-schedule-change-notifier">Source Code</a>
+                        <div className={styles.project_link}><a href="https://github.com/PuckyEU/vsem-schedule-change-notifier">Source Code</a></div>
                     </div>
                 </div>
             </main>
