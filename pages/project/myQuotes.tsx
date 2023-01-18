@@ -30,7 +30,6 @@ export default function MyQuotes() {
                         <p/>
                         <div className={styles.project_images}>
                             <Image src="/myQuotes/myquotes-video-1.gif" alt="" width={270} height={530}/>
-                            <Image src="/myQuotes/myquotes-screenshot-1.jpg" alt="" width={270} height={530}/>
                             <Image src="/myQuotes/myquotes-screenshot-2.jpg" alt="" width={270} height={530}/>
                             <Image src="/myQuotes/myquotes-screenshot-3.jpg" alt="" width={270} height={530}/>
                             <Image src="/myQuotes/myquotes-screenshot-4.jpg" alt="" width={270} height={530}/>
