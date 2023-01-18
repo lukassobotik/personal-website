@@ -164,6 +164,15 @@
   background: white;
 }
 
+.project_images {
+  margin-top: 2rem;
+}
+
+.project_images img {
+  border-radius: 10px;
+  margin: 0.15rem;
+}
+
 .overview_section {
   display: flex;
   flex-direction: column;
@@ -237,7 +246,7 @@
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   padding: 1rem 0;
   width: 75%;
   top: 0;

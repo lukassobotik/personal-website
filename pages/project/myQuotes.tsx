@@ -24,12 +24,18 @@ export default function MyQuotes() {
                         <p>
                             myQuotes is an Android application where you can Share, Discover and Save New Quotes!
                         </p>
-                        <p>
-                            The application is built using Java and Firebase.
-                        </p>
                         <div className={styles.project_link}><a href="https://github.com/PuckyEU/Quotes">Source Code</a></div>
-                        <p></p>
+                        <p/>
                         <a href="https://play.google.com/store/apps/details?id=com.sforge.quotes">Try it Out</a>
+                        <p/>
+                        <div className={styles.project_images}>
+                            <Image src="/myQuotes/myquotes-video-1.gif" alt="" width={270} height={530}/>
+                            <Image src="/myQuotes/myquotes-screenshot-1.jpg" alt="" width={270} height={530}/>
+                            <Image src="/myQuotes/myquotes-screenshot-2.jpg" alt="" width={270} height={530}/>
+                            <Image src="/myQuotes/myquotes-screenshot-3.jpg" alt="" width={270} height={530}/>
+                            <Image src="/myQuotes/myquotes-screenshot-4.jpg" alt="" width={270} height={530}/>
+                            <Image src="/myQuotes/myquotes-screenshot-5.jpg" alt="" width={270} height={530}/>
+                        </div>
                     </div>
                 </div>
             </main>
