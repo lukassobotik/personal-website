@@ -112,6 +112,9 @@ export default function Home() {
               </h3>
             </Link>
           </div>
+          <div className={styles.cv}>
+            <a href="/resume/junior-java-developer.pdf" download="lukas-sobotik-resume" className={styles.skill}>Download CV</a>
+          </div>
         </div>
         <h2 className={styles.featured}>
           Featured Projects

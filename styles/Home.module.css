@@ -88,6 +88,13 @@
   transition: transform 200ms;
 }
 
+.cv {
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+  font-style: italic;
+  font-weight: 700;
+}
+
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);

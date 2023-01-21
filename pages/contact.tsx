@@ -18,7 +18,7 @@ export default function Contact() {
                     Contact Me
                 </h2>
                 <div className={styles.overview}>
-                    <p>My preferred way of contact is LinkedIn, but you can contact me by email too.</p>
+                    <p>I would prefer if you would contact me through LinkedIn, but you can contact me through email too.</p>
                 </div>
                 <div className={styles.grid}>
                     <a href="https://www.linkedin.com/in/lukassobotik/" className={styles.card}>
@@ -47,12 +47,12 @@ export default function Contact() {
                         </p>
                     </a>
 
-                    <a href="https://github.com/PuckyEU" className={styles.card}>
+                    <a href="/resume/junior-java-developer.pdf" className={styles.card}>
                         <h2 className={inter.className}>
-                            Github <span>-&gt;</span>
+                            CV <span>-&gt;</span>
                         </h2>
                         <p className={inter.className}>
-                            Take a look at my Github! You can find all of my projects there. This website is also open source, you can find it there too!
+                            Here you can find my CV. You can download it here.
                         </p>
                     </a>
                 </div>
