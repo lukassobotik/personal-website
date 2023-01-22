@@ -60,6 +60,13 @@
   margin-bottom: 25vh;
 }
 
+.certificates {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(33%, auto));
+  width: var(--max-width);
+  max-width: 100%;
+}
+
 .personal_details {
   display: grid;
   grid-template-rows: repeat(4, minmax(50%, auto));
@@ -89,10 +96,14 @@
 }
 
 .cv {
-  margin-top: 1rem;
   padding: 1rem 1.2rem;
   font-style: italic;
   font-weight: 700;
+}
+
+.cv_section {
+  display: flex;
+  width: 100%;
 }
 
 .card {
@@ -337,6 +348,13 @@
     text-align: center;
   }
 
+  .certificates {
+    grid-template-columns: 1fr;
+    margin-bottom: 120px;
+    max-width: 320px;
+    text-align: center;
+  }
+
   .card {
     padding: 1rem 2.5rem;
   }
@@ -415,6 +433,10 @@
   }
 
   .skills {
+    grid-template-columns: repeat(2, 50%);
+  }
+
+  .certificates {
     grid-template-columns: repeat(2, 50%);
   }
 

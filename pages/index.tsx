@@ -113,8 +113,27 @@ export default function Home() {
               </h3>
             </Link>
           </div>
-          <div className={styles.cv}>
-            <a href="/resume/junior-java-developer.pdf" download="lukas-sobotik-resume" className={styles.skill}>Download CV</a>
+          <h2 className={styles.featured}>
+            Certificates
+          </h2>
+          <div className={styles.certificates}>
+            <a href="https://www.efset.org/cert/sW8Md2" className={styles.card}>
+              <h2 className={inter.className}>
+                EF Standard English Test <span>-&gt;</span>
+              </h2>
+              <p className={inter.className}>
+                My result is C2 Proficient.
+                The EF Standard English Test is a free online English test that helps you assess your level of English.
+              </p>
+            </a>
+          </div>
+          <h2 className={styles.featured}>
+            CV
+          </h2>
+          <div className={styles.cv_section}>
+            <div className={styles.cv}>
+              <a href="/resume/junior-java-developer.pdf" download="lukas-sobotik-resume" className={styles.skill}>Download CV</a>
+            </div>
           </div>
         </div>
         <h2 className={styles.featured}>
