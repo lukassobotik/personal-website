@@ -26,7 +26,7 @@ export default function Home() {
         <Navbar/>
         <div className={styles.title}>
           <h1>
-            Hi, I am <span className={styles.name}>Lukáš</span>, a <span className={styles.name}>Full-Stack </span>developer.
+            Hi, I&#39;m <span className={styles.name}>Lukáš</span>, a <span className={styles.name}>Full-Stack </span>developer.
           </h1>
         </div>
         <div className={styles.overview_section}>
@@ -34,7 +34,8 @@ export default function Home() {
             About Me
           </h2>
           <div className={styles.overview}>
-            <p>I&#39;m a student at Akademie VŠEM studying economics. Programming is my passion and I am open to any job offers or internships. I am currently learning Java, and I have had a bit of experience with JavaScript and C#. I have been actively learning programming since December 2021. I have developed Android applications and websites since then.</p>
+            <p>I&#39;m a student at Akademie VŠEM studying economics. Programming is my passion, and I am open to any job offers or internships. Currently, I am learning Java, and I have had a bit of experience with JavaScript and C#. Since December 2021, I have been actively learning programming. I have developed Android applications and websites since then.</p>
+            <p>At the moment, I have no professional experience with software development, but I would love to get some.</p>
           </div>
           <h2 className={styles.featured}>
             Personal Details
