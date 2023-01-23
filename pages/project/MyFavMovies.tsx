@@ -32,11 +32,11 @@ export default function MyFavMovies() {
                         <a href="https://github.com/PuckyEU/MyFavMovies">Source Code</a>
                         <p/>
                         <div className={styles.horizontal_project_images}>
-                            <Image src="/MyFavMovies/sc-1.png" alt="" width={1000} height={540}/>
-                            <Image src="/MyFavMovies/sc-2.png" alt="" width={1000} height={540}/>
-                            <Image src="/MyFavMovies/sc-3.png" alt="" width={1000} height={540}/>
-                            <Image src="/MyFavMovies/sc-4.png" alt="" width={1000} height={540}/>
-                            <Image src="/MyFavMovies/sc-5.png" alt="" width={1000} height={540}/>
+                            <Image src="/images/MyFavMovies/sc-1.png" alt="" width={1000} height={540}/>
+                            <Image src="/images/MyFavMovies/sc-2.png" alt="" width={1000} height={540}/>
+                            <Image src="/images/MyFavMovies/sc-3.png" alt="" width={1000} height={540}/>
+                            <Image src="/images/MyFavMovies/sc-4.png" alt="" width={1000} height={540}/>
+                            <Image src="/images/MyFavMovies/sc-5.png" alt="" width={1000} height={540}/>
                         </div>
                     </div>
                 </div>

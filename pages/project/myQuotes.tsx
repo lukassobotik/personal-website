@@ -29,11 +29,11 @@ export default function MyQuotes() {
                         <a href="https://play.google.com/store/apps/details?id=com.sforge.quotes">Try it Out</a>
                         <p/>
                         <div className={styles.vertical_project_images}>
-                            <Image src="/myQuotes/vid-1.gif" alt="" width={270} height={530}/>
-                            <Image src="/myQuotes/sc-1.jpg" alt="" width={270} height={530}/>
-                            <Image src="/myQuotes/sc-2.jpg" alt="" width={270} height={530}/>
-                            <Image src="/myQuotes/sc-3.jpg" alt="" width={270} height={530}/>
-                            <Image src="/myQuotes/sc-4.jpg" alt="" width={270} height={530}/>
+                            <Image src="/images/myQuotes/vid-1.gif" alt="" width={270} height={530}/>
+                            <Image src="/images/myQuotes/sc-1.jpg" alt="" width={270} height={530}/>
+                            <Image src="/images/myQuotes/sc-2.jpg" alt="" width={270} height={530}/>
+                            <Image src="/images/myQuotes/sc-3.jpg" alt="" width={270} height={530}/>
+                            <Image src="/images/myQuotes/sc-4.jpg" alt="" width={270} height={530}/>
                         </div>
                     </div>
                 </div>
