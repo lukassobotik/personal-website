@@ -14,7 +14,7 @@ export default function MyFavMovies() {
             <Navbar/>
                 <div className={styles.project_overview_section}>
                     <div className={styles.overview}>
-                        <Image src="/MyFavMovies.png" alt="" width={150} height={150} className={styles.project_image}/>
+                        <Image src="/MyFavMovies/MyFavMovies.png" alt="" width={150} height={150} className={styles.project_image}/>
                         <h1>
                             MyFavMovies
                         </h1>
