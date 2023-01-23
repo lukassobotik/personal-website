@@ -14,7 +14,7 @@ export default function MyFavMovies() {
             <Navbar/>
                 <div className={styles.project_overview_section}>
                     <div className={styles.overview}>
-                        <Image src="/MyFavMovies/MyFavMovies.png" alt="" width={150} height={150} className={styles.project_image}/>
+                        <Image src="/images/MyFavMovies/MyFavMovies.png" alt="" width={150} height={150} className={styles.project_image}/>
                         <h1>
                             MyFavMovies
                         </h1>
@@ -27,7 +27,7 @@ export default function MyFavMovies() {
                         <p>
                             The application is built using React and Firebase.
                         </p>
-                        <div className={styles.project_link}><a href="https://puckyeu.github.io/MyFavMovies">Try it Out</a></div>
+                        <div className={styles.project_link}><a href="https://lukassobotik.dev/MyFavMovies/">Try it Out</a></div>
                         <p/>
                         <a href="https://github.com/PuckyEU/MyFavMovies">Source Code</a>
                         <p/>
