@@ -181,11 +181,23 @@
   border-radius: 20%;
 }
 
-.project_images {
+.horizontal_project_images {
+  margin-top: 2rem;
+  display: inline-block;
+}
+
+.horizontal_project_images img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+}
+
+.vertical_project_images {
   margin-top: 2rem;
 }
 
-.project_images img {
+.vertical_project_images img {
   border-radius: 10px;
   margin: 0.15rem;
 }
