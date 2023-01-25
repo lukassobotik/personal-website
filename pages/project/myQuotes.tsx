@@ -24,10 +24,10 @@ export default function MyQuotes() {
                         <p>
                             myQuotes is an Android application where you can Share, Discover and Save New Quotes!
                         </p>
-                        <div className={styles.project_link}><a href="https://github.com/PuckyEU/Quotes">Source Code</a></div>
-                        <p/>
-                        <a href="https://play.google.com/store/apps/details?id=com.sforge.quotes">Try it Out</a>
-                        <p/>
+                        <div className={styles.project_link}>
+                            <a href="https://play.google.com/store/apps/details?id=com.sforge.quotes" className={styles.skill}>Try it Out</a>
+                            <a href="https://github.com/PuckyEU/Quotes" className={styles.skill}>Source Code</a>
+                        </div>
                         <div className={styles.vertical_project_images}>
                             <Image src="/images/myQuotes/vid-1.gif" alt="" width={270} height={530}/>
                             <Image src="/images/myQuotes/sc-1.jpg" alt="" width={270} height={530}/>

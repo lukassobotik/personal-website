@@ -177,6 +177,13 @@
   margin-top: 2rem;
 }
 
+.project_link a {
+  color: white;
+  padding: 1rem 1.5rem;
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+}
+
 .project_image {
   border-radius: 20%;
 }

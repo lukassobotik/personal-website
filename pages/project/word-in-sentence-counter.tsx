@@ -22,7 +22,9 @@ export default function wordInSentenceCounter() {
                         <p>
                             Word in Sentence Counter is a C# application that counts the number of words in a sentence.
                         </p>
-                        <div className={styles.project_link}><a href="https://github.com/PuckyEU/word-in-sentence-counter">Source Code</a></div>
+                        <div className={styles.project_link}>
+                            <a href="https://github.com/PuckyEU/word-in-sentence-counter" className={styles.skill}>Source Code</a>
+                        </div>
                     </div>
                 </div>
             </main>

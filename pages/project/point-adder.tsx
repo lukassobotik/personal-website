@@ -20,9 +20,11 @@ export default function pointAdder() {
                             Java
                         </h3>
                         <p>
-                            Point Adder is a simple Java application that adds points to a score.
+                            Point Adder is a really simple Java project that runs in the system tray where you have ease of access to add a point to a greater score.
                         </p>
-                        <div className={styles.project_link}><a href="https://github.com/PuckyEU/point-adder">Source Code</a></div>
+                        <div className={styles.project_link}>
+                            <a href="https://github.com/PuckyEU/point-adder" className={styles.skill}>Source Code</a>
+                        </div>
                     </div>
                 </div>
             </main>

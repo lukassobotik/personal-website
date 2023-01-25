@@ -24,13 +24,10 @@ export default function MyFavMovies() {
                         <p>
                             MyFavMovies is a web application that allows you to search for movies and add them to your favorites.
                         </p>
-                        <p>
-                            The application is built using React and Firebase.
-                        </p>
-                        <div className={styles.project_link}><a href="https://lukassobotik.dev/MyFavMovies/">Try it Out</a></div>
-                        <p/>
-                        <a href="https://github.com/PuckyEU/MyFavMovies">Source Code</a>
-                        <p/>
+                        <div className={styles.project_link}>
+                            <a href="https://lukassobotik.dev/MyFavMovies/" className={styles.skill}>Try it Out</a>
+                            <a href="https://github.com/PuckyEU/MyFavMovies" className={styles.skill}>Source Code</a>
+                        </div>
                         <div className={styles.horizontal_project_images}>
                             <Image src="/images/MyFavMovies/sc-1.png" alt="" width={1000} height={540}/>
                             <Image src="/images/MyFavMovies/sc-2.png" alt="" width={1000} height={540}/>

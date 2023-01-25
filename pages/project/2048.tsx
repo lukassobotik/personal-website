@@ -22,7 +22,9 @@ export default function twentyFortyEight() {
                         <p>
                             My recreation of the popular game 2048. Built using Java.
                         </p>
-                        <div className={styles.project_link}><a href="https://github.com/PuckyEU/2048">Source Code</a></div>
+                        <div className={styles.project_link}>
+                            <a href="https://github.com/PuckyEU/2048" className={styles.skill}>Source Code</a>
+                        </div>
                     </div>
                 </div>
             </main>
