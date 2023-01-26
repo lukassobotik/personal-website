@@ -19,10 +19,20 @@ export default function MyFavMovies() {
                             MyFavMovies
                         </h1>
                         <h3>
-                            JavaScript, Firebase, React
+                            JavaScript, Firebase, React, TMDb API
                         </h3>
                         <p>
                             MyFavMovies is a web application that allows you to search for movies and add them to your favorites.
+                        </p>
+                        <p>
+                            It uses the <a href="https://www.themoviedb.org/">The Movie Database API</a> to fetch the movies.
+                        </p>
+                        <p>
+                            You can create an account and login to save your favorite movies or save them to collections that you created.
+                            You can also set your language and region preferences. The application will use them to fetch the movies in your language and region.
+                            You can set a profile picture and a username.
+                            The application is fully responsive and works on mobile devices.
+                            This application was my first project using React and developing a web application in general.
                         </p>
                         <div className={styles.project_link}>
                             <a href="https://lukassobotik.dev/MyFavMovies/" className={styles.skill}>Try it Out</a>

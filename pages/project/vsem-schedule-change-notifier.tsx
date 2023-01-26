@@ -20,10 +20,11 @@ export default function VsemScheduleChangeNotifier() {
                             Java, JavaMail, JSoup, Raspberry Pi, Cron, Debian
                         </h3>
                         <p>
-                            VŠEM Schedule Change Notifier is a Java application that notifies you about changes in the schedule of your classes.
+                            VŠEM Schedule Change Notifier is a Java application that notifies you about changes in the schedule of your classes. The application is built using Java, JavaMail and Jsoup. It is deployed on a Raspberry Pi and runs on a Cron job.
                         </p>
                         <p>
-                            The application is built using Java, JavaMail and Jsoup.
+                            The application is running a Cron job that runs every 1 hour. The Cron job checks the schedule of the classes on the VŠEM website. If there is a change in the schedule, the application sends you an email with the new schedule.
+                            On the Raspberry Pi, the application logs all the changes in the schedule, every run of the application and the emails that were sent. The application also logs the errors that occurred during the execution of the application.
                         </p>
                         <div className={styles.project_link}>
                             <a href="https://github.com/PuckyEU/vsem-schedule-change-notifier" className={styles.skill}>Source Code</a>

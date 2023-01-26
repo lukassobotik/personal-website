@@ -232,6 +232,10 @@
   text-align: left;
 }
 
+.overview p {
+  margin-bottom: 1rem;
+}
+
 .featured {
   text-align: center;
   font-size: 2rem;

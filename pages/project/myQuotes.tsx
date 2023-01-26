@@ -23,6 +23,15 @@ export default function MyQuotes() {
                         </h3>
                         <p>
                             myQuotes is an Android application where you can Share, Discover and Save New Quotes!
+                            The application is built using Java and Firebase. The application is available on the Google Play Store.
+                        </p>
+                        <p>
+                            This was my first completed Android application that I published on the Google Play Store.
+                        </p>
+                        <p>
+                            You can create an account and share your own quotes or you can discover new quotes from other users. You can also save quotes to your favorites.
+                            You can also search for quotes by author or by quote. You can also change your background color behind the quote.
+                            Users can delete their own account and all of their quotes and data.
                         </p>
                         <div className={styles.project_link}>
                             <a href="https://play.google.com/store/apps/details?id=com.sforge.quotes" className={styles.skill}>Try it Out</a>
