@@ -13,7 +13,6 @@ export default function Projects() {
             <Head>
                 <title>Projects</title>
             </Head>
-            <div className={styles.background}/>
             <main className={styles.main}>
                 <Navbar/>
                 <h2 className={styles.featured}>

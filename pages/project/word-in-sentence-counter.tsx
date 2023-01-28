@@ -8,7 +8,6 @@ export default function wordInSentenceCounter() {
             <Head>
                 <title>Word in a Sentence Counter</title>
             </Head>
-            <div className={styles.background}/>
             <main className={styles.main}>
                 <Navbar/>
                 <div className={styles.project_overview_section}>

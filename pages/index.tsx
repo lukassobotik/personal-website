@@ -16,12 +16,12 @@ export default function Home() {
     return Math.floor(ageInYears);
   }
 
+
   return (
     <>
       <Head>
         <title>Lukáš Sobotík</title>
       </Head>
-      <div className={styles.background}/>
       <main className={styles.main}>
         <Navbar/>
         <div className={styles.title}>

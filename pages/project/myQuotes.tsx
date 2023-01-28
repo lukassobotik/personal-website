@@ -9,7 +9,6 @@ export default function MyQuotes() {
             <Head>
                 <title>MyQuotes</title>
             </Head>
-            <div className={styles.background}/>
             <main className={styles.main}>
                 <Navbar/>
                 <div className={styles.project_overview_section}>

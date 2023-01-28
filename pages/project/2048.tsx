@@ -8,7 +8,6 @@ export default function twentyFortyEight() {
             <Head>
                 <title>2048</title>
             </Head>
-            <div className={styles.background}/>
             <main className={styles.main}>
                 <Navbar/>
                 <div className={styles.project_overview_section}>

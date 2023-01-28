@@ -9,7 +9,6 @@ export default function MyFavMovies() {
             <Head>
                 <title>MyFavMovies</title>
             </Head>
-            <div className={styles.background}/>
             <main className={styles.main}>
             <Navbar/>
                 <div className={styles.project_overview_section}>

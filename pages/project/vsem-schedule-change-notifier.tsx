@@ -8,7 +8,6 @@ export default function VsemScheduleChangeNotifier() {
             <Head>
                 <title>VŠEM Schedule Change Notifier</title>
             </Head>
-            <div className={styles.background}/>
             <main className={styles.main}>
                 <Navbar/>
                 <div className={styles.project_overview_section}>

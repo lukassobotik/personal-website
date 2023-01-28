@@ -8,7 +8,6 @@ export default function rollTwoOfKind() {
             <Head>
                 <title>Roll Two of a Kind</title>
             </Head>
-            <div className={styles.background}/>
             <main className={styles.main}>
                 <Navbar/>
                 <div className={styles.project_overview_section}>
