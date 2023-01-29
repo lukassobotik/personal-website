@@ -22,7 +22,10 @@ export default function Repeaty() {
                             Repeaty is an android application to Track and Manage your Habits.
                         </p>
                         <p>
-                            This was my first Android application and I learned a lot about Android development. I also learned how to use git and Github.
+                            Even though it was never finished, it was my first Android application and I learned a lot about Android development. I also learned how to use git and Github. This was the project that got me into programming regularly.
+                        </p>
+                        <p>
+                            It&apos;s made using Java and Android Studio. It uses SQLite to store the data. It isn&apos;t finished, but it has the basic functionality of adding and removing habits, and tracking them. I had planned to add a lot more features, but I lost interest in the project because I lost the need for the application. It also has a rather basic statistics system.
                         </p>
                         <div className={styles.project_link}>
                             <a href="https://github.com/PuckyEU/habit-manager" className={styles.skill}>Source Code</a>
