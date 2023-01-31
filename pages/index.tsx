@@ -168,13 +168,9 @@ export default function Home() {
           <h2 className={styles.featured}>
             CV
           </h2>
-          <div className={styles.cv_section}>
-            <div className={styles.cv}>
-              <a href="/resume/junior-java-developer.pdf" className={styles.skill}>View CV</a>
-            </div>
-            <div className={styles.cv}>
-              <a href="/resume/junior-java-developer.pdf" download="lukas-sobotik-resume" className={styles.skill}>Download CV</a>
-            </div>
+          <div className={styles.skills}>
+            <a href="/resume/junior-java-developer.pdf" className={styles.skill}>View CV</a>
+            <a href="/resume/junior-java-developer.pdf" download="lukas-sobotik-resume" className={styles.skill}>Download CV</a>
           </div>
         </div>
         <h2 className={styles.featured}>

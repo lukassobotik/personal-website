@@ -109,17 +109,6 @@
   transition: transform 200ms;
 }
 
-.cv {
-  padding: 1rem 1.2rem;
-  font-style: italic;
-  font-weight: 700;
-}
-
-.cv_section {
-  display: flex;
-  width: 100%;
-}
-
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
@@ -370,7 +359,7 @@
     padding: 2rem;
   }
 
-  .featured {
+  .featured:first-child {
     margin-top: 10vh;
   }
 
@@ -383,14 +372,12 @@
 
   .skills {
     grid-template-columns: 1fr;
-    margin-bottom: 120px;
     max-width: 320px;
     text-align: center;
   }
 
   .certificates {
     grid-template-columns: 1fr;
-    margin-bottom: 120px;
     max-width: 320px;
     text-align: center;
   }
@@ -405,6 +392,7 @@
 
   .title {
     padding: 8rem 0 6rem;
+    margin-top: 5vh;
   }
 
   .title::before {
