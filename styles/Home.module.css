@@ -1,9 +1,9 @@
 @keyframes gradient {
   0% {
-    background-position: 100% 100%;
+    background-position: 50% 50%;
   }
   50% {
-    background-position: 0 0;
+    background-position: 60% 60%;
   }
   100% {
     background-position: 100% 100%;
@@ -11,13 +11,21 @@
 }
 
 .main {
-  background-color:hsla(0,93%,71%,0.25);
+  background-color: hsla(277, 100%, 80%, 0.25);
   background-image:
-          radial-gradient(at 29% 25%, hsla(15,100%,50%,0.25) 0px, transparent 50%),
-          radial-gradient(at 85% 75%, hsla(278,80%,43%,0.25) 0px, transparent 50%);
+          radial-gradient(at 66% 96%, hsla(5,60%,78%,0.25) 0px, transparent 50%),
+          radial-gradient(at 65% 8%, hsla(246,79%,60%,0.25) 0px, transparent 50%),
+          radial-gradient(at 1% 24%, hsla(211,75%,65%,0.25) 0px, transparent 50%),
+          radial-gradient(at 74% 91%, hsla(324,93%,73%,0.25) 0px, transparent 50%),
+          radial-gradient(at 97% 89%, hsla(297,88%,68%,0.25) 0px, transparent 50%),
+          radial-gradient(at 15% 26%, hsla(260,73%,69%,0.25) 0px, transparent 50%),
+          radial-gradient(at 7% 15%, hsla(204,64%,60%,0.25) 0px, transparent 50%);
   background-size: 400% 400%;
   background-position: center;
   animation: gradient 15s ease infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -5s);
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;

@@ -4,6 +4,7 @@ import Navbar from "./navbar";
 import Link from "next/link";
 import Head from "next/head";
 import FeaturedProjects from "./featuredProjects";
+import {useEffect} from "react";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,6 +17,18 @@ export default function Home() {
     return Math.floor(ageInYears);
   }
 
+  useEffect(() => {
+    window?.addEventListener(
+        "scroll",
+        () => {
+          document.body.style.setProperty(
+              "--scroll",
+              (window.scrollY / (document.body.offsetHeight - window.innerHeight)).toString()
+          );
+        },
+        false
+    );
+  })
 
   return (
     <>
