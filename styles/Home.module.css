@@ -314,6 +314,10 @@
   cursor: pointer;
 }
 
+.navbar_item:last-child {
+  margin-right: 0;
+}
+
 .logo {
   position: relative;
 }
