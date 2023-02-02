@@ -37,10 +37,17 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Navbar/>
+        {/*<h1>*/}
+        {/*  Hi, I&#39;m <span className={styles.name}>Lukáš</span>, a <span className={styles.name}>Full-Stack </span>developer.*/}
+        {/*</h1>*/}
         <div className={styles.title}>
-          <h1>
-            Hi, I&#39;m <span className={styles.name}>Lukáš</span>, a <span className={styles.name}>Full-Stack </span>developer.
-          </h1>
+          <p>
+            Hi, I&#39;m
+          </p>
+          <span className={styles.name}>Lukáš</span>
+          <div>
+            a Full-Stack developer.
+          </div>
         </div>
         <div className={styles.overview_section}>
           <h2 className={styles.featured}>
@@ -54,11 +61,11 @@ export default function Home() {
             Personal Details
           </h2>
           <div className={styles.personal_details}>
-            <p className={styles.name}>Name:</p>
+            <p className={styles.small_name}>Name:</p>
             <p>Lukáš Sobotík</p>
-            <p className={styles.name}>Age:</p>
+            <p className={styles.small_name}>Age:</p>
             <p>{calculateAge()}</p>
-            <p className={styles.name}>Job Status:</p>
+            <p className={styles.small_name}>Job Status:</p>
             <p>Looking for a job</p>
           </div>
           <h2 className={styles.featured}>

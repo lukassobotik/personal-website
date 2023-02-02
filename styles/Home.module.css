@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=VT323&display=swap");
+
 @keyframes gradient {
   0% {
     background-position: 50% 50%;
@@ -8,6 +10,17 @@
   100% {
     background-position: 100% 100%;
   }
+}
+
+@keyframes glitch {
+  0% {
+    text-shadow: -1px 1px 0 red, 2px -3px 0 blue;
+    transform: translate(8px);
+  }
+  2% {
+    text-shadow: 1px -1px 0 red, -2px 3px 0 blue;
+  }
+  4%, 100% {  text-shadow: none; transform: none; }
 }
 
 .main {
@@ -136,7 +149,7 @@
 }
 
 .title {
-  display: flex;
+  display: inline-block;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -144,19 +157,41 @@
   padding: 4rem 0;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2rem;
-  width: var(--max-width);
   max-width: 100%;
   min-height: 80vh;
   margin-bottom: 10vh;
-  margin-top: -10vh;
+  margin-top: 10vh;
+  width: fit-content;
 }
 
 .name {
   font-weight: 700;
   margin-bottom: 0.5rem;
-  background: -webkit-linear-gradient(45deg, #092382 0%, #1033b3  51%, #092382  100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: "VT323", monospace;
+  font-size: 10rem;
+  text-transform: uppercase;
+  color: white;
+  animation: stack 340ms cubic-bezier(.46,.29,0,1.24) 1 backwards 120ms, glitch 2s ease infinite 2s alternate-reverse;
+}
+
+.small_name {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-family: "VT323", monospace;
+  text-transform: uppercase;
+  color: white;
+}
+
+.title p {
+  margin-bottom: -2rem;
+  text-align: left;
+  width: 100%;
+}
+
+.title div {
+  margin-top: -2rem;
+  text-align: right;
+  width: 100%;
 }
 
 .project_overview_section {
