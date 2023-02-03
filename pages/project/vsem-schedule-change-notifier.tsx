@@ -1,6 +1,7 @@
 import styles from '../../styles/Home.module.css'
 import Navbar from "../navbar";
 import Head from "next/head";
+import Image from "next/image";
 
 export default function VsemScheduleChangeNotifier() {
     return (
@@ -12,6 +13,7 @@ export default function VsemScheduleChangeNotifier() {
                 <Navbar/>
                 <div className={styles.project_overview_section}>
                     <div className={styles.overview}>
+                        <Image src="/images/schedule-change-notifier/VŠEM.png" alt="" width={150} height={150} className={styles.project_image}/>
                         <h1>
                             VŠEM Schedule Change Notifier
                         </h1>

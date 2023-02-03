@@ -37,9 +37,6 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <Navbar/>
-        {/*<h1>*/}
-        {/*  Hi, I&#39;m <span className={styles.name}>Lukáš</span>, a <span className={styles.name}>Full-Stack </span>developer.*/}
-        {/*</h1>*/}
         <div className={styles.title}>
           <p>
             Hi, I&#39;m

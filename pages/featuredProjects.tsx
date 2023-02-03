@@ -1,11 +1,12 @@
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function FeaturedProjects() {
     return (
         <>
             <div className={styles.featured_projects}>
-                <div className={styles.featured_project}>
+                <Link href="/project/MyFavMovies" className={styles.featured_project}>
                     <div className={styles.featured_project_description}>
                         <h2>MyFavMovies</h2>
                         <h4>
@@ -19,8 +20,8 @@ export default function FeaturedProjects() {
                         </p>
                     </div>
                     <Image src="/images/MyFavMovies/MyFavMovies.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
-                </div>
-                <div className={styles.featured_project}>
+                </Link>
+                <Link href="/project/myQuotes" className={styles.featured_project}>
                     <Image src="/images/myQuotes/myQuotes.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
                     <div className={styles.featured_project_description}>
                         <h2>MyQuotes</h2>
@@ -34,8 +35,8 @@ export default function FeaturedProjects() {
                             This was my first completed Android application that I published on the Google Play Store.
                         </p>
                     </div>
-                </div>
-                <div className={styles.featured_project}>
+                </Link>
+                <Link href="/project/vsem-schedule-change-notifier" className={styles.featured_project}>
                     <div className={styles.featured_project_description}>
                         <h2>VŠEM Schedule Change Notifier</h2>
                         <h4>
@@ -49,8 +50,8 @@ export default function FeaturedProjects() {
                         </p>
                     </div>
                     <Image src="/images/schedule-change-notifier/VŠEM.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
-                </div>
-                <div className={styles.featured_project}>
+                </Link>
+                <Link href="/project/Repeaty" className={styles.featured_project}>
                     <Image src="/images/Repeaty/Repeaty.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
                     <div className={styles.featured_project_description}>
                         <h2>Repeaty</h2>
@@ -64,7 +65,7 @@ export default function FeaturedProjects() {
                             Even though it was never finished, it was my first Android application and I learned a lot about Android development.
                         </p>
                     </div>
-                </div>
+                </Link>
             </div>
         </>
     )
