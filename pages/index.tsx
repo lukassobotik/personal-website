@@ -180,7 +180,6 @@ export default function Home() {
         <h2 className={styles.featured}>
           Featured Projects
         </h2>
-
         <FeaturedProjects/>
         <h2 className={styles.featured}>
           External Links

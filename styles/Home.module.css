@@ -280,10 +280,14 @@
   max-width: var(--max-width);
 }
 
-.featured_project:nth-child(odd) {
+.odd_featured_project {
   margin-left: 25%;
   justify-content: right;
   text-align: right;
+}
+
+.even_featured_project {
+  width: 75%;
 }
 
 .featured_project {
@@ -295,7 +299,7 @@
   flex-direction: row;
   justify-content: left;
   align-items: flex-start;
-  width: 75%;
+  width: 100%;
   max-width: 100%;
   margin-bottom: 2rem;
 }
@@ -545,8 +549,12 @@
     display: none;
   }
 
-  .featured_project:nth-child(odd) {
+  .odd_featured_project {
     margin-left: 0;
+  }
+
+  .even_featured_project {
+    width: 100%;
   }
 
   .featured_project {
@@ -576,8 +584,12 @@
     display: none;
   }
 
-  .featured_project:nth-child(odd) {
+  .odd_featured_project {
     margin-left: 0;
+  }
+
+  .even_featured_project {
+    width: 100%;
   }
 
   .featured_project {
