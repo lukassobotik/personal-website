@@ -1,5 +1,5 @@
 import {CSSProperties, FC, PropsWithChildren, RefObject, useEffect, useRef, useState} from "react";
-import styles from '../styles/Home.module.css'
+import styles from './styles/Home.module.css'
 
 function useElementOnScreen(
     ref: RefObject<Element>,
