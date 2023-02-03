@@ -1,7 +1,7 @@
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import {FadeLeft, FadeRight} from "./Animations";
+import {FadeLeft, FadeRight} from "./animations";
 
 export default function FeaturedProjects() {
     return (
