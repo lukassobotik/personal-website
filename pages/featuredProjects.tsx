@@ -6,7 +6,7 @@ export default function FeaturedProjects() {
     return (
         <>
             <div className={styles.featured_projects}>
-                <Link href="/project/MyFavMovies" className={styles.featured_project}>
+                <Link href="/project/MyFavMovies" data-aos="fade-right" className={styles.featured_project}>
                     <div className={styles.featured_project_description}>
                         <h2>MyFavMovies</h2>
                         <h4>
@@ -21,7 +21,7 @@ export default function FeaturedProjects() {
                     </div>
                     <Image src="/images/MyFavMovies/MyFavMovies.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
                 </Link>
-                <Link href="/project/myQuotes" className={styles.featured_project}>
+                <Link href="/project/myQuotes" data-aos="fade-right" className={styles.featured_project}>
                     <Image src="/images/myQuotes/myQuotes.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
                     <div className={styles.featured_project_description}>
                         <h2>MyQuotes</h2>
@@ -36,7 +36,7 @@ export default function FeaturedProjects() {
                         </p>
                     </div>
                 </Link>
-                <Link href="/project/vsem-schedule-change-notifier" className={styles.featured_project}>
+                <Link href="/project/vsem-schedule-change-notifier" data-aos="fade-right" className={styles.featured_project}>
                     <div className={styles.featured_project_description}>
                         <h2>VŠEM Schedule Change Notifier</h2>
                         <h4>
@@ -51,7 +51,7 @@ export default function FeaturedProjects() {
                     </div>
                     <Image src="/images/schedule-change-notifier/VŠEM.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
                 </Link>
-                <Link href="/project/Repeaty" className={styles.featured_project}>
+                <Link href="/project/Repeaty" data-aos="fade-right" className={styles.featured_project}>
                     <Image src="/images/Repeaty/Repeaty.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
                     <div className={styles.featured_project_description}>
                         <h2>Repeaty</h2>
