@@ -22,7 +22,7 @@ export default function MyQuotes() {
                         </h3>
                         <p>
                             myQuotes is an Android application where you can Share, Discover and Save New Quotes!
-                            The application is built using Java and Firebase. The application is available on the Google Play Store.
+                            The application is built using Java and Firebase.
                         </p>
                         <p>
                             This was my first completed Android application that I published on the Google Play Store.

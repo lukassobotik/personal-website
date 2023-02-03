@@ -1,57 +1,70 @@
 import styles from "../styles/Home.module.css";
-import Link from "next/link";
-import {Inter} from "@next/font/google";
-
-const inter = Inter({ subsets: ['latin'] })
+import Image from "next/image";
 
 export default function FeaturedProjects() {
     return (
         <>
-            <div className={styles.grid}>
-                <Link href="/project/MyFavMovies" className={styles.project}>
-                    <h3 className={inter.className}>
-                        MyFavMovies <span>-&gt;</span>
-                    </h3>
-                    <h5 className={inter.className}>
-                        JavaScript, React, Firebase
-                    </h5>
-                    <p className={inter.className}>
-                        MyFavMovies is a web application that allows you to search for movies and add them to your favorites.
-                    </p>
-                </Link>
-                <Link href="/project/myQuotes" className={styles.project}>
-                    <h3 className={inter.className}>
-                        myQuotes <span>-&gt;</span>
-                    </h3>
-                    <h5 className={inter.className}>
-                        Java, Android, Firebase
-                    </h5>
-                    <p className={inter.className}>
-                        myQuotes is an Android application where you can Share, Discover and Save New Quotes!
-                    </p>
-                </Link>
-                <Link href="/project/vsem-schedule-change-notifier" className={styles.project}>
-                    <h3 className={inter.className}>
-                        VŠEM Change Notifier <span>-&gt;</span>
-                    </h3>
-                    <h5 className={inter.className}>
-                        Java, JavaMail, JSoup
-                    </h5>
-                    <p className={inter.className}>
-                        VŠEM Schedule Change Notifier is a Java application that notifies you about changes in the schedule of your classes.
-                    </p>
-                </Link>
-                <Link href="/project/Repeaty" className={styles.project}>
-                    <h3 className={inter.className}>
-                        Repeaty <span>-&gt;</span>
-                    </h3>
-                    <h5 className={inter.className}>
-                        Java, Android, SQLite
-                    </h5>
-                    <p className={inter.className}>
-                        Repeaty is an android application to Track and Manage your Habits.
-                    </p>
-                </Link>
+            <div className={styles.featured_projects}>
+                <div className={styles.featured_project}>
+                    <div className={styles.featured_project_description}>
+                        <h2>MyFavMovies</h2>
+                        <h4>
+                            JavaScript, React, Firebase
+                        </h4>
+                        <p>
+                            MyFavMovies is a website made for finding movies and adding them to your favorites.
+                        </p>
+                        <p className={styles.extra_description}>
+                            It uses the The Movie Database API to fetch the movies.
+                        </p>
+                    </div>
+                    <Image src="/images/MyFavMovies/MyFavMovies.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
+                </div>
+                <div className={styles.featured_project}>
+                    <Image src="/images/myQuotes/myQuotes.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
+                    <div className={styles.featured_project_description}>
+                        <h2>MyQuotes</h2>
+                        <h4>
+                            Java, Android, Firebase
+                        </h4>
+                        <p>
+                            myQuotes is an Android application where you can Share, Discover and Save New Quotes!
+                        </p>
+                        <p className={styles.extra_description}>
+                            This was my first completed Android application that I published on the Google Play Store.
+                        </p>
+                    </div>
+                </div>
+                <div className={styles.featured_project}>
+                    <div className={styles.featured_project_description}>
+                        <h2>VŠEM Schedule Change Notifier</h2>
+                        <h4>
+                            Java, JavaMail, JSoup
+                        </h4>
+                        <p>
+                            VŠEM Schedule Change Notifier is an app that notifies you about changes in the schedule of your classes.
+                        </p>
+                        <p className={styles.extra_description}>
+                            The application is built using Java, JavaMail and Jsoup. It is deployed on a Raspberry Pi and runs on a Cron job.
+                        </p>
+                    </div>
+                    <Image src="/images/schedule-change-notifier/VŠEM.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
+                </div>
+                <div className={styles.featured_project}>
+                    <Image src="/images/Repeaty/Repeaty.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
+                    <div className={styles.featured_project_description}>
+                        <h2>Repeaty</h2>
+                        <h4>
+                            Java, Android, SQLite
+                        </h4>
+                        <p>
+                            Repeaty is an android application to Track and Manage your Habits.
+                        </p>
+                        <p className={styles.extra_description}>
+                            Even though it was never finished, it was my first Android application and I learned a lot about Android development.
+                        </p>
+                    </div>
+                </div>
             </div>
         </>
     )
