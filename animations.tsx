@@ -58,3 +58,39 @@ export const FadeRight: FC<PropsWithChildren> = ({ children }) => (
         {children}
     </AnimateIn>
 );
+
+export const FadeUp0: FC<PropsWithChildren> = ({ children }) => (
+    <AnimateIn
+        from={{ opacity: 0, translate: "0 2rem" }}
+        to={{ opacity: 1, translate: "none" }}
+        className={styles.even_featured_project}>
+        {children}
+    </AnimateIn>
+);
+
+export const FadeUp100: FC<PropsWithChildren> = ({ children }) => (
+    <AnimateIn
+        from={{ opacity: 0, translate: "0 2rem" }}
+        to={{ opacity: 1, translate: "none", transitionDelay: "100ms" }}
+        className={styles.even_featured_project}>
+        {children}
+    </AnimateIn>
+);
+
+export const FadeUp200: FC<PropsWithChildren> = ({ children }) => (
+    <AnimateIn
+        from={{ opacity: 0, translate: "0 2rem" }}
+        to={{ opacity: 1, translate: "none", transitionDelay: "200ms" }}
+        className={styles.even_featured_project}>
+        {children}
+    </AnimateIn>
+);
+
+export const FadeUp300: FC<PropsWithChildren> = ({ children }) => (
+    <AnimateIn
+        from={{ opacity: 0, translate: "0 2rem" }}
+        to={{ opacity: 1, translate: "none", transitionDelay: "300ms" }}
+        className={styles.even_featured_project}>
+        {children}
+    </AnimateIn>
+);
