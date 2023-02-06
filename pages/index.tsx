@@ -52,8 +52,13 @@ export default function Home() {
             About Me
           </h2>
           <div className={styles.overview}>
-            <p>I&#39;m a student at Akademie VŠEM studying economics. Programming is my passion, and I am open to any job offers or internships. Currently, I am learning Java, and I have had a bit of experience with JavaScript and C#. Since December 2021, I have been actively learning programming. I have developed Android applications and websites since then.</p>
-            <p>At the moment, I have no professional experience with software development, but I would love to get some.</p>
+            <p>At Akademie VŠEM, I&#39;m a student majoring in economics.
+              My interest is programming, thus I&#39;m open to any job or internship opportunities.
+              I am now studying Java, and I have minor knowledge of JavaScript and C#.
+              Since December 2021, I&#39;ve been actively learning programming.
+              Since then, I have created Android applications and websites.
+            </p>
+            <p>I don&#39;t currently have any professional expertise in software development, but I&#39;d really like to. </p>
           </div>
           <h2 className={styles.featured}>
             Personal Details
