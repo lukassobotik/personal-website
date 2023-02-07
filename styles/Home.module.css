@@ -291,7 +291,7 @@
 
 .featured_project {
   transition: transform 200ms;
-  border-radius: 4vw;
+  border-radius: calc(var(--max-width) * 0.05);
   background: rgba(var(--card-rgb), 0.1);
   border: 1px solid rgba(var(--card-border-rgb), 0.15);
   display: flex;
@@ -558,6 +558,7 @@
 
   .featured_project {
     width: 100%;
+    border-radius: 4vw;
   }
 }
 
@@ -593,5 +594,6 @@
 
   .featured_project {
     width: 100%;
+    border-radius: 4vw;
   }
 }
