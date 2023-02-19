@@ -369,7 +369,7 @@
   align-items: center;
   justify-content: flex-end;
   padding: 1rem 0;
-  width: 75%;
+  width: 100%;
   top: 0;
   left: 0;
   z-index: 3;
@@ -496,7 +496,7 @@
   }
 
   .description a {
-    padding: 1rem;
+    padding: 0.5rem;
   }
 
   .description p,
@@ -507,7 +507,7 @@
     width: 100%;
   }
 
-  .description p {
+  .description div {
     align-items: center;
     inset: 0 0 auto;
     padding: 2rem 1rem 1.4rem;
@@ -521,19 +521,6 @@
     );
     background-clip: padding-box;
     backdrop-filter: blur(24px);
-  }
-
-  .description div {
-    align-items: flex-end;
-    inset: auto 0 0;
-    padding: 2rem;
-    height: fit-content;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgb(var(--background-end-rgb)) 40%
-    );
-    z-index: 1;
   }
 
   .titleText {
