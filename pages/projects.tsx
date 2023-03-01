@@ -25,6 +25,17 @@ export default function Projects() {
                 <div className={styles.grid}>
                     <Link href="/project/portfolio" className={styles.project}>
                         <h3 className={inter.className}>
+                            Repeaty <span>-&gt;</span>
+                        </h3>
+                        <h5 className={inter.className}>
+                            Java, Android, SQLite
+                        </h5>
+                        <p className={inter.className}>
+                            Repeaty is an android application to Track and Manage your Habits.
+                        </p>
+                    </Link>
+                    <Link href="/project/portfolio" className={styles.project}>
+                        <h3 className={inter.className}>
                             Portfolio Website <span>-&gt;</span>
                         </h3>
                         <h5 className={inter.className}>

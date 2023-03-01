@@ -2,6 +2,7 @@ import styles from '../../styles/Home.module.css'
 import Navbar from "../navbar";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function DailyTasks() {
     return (
@@ -24,11 +25,8 @@ export default function DailyTasks() {
                             DailyTasks is an android app where you manage daily tasks you want to complete.
                         </p>
                         <p>
-                            You can create an account and login to save your favorite movies or save them to collections that you created.
-                            You can also set your language and region preferences. The application will use them to fetch the movies in your language and region.
-                            You can set a profile picture and a username.
-                            The application is fully responsive and works on mobile devices.
-                            This application was my first project using React and developing a web application in general.
+                            Although it is similar to my other repository <Link href="/project/Repeaty">Repeaty</Link>, I have slightly different plans and goals for it.
+                            <Link href="/project/Repeaty"> Repeaty</Link> was more on the habit building side, this is more on the to-do list side.
                         </p>
                         <div className={styles.project_link}>
                             <a href="https://github.com/PuckyEU/DailyTasks" className={styles.skill}>Source Code</a>
