@@ -22,7 +22,13 @@ export default function TaskLooper() {
                             Java, Android, SQLite
                         </h3>
                         <p>
-                            TaskLooper is an android app where you manage daily tasks you want to complete.
+                            Seize the Day, Repeat the Success.
+                        </p>
+                        <p>
+                            This lightweight task-repeating Android application is designed to help users keep track of their daily tasks and activities without any unnecessary clutter. The application automatically unchecks completed tasks the next day, making it easy for users to manage their to-do list on a daily basis.
+                        </p>
+                        <p>
+                            One of the key benefits of this application is that all the data is stored locally, ensuring user privacy and security. The app is also very simple and easy to use, with a minimalistic interface that doesn&apos;t require any complex setup or configuration.
                         </p>
                         <p>
                             Although it is similar to my other repository <Link href="/project/Repeaty">Repeaty</Link>, I have slightly different plans and goals for it.
