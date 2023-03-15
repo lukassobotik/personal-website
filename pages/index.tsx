@@ -33,7 +33,7 @@ export default function Home() {
     );
     AOS.init();
   })
-
+  //TODO: Redesign
   return (
     <>
       <Head>
