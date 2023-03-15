@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import Navbar from "./navbar";
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 import FeaturedProjects from "./featuredProjects";
 import {useEffect} from "react";
 import 'aos/dist/aos.css'
@@ -33,14 +34,32 @@ export default function Home() {
     );
     AOS.init();
   })
-  //TODO: Redesign
+
   return (
     <>
       <Head>
         <title>Lukáš Sobotík</title>
       </Head>
       <main className={styles.main}>
-        <Navbar/>
+        <Image src="/images/banner" alt="" width={2000} height={300} className={styles.banner}/>
+        <div className={styles.splitter}>
+          <div className={styles.profile_info}>
+            <Image src="/images/logo.jpg" alt="" width={300} height={300} className={styles.logo}/>
+            <p>Lukáš Sobotík</p>
+            <p>PuckyEU</p>
+            <p>At Akademie VŠEM, I&#39;m a student majoring in economics.
+              My interest is programming, thus I&#39;m open to any job or internship opportunities.
+              I am now studying Java, and I have minor knowledge of JavaScript and C#.
+              Since December 2021, I&#39;ve been actively learning programming.
+              Since then, I have created Android applications and websites.
+            </p>
+            <p>I don&#39;t currently have any professional expertise in software development, but I&#39;d really like to. </p>
+          </div>
+          <Navbar/>
+        </div>
+
+
+        {/* Old Design */}
         <div className={styles.title}>
           <p>
             Hi, I&#39;m
