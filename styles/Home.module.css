@@ -49,7 +49,7 @@
   font-family: var(--font-mono);
 }
 
-.description a {
+.description span {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,7 +90,7 @@
   width: var(--profile-width);
   padding-left: 6rem;
   position: absolute;
-  margin-top: -5vh;
+  margin-top: -25vh;
 }
 
 .logo {
@@ -125,6 +125,18 @@
   font-size: 1.125rem;
   font-weight: lighter;
   font-family: "PT Sans Narrow", serif;
+}
+
+.tab {
+  margin-left: var(--profile-width);
+  padding-left: 8rem;
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.tabContent {
+
 }
 
 

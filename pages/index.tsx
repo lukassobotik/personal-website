@@ -5,20 +5,33 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import FeaturedProjects from "./featuredProjects";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import 'aos/dist/aos.css'
+import { useRouter } from 'next/router';
 
 const AOS = require('aos');
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const router = useRouter();
+  const [tabContent, setTabContent] = useState('');
+
   function calculateAge() {
     let birthdate = new Date(2007, 5, 10);
     let currentTime = new Date().getTime();
     let birthDateTime = new Date(birthdate).getTime();
     let ageInYears = (currentTime - birthDateTime) / 31_536_000_000;
     return Math.floor(ageInYears);
+  }
+  function homeClick() {
+    router.push('/', undefined, { shallow: true });
+  }
+  function projectsClick() {
+    router.push('/?tab=projects', undefined, { shallow: true });
+  }
+  function contactClick() {
+    router.push('/?tab=contact', undefined, { shallow: true });
   }
 
   useEffect(() => {
@@ -34,6 +47,31 @@ export default function Home() {
     );
     AOS.init();
   })
+
+  const homeTab = (
+      <div className={styles.tabContent}>Home</div>
+  );
+  const projectsTab = (
+      <div className={styles.tabContent}>Projects</div>
+  );
+  const contactTab = (
+      <div className={styles.tabContent}>Contact</div>
+  );
+
+  useEffect(() => {
+    const tab = router.query.tab;
+    if (tab === "projects") {
+      // @ts-ignore
+      setTabContent(projectsTab);
+    } else if (tab === "contact") {
+      // @ts-ignore
+      setTabContent(contactTab);
+    } else {
+      // @ts-ignore
+      setTabContent(homeTab);
+    }
+
+  }, [router.query.tab]);
 
   return (
     <>
@@ -55,9 +93,30 @@ export default function Home() {
             </p>
             <p>I don&#39;t currently have any professional expertise in software development, but I&#39;d really like to. </p>
           </div>
-          <Navbar/>
+          {/*Navbar*/}
+          <div className={styles.description}>
+            <div className={styles.navbar}>
+                <span className={styles.navbar_item} onClick={homeClick}>
+                    <h4>
+                        Home
+                    </h4>
+                </span>
+                <span className={styles.navbar_item} onClick={projectsClick}>
+                    <h4>
+                        Projects
+                    </h4>
+                </span>
+                <span className={styles.navbar_item} onClick={contactClick}>
+                    <h4>
+                        Contact
+                    </h4>
+                </span>
+            </div>
         </div>
-
+        </div>
+        <div className={styles.tab}>
+          {tabContent}
+        </div>
 
         {/* Old Design */}
         <div className={styles.title}>
