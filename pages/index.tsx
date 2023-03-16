@@ -83,15 +83,21 @@ export default function Home() {
         <div className={styles.splitter}>
           <div className={styles.profile_info}>
             <Image src="/images/logo.jpg" alt="" width={300} height={300} className={styles.logo}/>
-            <p>Lukáš Sobotík</p>
-            <p>PuckyEU</p>
-            <p>At Akademie VŠEM, I&#39;m a student majoring in economics.
+            <p className={styles.profile_name_main}>Lukáš Sobotík</p>
+            <p className={styles.profile_name}>PuckyEU</p>
+            <p className={styles.bio}>At Akademie VŠEM, I&#39;m a student majoring in economics.
               My interest is programming, thus I&#39;m open to any job or internship opportunities.
               I am now studying Java, and I have minor knowledge of JavaScript and C#.
               Since December 2021, I&#39;ve been actively learning programming.
               Since then, I have created Android applications and websites.
             </p>
-            <p>I don&#39;t currently have any professional expertise in software development, but I&#39;d really like to. </p>
+            <p className={styles.bio}>I don&#39;t currently have any professional expertise in software development, but I&#39;d really like to. </p>
+            <p className={styles.bio}>Age: {calculateAge()}</p>
+            <p className={styles.bio}>Job Status: Looking for a job</p>
+            <p className={styles.profile_link}><a href="https://github.com/PuckyEU/puckyeu.github.io">Source Code</a></p>
+            <p className={styles.profile_link}><a href="https://www.buymeacoffee.com/puckyeu">BuyMeACoffee</a></p>
+            <p className={styles.profile_link}><a href="https://github.com/PuckyEU">Github</a></p>
+            <p className={styles.profile_link}><a href="https://www.linkedin.com/in/lukassobotik/">LinkedIn</a></p>
           </div>
           {/*Navbar*/}
           <div className={styles.description}>
@@ -119,39 +125,8 @@ export default function Home() {
         </div>
 
         {/* Old Design */}
-        <div className={styles.title}>
-          <p>
-            Hi, I&#39;m
-          </p>
-          <span className={styles.name}>Lukáš</span>
-          <div>
-            a Full-Stack developer.
-          </div>
-        </div>
+        <div className={styles.title}></div>
         <div className={styles.overview_section}>
-          <h2 className={styles.featured}>
-            About Me
-          </h2>
-          <div className={styles.overview}>
-            <p>At Akademie VŠEM, I&#39;m a student majoring in economics.
-              My interest is programming, thus I&#39;m open to any job or internship opportunities.
-              I am now studying Java, and I have minor knowledge of JavaScript and C#.
-              Since December 2021, I&#39;ve been actively learning programming.
-              Since then, I have created Android applications and websites.
-            </p>
-            <p>I don&#39;t currently have any professional expertise in software development, but I&#39;d really like to. </p>
-          </div>
-          <h2 className={styles.featured}>
-            Personal Details
-          </h2>
-          <div className={styles.personal_details}>
-            <p className={styles.small_name}>Name:</p>
-            <p>Lukáš Sobotík</p>
-            <p className={styles.small_name}>Age:</p>
-            <p>{calculateAge()}</p>
-            <p className={styles.small_name}>Job Status:</p>
-            <p>Looking for a job</p>
-          </div>
           <h2 className={styles.featured}>
             Skills
           </h2>
@@ -268,43 +243,6 @@ export default function Home() {
           Featured Projects
         </h2>
         <FeaturedProjects/>
-        <h2 className={styles.featured}>
-          External Links
-        </h2>
-        <div className={styles.grid}>
-          <a href="https://github.com/PuckyEU/puckyeu.github.io" data-aos="fade-up" className={styles.card}>
-            <h2 className={inter.className}>
-              Source Code <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Here you can find all of my source code for this website. If you have any questions or suggestions, feel free to contact me!
-            </p>
-          </a>
-          <a href="https://www.buymeacoffee.com/puckyeu" data-aos="fade-up" data-aos-delay="100" className={styles.card}>
-            <h2 className={inter.className}>
-              Buy Me A Coffee <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              You can buy me a coffee if you want to support me! I would really appreciate it!
-            </p>
-          </a>
-          <a href="https://github.com/PuckyEU" data-aos="fade-up" data-aos-delay="200" className={styles.card}>
-            <h2 className={inter.className}>
-              Github <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Take a look at my Github! You can find all of my projects there. This website is also open source, you can find it there too!
-            </p>
-          </a>
-          <a href="https://www.linkedin.com/in/lukassobotik/" data-aos="fade-up" data-aos-delay="300" className={styles.card}>
-            <h2 className={inter.className}>
-              LinkedIn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Here you can find my LinkedIn profile. You can also contact me there.
-            </p>
-          </a>
-        </div>
       </main>
     </>
   )

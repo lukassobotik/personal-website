@@ -106,24 +106,24 @@
   font-size: 1.5rem;
 }
 
-.profile_info p:nth-child(2) {
+.profile_info .profile_name_main {
   font-weight: bold;
 }
 
-.profile_info p:nth-child(3) {
+.profile_info .profile_name {
   color: #949494;
   margin-top: -0.25rem;
 }
 
-.profile_info p:nth-child(4) {
+.profile_info .bio {
   font-size: 1.125rem;
   font-weight: lighter;
   font-family: "PT Sans Narrow", serif;
 }
 
-.profile_info p:nth-child(5) {
+.profile_info .profile_link {
   font-size: 1.125rem;
-  font-weight: lighter;
+  font-weight: bold;
   font-family: "PT Sans Narrow", serif;
 }
 
