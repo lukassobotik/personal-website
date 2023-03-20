@@ -35,7 +35,13 @@ export default function TaskLooper() {
                             <Link href="/project/Repeaty"> Repeaty</Link> was more on the habit building side, this is more on the to-do list side.
                         </p>
                         <div className={styles.project_link}>
+                            <a href="https://play.google.com/store/apps/details?id=lukas.sobotik.tasklooper" className={styles.skill}>Try it Out</a>
                             <a href="https://github.com/PuckyEU/TaskLooper" className={styles.skill}>Source Code</a>
+                        </div>
+                        <div className={styles.vertical_project_images}>
+                            <Image src="/images/TaskLooper/sc-1.jpg" alt="" width={270} height={530}/>
+                            <Image src="/images/TaskLooper/sc-2.jpg" alt="" width={270} height={530}/>
+                            <Image src="/images/TaskLooper/sc-3.jpg" alt="" width={270} height={530}/>
                         </div>
                     </div>
                 </div>
