@@ -50,7 +50,6 @@ export default function Home() {
 
   const homeTab = (
       <div className={styles.tabContent}>
-        <FeaturedProjects/>
         <div className={styles.post}>
           <h2>Skills</h2>
           <div className={styles.skills}>
@@ -158,7 +157,104 @@ export default function Home() {
       </div>
   );
   const projectsTab = (
-      <div className={styles.tabContent}>Projects</div>
+      <div className={styles.tabContent}>
+        <FeaturedProjects/>
+        <div className={styles.post}>
+          <h2>
+            Other Projects
+          </h2>
+          <div className={styles.grid}>
+            <Link href="/project/portfolio" className={styles.project}>
+              <h3 className={inter.className}>
+                Repeaty <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                Java, Android, SQLite
+              </h5>
+              <p className={inter.className}>
+                Repeaty is an android application to Track and Manage your Habits.
+              </p>
+            </Link>
+            <Link href="/project/portfolio" className={styles.project}>
+              <h3 className={inter.className}>
+                Portfolio Website <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                TypeScript, Next.js, React
+              </h5>
+              <p className={inter.className}>
+                Source code of this website.
+              </p>
+            </Link>
+            <Link href="/project/2048" className={styles.project}>
+              <h3 className={inter.className}>
+                2048 <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                Java, Java GUI
+              </h5>
+              <p className={inter.className}>
+                My recreation of the popular game 2048.
+              </p>
+            </Link>
+            <Link href="/project/word-in-sentence-counter" className={styles.project}>
+              <h3 className={inter.className}>
+                Word Counter <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                C#
+              </h5>
+              <p className={inter.className}>
+                Simple C# application that counts the number of words in a sentence.
+              </p>
+            </Link>
+            <Link href="/project/imdb-scraper" className={styles.project}>
+              <h3 className={inter.className}>
+                IMDb Scraper <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                Java, JSoup
+              </h5>
+              <p className={inter.className}>
+                Simple Java application that scrapes the top 250 section on the IMDb website.
+              </p>
+            </Link>
+            <Link href="/project/bigger-or-smaller" className={styles.project}>
+              <h3 className={inter.className}>
+                Bigger or Smaller <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                Java, Java GUI
+              </h5>
+              <p className={inter.className}>
+                Simple Java Gui application that compares two numbers.
+              </p>
+            </Link>
+            <Link href="/project/roll-two-of-kind" className={styles.project}>
+              <h3 className={inter.className}>
+                Roll Two of a Kind <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                C#
+              </h5>
+              <p className={inter.className}>
+                Test Your Luck By Rolling Two Dice!
+              </p>
+            </Link>
+            <Link href="/project/point-adder" className={styles.project}>
+              <h3 className={inter.className}>
+                Point Adder <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                Java
+              </h5>
+              <p className={inter.className}>
+                Simple Java project made for storing any amount of points. It runs in the system tray.
+              </p>
+            </Link>
+          </div>
+        </div>
+      </div>
   );
   const contactTab = (
       <div className={styles.tabContent}>Contact</div>
