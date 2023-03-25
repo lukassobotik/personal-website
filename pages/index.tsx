@@ -50,10 +50,8 @@ export default function Home() {
 
   const homeTab = (
       <div className={styles.tabContent}>
-        <div className={styles.overview_section}>
-          <h2 className={styles.featured}>
-            Skills
-          </h2>
+        <div className={styles.post}>
+          <h2>Skills</h2>
           <div className={styles.skills}>
             <Link href="https://www.java.com/" className={styles.skill}>
               <h3 className={inter.className}>
@@ -116,9 +114,9 @@ export default function Home() {
               </h3>
             </Link>
           </div>
-          <h2 className={styles.featured}>
-            Interests
-          </h2>
+        </div>
+        <div className={styles.post}>
+          <h2>Interests</h2>
           <div className={styles.skills}>
             <Link href="https://www.imdb.com/user/ur150332429/" className={styles.skill}>
               <h3 className={inter.className}>
@@ -141,9 +139,9 @@ export default function Home() {
               </h3>
             </div>
           </div>
-          <h2 className={styles.featured}>
-            Certificates
-          </h2>
+        </div>
+        <div className={styles.post}>
+          <h2>Certificates</h2>
           <div className={styles.certificates}>
             <a href="https://www.efset.org/cert/sW8Md2" className={styles.card}>
               <h2 className={inter.className}>
