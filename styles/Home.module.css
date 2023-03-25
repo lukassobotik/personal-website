@@ -140,6 +140,7 @@
 .tabContent {
   padding-top: 2rem;
   width: 70vw;
+  min-height: 100vh;
 }
 
 .post {

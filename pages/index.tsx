@@ -200,6 +200,7 @@ export default function Home() {
             <p className={styles.bio}>I don&#39;t currently have any professional expertise in software development, but I&#39;d really like to. </p>
             <p className={styles.bio}>Age: {calculateAge()}</p>
             <p className={styles.bio}>Job Status: Looking for a job</p>
+            <p className={styles.profile_link}><a href="/resume/junior-java-developer.pdf">Resume</a></p>
             <p className={styles.profile_link}><a href="https://github.com/PuckyEU/puckyeu.github.io">Source Code</a></p>
             <p className={styles.profile_link}><a href="https://www.buymeacoffee.com/puckyeu">BuyMeACoffee</a></p>
             <p className={styles.profile_link}><a href="https://github.com/PuckyEU">Github</a></p>
@@ -233,22 +234,6 @@ export default function Home() {
         <div className={styles.tab}>
           {tabContent}
         </div>
-
-        {/* Old Design */}
-        <div className={styles.title}></div>
-        <div className={styles.overview_section}>
-          <h2 className={styles.featured}>
-            CV
-          </h2>
-          <div className={styles.skills}>
-            <a href="/resume/junior-java-developer.pdf" className={styles.skill}>View CV</a>
-            <a href="/resume/junior-java-developer.pdf" download="lukas-sobotik-resume" className={styles.skill}>Download CV</a>
-          </div>
-        </div>
-        <h2 className={styles.featured}>
-          Featured Projects
-        </h2>
-        <FeaturedProjects/>
       </main>
     </>
   )
