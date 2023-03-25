@@ -90,7 +90,7 @@
   width: var(--profile-width);
   padding-left: 6rem;
   position: absolute;
-  margin-top: -25vh;
+  margin-top: -12rem;
 }
 
 .logo {
@@ -111,20 +111,22 @@
 }
 
 .profile_info .profile_name {
-  color: #949494;
+  color: #999999;
+  font-weight: bold;
   margin-top: -0.25rem;
 }
 
 .profile_info .bio {
   font-size: 1.125rem;
-  font-weight: lighter;
-  font-family: "PT Sans Narrow", serif;
+  font-family: Montserrat, sans-serif;
+  color: #cccccc;
 }
 
 .profile_info .profile_link {
   font-size: 1.125rem;
   font-weight: bold;
-  font-family: "PT Sans Narrow", serif;
+  font-family: Montserrat, sans-serif;
+  color: #E5E5E5;
 }
 
 .tab {
@@ -341,7 +343,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   margin-bottom: 25vh;
   max-width: 100%;
 }

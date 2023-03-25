@@ -49,83 +49,7 @@ export default function Home() {
   })
 
   const homeTab = (
-      <div className={styles.tabContent}>Home</div>
-  );
-  const projectsTab = (
-      <div className={styles.tabContent}>Projects</div>
-  );
-  const contactTab = (
-      <div className={styles.tabContent}>Contact</div>
-  );
-
-  useEffect(() => {
-    const tab = router.query.tab;
-    if (tab === "projects") {
-      // @ts-ignore
-      setTabContent(projectsTab);
-    } else if (tab === "contact") {
-      // @ts-ignore
-      setTabContent(contactTab);
-    } else {
-      // @ts-ignore
-      setTabContent(homeTab);
-    }
-
-  }, [router.query.tab]);
-
-  return (
-    <>
-      <Head>
-        <title>Lukáš Sobotík</title>
-      </Head>
-      <main className={styles.main}>
-        <Image src="/images/banner" alt="" width={2000} height={300} className={styles.banner}/>
-        <div className={styles.splitter}>
-          <div className={styles.profile_info}>
-            <Image src="/images/logo.jpg" alt="" width={300} height={300} className={styles.logo}/>
-            <p className={styles.profile_name_main}>Lukáš Sobotík</p>
-            <p className={styles.profile_name}>PuckyEU</p>
-            <p className={styles.bio}>At Akademie VŠEM, I&#39;m a student majoring in economics.
-              My interest is programming, thus I&#39;m open to any job or internship opportunities.
-              I am now studying Java, and I have minor knowledge of JavaScript and C#.
-              Since December 2021, I&#39;ve been actively learning programming.
-              Since then, I have created Android applications and websites.
-            </p>
-            <p className={styles.bio}>I don&#39;t currently have any professional expertise in software development, but I&#39;d really like to. </p>
-            <p className={styles.bio}>Age: {calculateAge()}</p>
-            <p className={styles.bio}>Job Status: Looking for a job</p>
-            <p className={styles.profile_link}><a href="https://github.com/PuckyEU/puckyeu.github.io">Source Code</a></p>
-            <p className={styles.profile_link}><a href="https://www.buymeacoffee.com/puckyeu">BuyMeACoffee</a></p>
-            <p className={styles.profile_link}><a href="https://github.com/PuckyEU">Github</a></p>
-            <p className={styles.profile_link}><a href="https://www.linkedin.com/in/lukassobotik/">LinkedIn</a></p>
-          </div>
-          {/*Navbar*/}
-          <div className={styles.description}>
-            <div className={styles.navbar}>
-                <span className={styles.navbar_item} onClick={homeClick}>
-                    <h4>
-                        Home
-                    </h4>
-                </span>
-                <span className={styles.navbar_item} onClick={projectsClick}>
-                    <h4>
-                        Projects
-                    </h4>
-                </span>
-                <span className={styles.navbar_item} onClick={contactClick}>
-                    <h4>
-                        Contact
-                    </h4>
-                </span>
-            </div>
-        </div>
-        </div>
-        <div className={styles.tab}>
-          {tabContent}
-        </div>
-
-        {/* Old Design */}
-        <div className={styles.title}></div>
+      <div className={styles.tabContent}>
         <div className={styles.overview_section}>
           <h2 className={styles.featured}>
             Skills
@@ -231,6 +155,89 @@ export default function Home() {
               </p>
             </a>
           </div>
+        </div>
+      </div>
+  );
+  const projectsTab = (
+      <div className={styles.tabContent}>Projects</div>
+  );
+  const contactTab = (
+      <div className={styles.tabContent}>Contact</div>
+  );
+
+  useEffect(() => {
+    const tab = router.query.tab;
+    if (tab === "projects") {
+      // @ts-ignore
+      setTabContent(projectsTab);
+    } else if (tab === "contact") {
+      // @ts-ignore
+      setTabContent(contactTab);
+    } else {
+      // @ts-ignore
+      setTabContent(homeTab);
+    }
+
+  }, [router.query.tab]);
+
+  return (
+    <>
+      <Head>
+        <title>Lukáš Sobotík</title>
+      </Head>
+      <main className={styles.main}>
+        <Image src="/images/banner" alt="" width={2000} height={300} className={styles.banner}/>
+        <div className={styles.splitter}>
+          <div className={styles.profile_info}>
+            <Image src="/images/logo.jpg" alt="" width={300} height={300} className={styles.logo}/>
+            <p className={styles.profile_name_main}>Lukáš Sobotík</p>
+            <p className={styles.profile_name}>PuckyEU</p>
+            <p className={styles.bio}>At Akademie VŠEM, I&#39;m a student majoring in economics.
+              My interest is programming, thus I&#39;m open to any job or internship opportunities.
+              I am now studying Java, and I have minor knowledge of JavaScript and C#.
+              Since December 2021, I&#39;ve been actively learning programming.
+              Since then, I have created Android applications and websites.
+            </p>
+            <p className={styles.bio}>I don&#39;t currently have any professional expertise in software development, but I&#39;d really like to. </p>
+            <p className={styles.bio}>Age: {calculateAge()}</p>
+            <p className={styles.bio}>Job Status: Looking for a job</p>
+            <p className={styles.profile_link}><a href="https://github.com/PuckyEU/puckyeu.github.io">Source Code</a></p>
+            <p className={styles.profile_link}><a href="https://www.buymeacoffee.com/puckyeu">BuyMeACoffee</a></p>
+            <p className={styles.profile_link}><a href="https://github.com/PuckyEU">Github</a></p>
+            <p className={styles.profile_link}><a href="https://www.linkedin.com/in/lukassobotik/">LinkedIn</a></p>
+            <p className={styles.profile_link}><a href="https://play.google.com/store/apps/dev?id=6212701078283176937">Google Play</a></p>
+            <p className={styles.profile_link}><a href="https://twitter.com/PuckyEU">Twitter</a></p>
+            <p className={styles.profile_link}><a href="https://youtube.com/@PuckyEU">YouTube</a></p>
+            <p className={styles.profile_link}><a href="https://www.codewars.com/users/PuckyEU">CodeWars</a></p>
+          </div>
+          {/*Navbar*/}
+          <div className={styles.description}>
+            <div className={styles.navbar}>
+                <span className={styles.navbar_item} onClick={homeClick}>
+                    <h4>
+                        Home
+                    </h4>
+                </span>
+                <span className={styles.navbar_item} onClick={projectsClick}>
+                    <h4>
+                        Projects
+                    </h4>
+                </span>
+                <span className={styles.navbar_item} onClick={contactClick}>
+                    <h4>
+                        Contact
+                    </h4>
+                </span>
+            </div>
+        </div>
+        </div>
+        <div className={styles.tab}>
+          {tabContent}
+        </div>
+
+        {/* Old Design */}
+        <div className={styles.title}></div>
+        <div className={styles.overview_section}>
           <h2 className={styles.featured}>
             CV
           </h2>

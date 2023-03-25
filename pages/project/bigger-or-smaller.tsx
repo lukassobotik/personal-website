@@ -9,7 +9,6 @@ export default function biggerOrSmaller() {
                 <title>Bigger or Smaller</title>
             </Head>
             <main className={styles.main}>
-                <Navbar/>
                 <div className={styles.project_overview_section}>
                     <div className={styles.overview}>
                         <h1>
