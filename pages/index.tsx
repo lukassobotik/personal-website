@@ -194,12 +194,12 @@ export default function Home() {
           External Links
         </h2>
         <div className={styles.grid}>
-          <a href="https://github.com/PuckyEU/puckyeu.github.io" data-aos="fade-up" className={styles.card}>
+          <a href="https://play.google.com/store/apps/dev?id=6212701078283176937" data-aos="fade-up" className={styles.card}>
             <h2 className={inter.className}>
-              Source Code <span>-&gt;</span>
+              Google Play <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
-              Here you can find all of my source code for this website. If you have any questions or suggestions, feel free to contact me!
+              Here you can find my Google Play Profile where you can find all of my applications that I&apos;ve developed.
             </p>
           </a>
           <a href="https://www.buymeacoffee.com/puckyeu" data-aos="fade-up" data-aos-delay="100" className={styles.card}>
