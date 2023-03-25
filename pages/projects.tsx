@@ -14,7 +14,6 @@ export default function Projects() {
                 <title>Projects</title>
             </Head>
             <main className={styles.main}>
-                <Navbar/>
                 <h2 className={styles.featured}>
                     Featured Projects
                 </h2>

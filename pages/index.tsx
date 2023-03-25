@@ -50,6 +50,7 @@ export default function Home() {
 
   const homeTab = (
       <div className={styles.tabContent}>
+        <FeaturedProjects/>
         <div className={styles.post}>
           <h2>Skills</h2>
           <div className={styles.skills}>

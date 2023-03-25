@@ -139,13 +139,35 @@
 
 .tabContent {
   padding-top: 2rem;
+  width: 70vw;
 }
 
 .post {
+  position: relative;
   backdrop-filter: brightness(150%);
   border-radius: 2rem;
   padding: 1rem;
   margin-bottom: 1rem;
+}
+
+.project_post {
+  display: flex;
+  position: relative;
+  backdrop-filter: brightness(150%);
+  border-radius: 2rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.project_post img {
+  width: 8rem;
+  height: 100%;
+  aspect-ratio: 1/1;
+  margin-right: 1rem;
+}
+
+.post_text {
+  display: inline-block;
 }
 
 
