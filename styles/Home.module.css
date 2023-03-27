@@ -131,15 +131,14 @@
 
 .tab {
   margin-left: var(--profile-width);
-  padding-left: 8rem;
   display: flex;
   justify-content: flex-start;
-  width: 100%;
+  width: calc(100% - var(--profile-width));
 }
 
 .tabContent {
   padding-top: 2rem;
-  width: 70vw;
+  width: 100%;
   min-height: 100vh;
 }
 
@@ -184,6 +183,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  position: relative;
   padding: 6rem;
   min-height: 100vh;
 }
@@ -544,9 +544,6 @@
 
   .grid {
     grid-template-columns: 1fr;
-    margin-bottom: 120px;
-    max-width: 320px;
-    text-align: center;
   }
 
   .skills {
@@ -586,6 +583,7 @@
 
   .description {
     font-size: 0.8rem;
+    margin-left: 0;
   }
 
   .description a {
@@ -640,10 +638,30 @@
     width: 100%;
     border-radius: 4vw;
   }
+
+  .tab {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .profile_info {
+    width: 100%;
+    position: relative;
+    padding-right: 6rem;
+    margin-bottom: 2rem;
+  }
+
+  .splitter {
+    height: auto;
+  }
+
+  .navbar {
+    height: 10vh;
+  }
 }
 
 /* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
+@media (min-width: 701px) and (max-width: 1250px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
   }
@@ -675,5 +693,29 @@
   .featured_project {
     width: 100%;
     border-radius: 4vw;
+  }
+
+  .description {
+    margin-left: 0;
+  }
+
+  .tab {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .profile_info {
+    width: 100%;
+    position: relative;
+    padding-right: 6rem;
+    margin-bottom: 2rem;
+  }
+
+  .splitter {
+    height: auto;
+  }
+
+  .navbar {
+    height: 10vh;
   }
 }
