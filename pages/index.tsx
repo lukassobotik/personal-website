@@ -1,6 +1,5 @@
 import {Inter} from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import Navbar from "./navbar";
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
@@ -8,8 +7,6 @@ import FeaturedProjects from "./featuredProjects";
 import {useEffect, useState} from "react";
 import 'aos/dist/aos.css'
 import { useRouter } from 'next/router';
-
-const AOS = require('aos');
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -45,7 +42,6 @@ export default function Home() {
         },
         false
     );
-    AOS.init();
   })
 
   const homeTab = (
@@ -308,7 +304,7 @@ export default function Home() {
           </div>
           {/*Navbar*/}
           <div className={styles.description}>
-            <div className={styles.navbar}>
+            <div className={styles.links}>
                 <span className={styles.navbar_item} onClick={homeClick}>
                     <h4>
                         Home

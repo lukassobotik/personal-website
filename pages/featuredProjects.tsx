@@ -1,16 +1,9 @@
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import {useEffect} from "react";
 import 'aos/dist/aos.css'
 
-const AOS = require('aos');
-
 export default function FeaturedProjects() {
-    useEffect(() => {
-        AOS.init();
-    }, []);
-
     return (
         <>
             <Link href="/project/myQuotes" className={styles.project_post}>

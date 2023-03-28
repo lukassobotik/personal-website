@@ -28,6 +28,7 @@
 }
 
 .splitter {
+  position: relative;
   width: 100vw;
   height: 10vh;
   backdrop-filter: brightness(80%) blur(20vw);
@@ -35,18 +36,21 @@
   border-bottom: white 0.1vh solid;
 }
 
-.description {
+.description, .navbar_parent {
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
   font-size: 0.85rem;
-  padding-right: 6rem;
-  padding-left: 2rem;
-  margin-left: var(--profile-width);
   width: 100%;
   height: 100%;
   z-index: 2;
   font-family: var(--font-mono);
+}
+
+.description {
+  padding-right: 6rem;
+  padding-left: 2rem;
+  margin-left: var(--profile-width);
 }
 
 .description span {
@@ -65,15 +69,22 @@
   border-radius: var(--border-radius);
 }
 
-.navbar {
+.navbar, .links {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   z-index: 3;
+}
+
+.links {
+  justify-content: flex-start;
+}
+
+.navbar {
+  justify-content: center;
 }
 
 .navbar_item {

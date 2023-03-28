@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Navbar from "./navbar";
 import styles from "../styles/Home.module.css";
 import {Inter} from "@next/font/google";
 
@@ -12,7 +11,6 @@ export default function Contact() {
                 <title>Contact</title>
             </Head>
             <main className={styles.main}>
-                <Navbar/>
                 <h2 className={styles.featured}>
                     Contact Me
                 </h2>

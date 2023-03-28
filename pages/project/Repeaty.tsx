@@ -1,7 +1,7 @@
 import styles from '../../styles/Home.module.css'
-import Navbar from "../navbar";
 import Head from "next/head";
 import Image from "next/image";
+import Navbar from "../navbar";
 
 export default function Repeaty() {
     return (
