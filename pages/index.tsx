@@ -5,7 +5,6 @@ import Head from "next/head";
 import Image from "next/image";
 import FeaturedProjects from "./featuredProjects";
 import {useEffect, useState} from "react";
-import 'aos/dist/aos.css'
 import { useRouter } from 'next/router';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -22,27 +21,14 @@ export default function Home() {
     return Math.floor(ageInYears);
   }
   function homeClick() {
-    router.push('/', undefined, { shallow: true });
+    router.push('/', undefined, {shallow: true}).then(() => {});
   }
   function projectsClick() {
-    router.push('/?tab=projects', undefined, { shallow: true });
+    router.push('/?tab=projects', undefined, { shallow: true }).then(() => {});
   }
   function contactClick() {
-    router.push('/?tab=contact', undefined, { shallow: true });
+    router.push('/?tab=contact', undefined, { shallow: true }).then(() => {});
   }
-
-  useEffect(() => {
-    window?.addEventListener(
-        "scroll",
-        () => {
-          document.body.style.setProperty(
-              "--scroll",
-              (window.scrollY / (document.body.offsetHeight - window.innerHeight)).toString()
-          );
-        },
-        false
-    );
-  })
 
   const homeTab = (
       <div className={styles.tabContent}>

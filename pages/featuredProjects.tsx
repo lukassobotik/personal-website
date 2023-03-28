@@ -1,7 +1,6 @@
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
-import 'aos/dist/aos.css'
 
 export default function FeaturedProjects() {
     return (
