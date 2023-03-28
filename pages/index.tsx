@@ -344,7 +344,7 @@ export default function Home() {
             <p className={styles.profile_link}><a href="https://youtube.com/@PuckyEU">YouTube</a></p>
             <p className={styles.profile_link}><a href="https://www.codewars.com/users/PuckyEU">CodeWars</a></p>
           </div>
-          {/*Navbar*/}
+          {/*Links*/}
           <div className={styles.description}>
             <div className={styles.links}>
                 <span className={styles.navbar_item} onClick={homeClick}>
