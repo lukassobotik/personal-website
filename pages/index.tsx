@@ -1,17 +1,18 @@
 import {Inter} from '@next/font/google'
 import styles from '../styles/Home.module.css'
-import Navbar from "./navbar";
 import Link from "next/link";
 import Head from "next/head";
+import Image from "next/image";
 import FeaturedProjects from "./featuredProjects";
-import {useEffect} from "react";
-import 'aos/dist/aos.css'
-
-const AOS = require('aos');
+import {useEffect, useState} from "react";
+import { useRouter } from 'next/router';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const router = useRouter();
+  const [tabContent, setTabContent] = useState('');
+
   function calculateAge() {
     let birthdate = new Date(2007, 5, 10);
     let currentTime = new Date().getTime();
@@ -19,64 +20,20 @@ export default function Home() {
     let ageInYears = (currentTime - birthDateTime) / 31_536_000_000;
     return Math.floor(ageInYears);
   }
+  function homeClick() {
+    router.push('/', undefined, {shallow: true}).then(() => {});
+  }
+  function projectsClick() {
+    router.push('/?tab=projects', undefined, { shallow: true }).then(() => {});
+  }
+  function contactClick() {
+    router.push('/?tab=contact', undefined, { shallow: true }).then(() => {});
+  }
 
-  useEffect(() => {
-    window?.addEventListener(
-        "scroll",
-        () => {
-          document.body.style.setProperty(
-              "--scroll",
-              (window.scrollY / (document.body.offsetHeight - window.innerHeight)).toString()
-          );
-        },
-        false
-    );
-    AOS.init();
-  })
-
-  return (
-    <>
-      <Head>
-        <title>Lukáš Sobotík</title>
-      </Head>
-      <main className={styles.main}>
-        <Navbar/>
-        <div className={styles.title}>
-          <p>
-            Hi, I&#39;m
-          </p>
-          <span className={styles.name}>Lukáš</span>
-          <div>
-            a Full-Stack developer.
-          </div>
-        </div>
-        <div className={styles.overview_section}>
-          <h2 className={styles.featured}>
-            About Me
-          </h2>
-          <div className={styles.overview}>
-            <p>At Akademie VŠEM, I&#39;m a student majoring in economics.
-              My interest is programming, thus I&#39;m open to any job or internship opportunities.
-              I am now studying Java, and I have minor knowledge of JavaScript and C#.
-              Since December 2021, I&#39;ve been actively learning programming.
-              Since then, I have created Android applications and websites.
-            </p>
-            <p>I don&#39;t currently have any professional expertise in software development, but I&#39;d really like to. </p>
-          </div>
-          <h2 className={styles.featured}>
-            Personal Details
-          </h2>
-          <div className={styles.personal_details}>
-            <p className={styles.small_name}>Name:</p>
-            <p>Lukáš Sobotík</p>
-            <p className={styles.small_name}>Age:</p>
-            <p>{calculateAge()}</p>
-            <p className={styles.small_name}>Job Status:</p>
-            <p>Looking for a job</p>
-          </div>
-          <h2 className={styles.featured}>
-            Skills
-          </h2>
+  const homeTab = (
+      <div className={styles.tabContent}>
+        <div className={styles.post}>
+          <h2>Skills</h2>
           <div className={styles.skills}>
             <Link href="https://www.java.com/" className={styles.skill}>
               <h3 className={inter.className}>
@@ -139,9 +96,9 @@ export default function Home() {
               </h3>
             </Link>
           </div>
-          <h2 className={styles.featured}>
-            Interests
-          </h2>
+        </div>
+        <div className={styles.post}>
+          <h2>Interests</h2>
           <div className={styles.skills}>
             <Link href="https://www.imdb.com/user/ur150332429/" className={styles.skill}>
               <h3 className={inter.className}>
@@ -164,9 +121,9 @@ export default function Home() {
               </h3>
             </div>
           </div>
-          <h2 className={styles.featured}>
-            Certificates
-          </h2>
+        </div>
+        <div className={styles.post}>
+          <h2>Certificates</h2>
           <div className={styles.certificates}>
             <a href="https://www.efset.org/cert/sW8Md2" className={styles.card}>
               <h2 className={inter.className}>
@@ -178,54 +135,226 @@ export default function Home() {
               </p>
             </a>
           </div>
-          <h2 className={styles.featured}>
-            CV
+        </div>
+      </div>
+  );
+  const projectsTab = (
+      <div className={styles.tabContent}>
+        <FeaturedProjects/>
+        <div className={styles.post}>
+          <h2>
+            Other Projects
           </h2>
-          <div className={styles.skills}>
-            <a href="/resume/junior-java-developer.pdf" className={styles.skill}>View CV</a>
-            <a href="/resume/junior-java-developer.pdf" download="lukas-sobotik-resume" className={styles.skill}>Download CV</a>
+          <div className={styles.grid}>
+            <Link href="/project/portfolio" className={styles.project}>
+              <h3 className={inter.className}>
+                Repeaty <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                Java, Android, SQLite
+              </h5>
+              <p className={inter.className}>
+                Repeaty is an android application to Track and Manage your Habits.
+              </p>
+            </Link>
+            <Link href="/project/portfolio" className={styles.project}>
+              <h3 className={inter.className}>
+                Portfolio Website <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                TypeScript, Next.js, React
+              </h5>
+              <p className={inter.className}>
+                Source code of this website.
+              </p>
+            </Link>
+            <Link href="/project/2048" className={styles.project}>
+              <h3 className={inter.className}>
+                2048 <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                Java, Java GUI
+              </h5>
+              <p className={inter.className}>
+                My recreation of the popular game 2048.
+              </p>
+            </Link>
+            <Link href="/project/word-in-sentence-counter" className={styles.project}>
+              <h3 className={inter.className}>
+                Word Counter <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                C#
+              </h5>
+              <p className={inter.className}>
+                Simple C# application that counts the number of words in a sentence.
+              </p>
+            </Link>
+            <Link href="/project/imdb-scraper" className={styles.project}>
+              <h3 className={inter.className}>
+                IMDb Scraper <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                Java, JSoup
+              </h5>
+              <p className={inter.className}>
+                Simple Java application that scrapes the top 250 section on the IMDb website.
+              </p>
+            </Link>
+            <Link href="/project/bigger-or-smaller" className={styles.project}>
+              <h3 className={inter.className}>
+                Bigger or Smaller <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                Java, Java GUI
+              </h5>
+              <p className={inter.className}>
+                Simple Java Gui application that compares two numbers.
+              </p>
+            </Link>
+            <Link href="/project/roll-two-of-kind" className={styles.project}>
+              <h3 className={inter.className}>
+                Roll Two of a Kind <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                C#
+              </h5>
+              <p className={inter.className}>
+                Test Your Luck By Rolling Two Dice!
+              </p>
+            </Link>
+            <Link href="/project/point-adder" className={styles.project}>
+              <h3 className={inter.className}>
+                Point Adder <span>-&gt;</span>
+              </h3>
+              <h5 className={inter.className}>
+                Java
+              </h5>
+              <p className={inter.className}>
+                Simple Java project made for storing any amount of points. It runs in the system tray.
+              </p>
+            </Link>
           </div>
         </div>
-        <h2 className={styles.featured}>
-          Featured Projects
-        </h2>
-        <FeaturedProjects/>
-        <h2 className={styles.featured}>
-          External Links
-        </h2>
-        <div className={styles.grid}>
-          <a href="https://play.google.com/store/apps/dev?id=6212701078283176937" data-aos="fade-up" className={styles.card}>
-            <h2 className={inter.className}>
-              Google Play <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Here you can find my Google Play Profile where you can find all of my applications that I&apos;ve developed.
+      </div>
+  );
+  const contactTab = (
+      <div className={styles.tabContent}>
+        <div className={styles.post}>
+          <h2>
+            Contact Me
+          </h2>
+          <div className={styles.grid}>
+            <a href="https://www.linkedin.com/in/lukassobotik/" className={styles.card}>
+              <h2 className={inter.className}>
+                LinkedIn <span>-&gt;</span>
+              </h2>
+              <p className={inter.className}>
+                Here you can find my LinkedIn profile. You can also contact me there.
+              </p>
+            </a>
+            <a href="mailto:sobotik.lukas@proton.me" className={styles.card}>
+              <h2 className={inter.className}>
+                Email <span>-&gt;</span>
+              </h2>
+              <p className={inter.className}>
+                This is my email address. You can contact me here. I will try to respond as soon as possible.
+              </p>
+            </a>
+
+            <a href="https://www.buymeacoffee.com/puckyeu" className={styles.card}>
+              <h2 className={inter.className}>
+                Buy Me A Coffee <span>-&gt;</span>
+              </h2>
+              <p className={inter.className}>
+                You can buy me a coffee if you want to support me! I would really appreciate it!
+              </p>
+            </a>
+
+            <a href="/resume/junior-java-developer.pdf" className={styles.card}>
+              <h2 className={inter.className}>
+                CV <span>-&gt;</span>
+              </h2>
+              <p className={inter.className}>
+                Here you can find my CV. You can download it here.
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+  );
+
+  useEffect(() => {
+    const tab = router.query.tab;
+    if (tab === "projects") {
+      // @ts-ignore
+      setTabContent(projectsTab);
+    } else if (tab === "contact") {
+      // @ts-ignore
+      setTabContent(contactTab);
+    } else {
+      // @ts-ignore
+      setTabContent(homeTab);
+    }
+
+  }, [router.query.tab]);
+
+  return (
+    <>
+      <Head>
+        <title>Lukáš Sobotík</title>
+      </Head>
+      <main className={styles.main}>
+        <Image src="/images/banner.jpg" alt="" width={2000} height={300} className={styles.banner}/>
+        <div className={styles.splitter}>
+          <div className={styles.profile_info}>
+            <div className={styles.logo_parent}>
+              <Image src="/images/logo.jpg" alt="" width={300} height={300} className={styles.logo}/>
+            </div>
+            <p className={styles.profile_name_main}>Lukáš Sobotík</p>
+            <p className={styles.profile_name}>PuckyEU</p>
+            <p className={styles.bio}>At Akademie VŠEM, I&#39;m a student majoring in economics.
+              My interest is programming, thus I&#39;m open to any job or internship opportunities.
+              I am now studying Java, and I have minor knowledge of JavaScript and C#.
+              Since December 2021, I&#39;ve been actively learning programming.
+              Since then, I have created Android applications and websites.
             </p>
-          </a>
-          <a href="https://www.buymeacoffee.com/puckyeu" data-aos="fade-up" data-aos-delay="100" className={styles.card}>
-            <h2 className={inter.className}>
-              Buy Me A Coffee <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              You can buy me a coffee if you want to support me! I would really appreciate it!
-            </p>
-          </a>
-          <a href="https://github.com/PuckyEU" data-aos="fade-up" data-aos-delay="200" className={styles.card}>
-            <h2 className={inter.className}>
-              Github <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Take a look at my Github! You can find all of my projects there. This website is also open source, you can find it there too!
-            </p>
-          </a>
-          <a href="https://www.linkedin.com/in/lukassobotik/" data-aos="fade-up" data-aos-delay="300" className={styles.card}>
-            <h2 className={inter.className}>
-              LinkedIn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Here you can find my LinkedIn profile. You can also contact me there.
-            </p>
-          </a>
+            <p className={styles.bio}>I don&#39;t currently have any professional expertise in software development, but I&#39;d really like to. </p>
+            <p className={styles.bio}>Age: {calculateAge()}</p>
+            <p className={styles.bio}>Job Status: Looking for a job</p>
+            <p className={styles.profile_link}><a href="/resume/junior-java-developer.pdf">Resume</a></p>
+            <p className={styles.profile_link}><a href="https://github.com/PuckyEU/puckyeu.github.io">Source Code</a></p>
+            <p className={styles.profile_link}><a href="https://www.buymeacoffee.com/puckyeu">BuyMeACoffee</a></p>
+            <p className={styles.profile_link}><a href="https://github.com/PuckyEU">Github</a></p>
+            <p className={styles.profile_link}><a href="https://www.linkedin.com/in/lukassobotik/">LinkedIn</a></p>
+            <p className={styles.profile_link}><a href="https://play.google.com/store/apps/dev?id=6212701078283176937">Google Play</a></p>
+            <p className={styles.profile_link}><a href="https://twitter.com/PuckyEU">Twitter</a></p>
+            <p className={styles.profile_link}><a href="https://youtube.com/@PuckyEU">YouTube</a></p>
+            <p className={styles.profile_link}><a href="https://www.codewars.com/users/PuckyEU">CodeWars</a></p>
+          </div>
+          {/*Links*/}
+          <div className={styles.description}>
+            <div className={styles.links}>
+                <span className={styles.navbar_item} onClick={homeClick}>
+                    <h4>
+                        Home
+                    </h4>
+                </span>
+                <span className={styles.navbar_item} onClick={projectsClick}>
+                    <h4>
+                        Projects
+                    </h4>
+                </span>
+                <span className={styles.navbar_item} onClick={contactClick}>
+                    <h4>
+                        Contact
+                    </h4>
+                </span>
+            </div>
+        </div>
+        </div>
+        <div className={styles.tab}>
+          {tabContent}
         </div>
       </main>
     </>
