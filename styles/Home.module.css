@@ -24,7 +24,12 @@
 }
 
 .banner {
-
+  width: 100vw;
+  height: 45vh;
+  margin-top: -6rem;
+  object-fit: cover;
+  object-position: bottom;
+  aspect-ratio: 21/9;
 }
 
 .splitter {
@@ -632,7 +637,7 @@
   .profile_info {
     width: 100%;
     position: relative;
-    padding-right: 6rem;
+    padding: 1rem;
     margin-bottom: 2rem;
   }
 
@@ -646,8 +651,19 @@
     margin-bottom: 1rem;
   }
 
+  .logo_parent {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .logo {
-    max-width: 300px;
+    width: 300px;
+  }
+
+  .main {
+    padding: 1rem;
   }
 }
 
@@ -718,6 +734,6 @@
   }
 
   .logo {
-    max-width: 300px;
+    width: 300px;
   }
 }

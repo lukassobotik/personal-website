@@ -305,10 +305,12 @@ export default function Home() {
         <title>Lukáš Sobotík</title>
       </Head>
       <main className={styles.main}>
-        <Image src="/images/banner" alt="" width={2000} height={300} className={styles.banner}/>
+        <Image src="/images/banner.jpg" alt="" width={2000} height={300} className={styles.banner}/>
         <div className={styles.splitter}>
           <div className={styles.profile_info}>
-            <Image src="/images/logo.jpg" alt="" width={300} height={300} className={styles.logo}/>
+            <div className={styles.logo_parent}>
+              <Image src="/images/logo.jpg" alt="" width={300} height={300} className={styles.logo}/>
+            </div>
             <p className={styles.profile_name_main}>Lukáš Sobotík</p>
             <p className={styles.profile_name}>PuckyEU</p>
             <p className={styles.bio}>At Akademie VŠEM, I&#39;m a student majoring in economics.
