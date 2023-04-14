@@ -20,6 +20,21 @@ export default function FeaturedProjects() {
                     </p>
                 </div>
             </Link>
+            <Link href="/project/WidgetSchedule" className={styles.project_post}>
+                <Image src="/images/WidgetSchedule/WidgetSchedule.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
+                <div className={styles.post_text}>
+                    <h2>WidgetSchedule</h2>
+                    <h4>
+                        Java, Android, JSoup, SQLite
+                    </h4>
+                    <p>
+                        Turn online schedules into stunning widgets with ease!
+                    </p>
+                    <p>
+                        The application enables schedules to be turned into an Android widget from a URL or URLs of links, which can be effortlessly accessed from the device&apos;s home screen.
+                    </p>
+                </div>
+            </Link>
             <Link href="/project/MyFavMovies" className={styles.project_post}>
                 <Image src="/images/MyFavMovies/MyFavMovies.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
                 <div className={styles.post_text}>
