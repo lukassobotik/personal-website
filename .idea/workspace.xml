@@ -4,13 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2aa5df9f-f76d-4e65-ba75-810598cc8f6c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pages/project/WidgetSchedule.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/featuredProjects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/featuredProjects.tsx" afterDir="false" />
+    <list default="true" id="2aa5df9f-f76d-4e65-ba75-810598cc8f6c" name="Changes" comment="WidgetSchedule">
+      <change afterPath="$PROJECT_DIR$/pages/project/[projectId].tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/projects.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/2048.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/2048.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/MyFavMovies.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/MyFavMovies.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/Repeaty.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/Repeaty.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/TaskLooper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/TaskLooper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/WidgetSchedule.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/WidgetSchedule.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/bigger-or-smaller.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/bigger-or-smaller.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/imdb-scraper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/imdb-scraper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/myQuotes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/myQuotes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/point-adder.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/point-adder.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/portfolio.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/portfolio.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/roll-two-of-kind.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/roll-two-of-kind.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/vsem-schedule-change-notifier.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/vsem-schedule-change-notifier.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/word-in-sentence-counter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/public/resume/word-in-sentence-counter.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +35,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -36,23 +51,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/home/lukas/IdeaProjects/puckyeu.github.io/package.json",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "ts.external.directory.path": "/home/lukas/IdeaProjects/puckyeu.github.io/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;use__dynamic__routes&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/lukas/IdeaProjects/puckyeu.github.io/package.json&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/lukas/IdeaProjects/puckyeu.github.io/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/resume" />
+      <recent name="$PROJECT_DIR$/public" />
+      <recent name="$PROJECT_DIR$/pages" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -62,11 +84,25 @@
       <option name="presentableId" value="Default" />
       <updated>1681500095442</updated>
       <workItem from="1681500097031" duration="345000" />
-      <workItem from="1681500445394" duration="493000" />
+      <workItem from="1681500445394" duration="1175000" />
+      <workItem from="1681548065697" duration="1562000" />
+      <workItem from="1681550040511" duration="4839000" />
     </task>
+    <task id="LOCAL-00001" summary="WidgetSchedule">
+      <created>1681501010026</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681501010026</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="WidgetSchedule" />
+    <option name="LAST_COMMIT_MESSAGE" value="WidgetSchedule" />
   </component>
 </project>

@@ -1,0 +1,21 @@
+{
+  "2048": {
+    "id": "2048",
+    "name": "2048",
+    "technologies": "Java, Java GUI",
+    "description": {
+      "1": "My recreation of the popular game 2048. Built using Java."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/2048"
+      }
+    }
+  },
+
+  "bigger-or-smaller": {
+    "id": "bigger-or-smaller",
+    "name": "Bigger or Smaller"
+  }
+}
