@@ -1,8 +1,12 @@
 {
   "2048": {
+    "featured": false,
     "id": "2048",
     "name": "2048",
     "technologies": "Java, Java GUI",
+    "shortDescription": {
+      "1": "My recreation of the popular game 2048."
+    },
     "description": {
       "1": "My recreation of the popular game 2048. Built using Java."
     },
@@ -17,9 +21,13 @@
   },
 
   "bigger-or-smaller": {
+    "featured": false,
     "id": "bigger-or-smaller",
     "name": "Bigger or Smaller",
     "technologies": "Java, Java GUI",
+    "shortDescription": {
+      "1": "Simple Java Gui application that compares two numbers."
+    },
     "description": {
       "1": "Bigger or Smaller is a simple Java GUI application that compares two numbers and tells you which one is bigger.",
       "2": "The application is built using Java and Java GUIs."
@@ -35,9 +43,13 @@
   },
 
   "imdb-scraper": {
+    "featured": false,
     "id": "imdb-scraper",
     "name": "IMDb Scraper",
     "technologies": "Java, JSoup",
+    "shortDescription": {
+      "1": "Simple Java application that scrapes the top 250 section on the IMDb website."
+    },
     "description": {
       "1": "IMDb Scraper is a simple Java application that scrapes the top 250 section on the IMDb website."
     },
@@ -52,11 +64,12 @@
   },
 
   "MyFavMovies": {
+    "featured": true,
     "id": "MyFavMovies",
     "logoUrl": "/images/MyFavMovies/MyFavMovies.png",
     "name": "MyFavMovies",
     "technologies": "JavaScript, Firebase, React, TMDb API",
-    "featuredDescription": {
+    "shortDescription": {
       "1": "MyFavMovies is a website made for finding movies and adding them to your favorites.",
       "2": "It uses the The Movie Database API to fetch the movies."
     },
@@ -91,11 +104,12 @@
   },
 
   "myQuotes": {
+    "featured": true,
     "id": "myQuotes",
     "logoUrl": "/images/myQuotes/myQuotes.png",
     "name": "myQuotes",
     "technologies": "Java, Android, Firebase",
-    "featuredDescription": {
+    "shortDescription": {
       "1": "myQuotes is an Android application where you can Share, Discover and Save New Quotes!",
       "2": "This was my first completed Android application that I published on the Google Play Store."
     },
@@ -130,9 +144,13 @@
   },
 
   "point-adder": {
+    "featured": false,
     "id": "point-adder",
     "name": "Point Adder",
     "technologies": "Java",
+    "shortDescription": {
+      "1": "Simple Java project made for storing any amount of points. It runs in the system tray."
+    },
     "description": {
       "1": "Point Adder is a really simple Java project that runs in the system tray where you have ease of access to add a point to a greater score."
     },
@@ -147,9 +165,13 @@
   },
 
   "portfolio": {
+    "featured": false,
     "id": "portfolio",
     "name": "Portfolio Website",
     "technologies": "TypeScript, Next.js, React",
+    "shortDescription": {
+      "1": "Source code of this website."
+    },
     "description": {
       "1": "This website is built using TypeScript, Next.js and React."
     },
@@ -164,10 +186,14 @@
   },
 
   "Repeaty": {
+    "featured": false,
     "id": "Repeaty",
     "logoUrl": "/images/Repeaty/Repeaty.png",
     "name": "Repeaty",
     "technologies": "Java, Android, SQLite",
+    "shortDescription": {
+      "1": "Repeaty is an android application to Track and Manage your Habits."
+    },
     "description": {
       "1": "Repeaty is an android application to Track and Manage your Habits.",
       "2": "Even though it was never finished, it was my first Android application and I learned a lot about Android development. I also learned how to use git and Github. This was the project that got me into programming regularly.",
@@ -184,9 +210,13 @@
   },
 
   "roll-two-of-kind": {
+    "featured": false,
     "id": "roll-two-of-kind",
     "name": "Roll Two of a Kind",
     "technologies": "C#",
+    "shortDescription": {
+      "1": "Test Your Luck By Rolling Two Dice!"
+    },
     "description": {
       "1": "Roll Two of a Kind is a simple C# where you can test your luck by rolling two dice."
     },
@@ -201,11 +231,12 @@
   },
 
   "TaskLooper": {
+    "featured": true,
     "id": "TaskLooper",
     "logoUrl": "/images/TaskLooper/TaskLooper.png",
     "name": "TaskLooper",
     "technologies": "Java, Android, SQLite",
-    "featuredDescription": {
+    "shortDescription": {
       "1": "TaskLooper is an android app where you manage daily tasks you want to complete.",
       "2": "Although it is similar to my other repository Repeaty, I have slightly different plans and goals for it."
     },
@@ -239,11 +270,12 @@
   },
 
   "vsem-schedule-change-notifier": {
+    "featured": true,
     "id": "vsem-schedule-change-notifier",
     "logoUrl": "/images/schedule-change-notifier/VŠEM.png",
     "name": "VŠEM Schedule Change Notifier",
     "technologies": "Java, JavaMail, JSoup, Raspberry Pi, Cron, Debian",
-    "featuredDescription": {
+    "shortDescription": {
       "1": "VŠEM Schedule Change Notifier is an app that notifies you about changes in the schedule of your classes.",
       "2": "The application is built using Java, JavaMail and Jsoup. It is deployed on a Raspberry Pi and runs on a Cron job."
     },
@@ -264,10 +296,11 @@
   },
 
   "WidgetSchedule": {
+    "featured": true,
     "id": "WidgetSchedule",
     "name": "WidgetSchedule",
     "technologies": "Java, Android, JSoup, SQLite",
-    "featuredDescription": {
+    "shortDescription": {
       "1": "Turn online schedules into stunning widgets with ease!",
       "2": "The application enables schedules to be turned into an Android widget from a URL or URLs of links, which can be effortlessly accessed from the device's home screen."
     },
@@ -291,9 +324,13 @@
   },
 
   "word-in-sentence-counter": {
+    "featured": false,
     "id": "word-in-sentence-counter",
     "name": "Word in a Sentence Counter",
     "technologies": "C#",
+    "shortDescription": {
+      "1": "Simple C# application that counts the number of words in a sentence."
+    },
     "description": {
       "1": "Word in Sentence Counter is a C# application that counts the number of words in a sentence."
     },

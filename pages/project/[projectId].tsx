@@ -7,11 +7,12 @@ import Navbar from "../../navbar";
 import Image from "next/image";
 
 export interface Project {
+    featured: boolean;
     id: string;
     logoUrl: string;
     name: string;
     technologies: string;
-    featuredDescription: Record<string, string>;
+    shortDescription: Record<string, string>;
     description: Record<string, string>;
     links: Record<string, { name: string, url: string }>;
     hasHorizontalScreenshots: boolean;
@@ -33,7 +34,7 @@ export default function Project() {
     const [project, setProject] = useState<Project>();
 
     useEffect(() => {
-        fetchProjects(projectId).then((project) => {setProject(project)});
+        fetchProjectById(projectId).then((project) => {setProject(project)});
     }, [projectId]);
 
     function renderScreenshots(urls: Record<string, string>, width: number, height: number) {
@@ -83,7 +84,7 @@ export default function Project() {
     )
 }
 
-export async function fetchProjects(projectId : string | string[] | undefined) {
+export async function fetchProjectById(projectId : string | string[] | undefined) {
     const res = await fetch('/projects.json');
     const data = await res.json();
 
@@ -91,5 +92,16 @@ export async function fetchProjects(projectId : string | string[] | undefined) {
     const project = projectArray.find(item => item.id === projectId);
     if (project) {
         return project;
+    }
+}
+
+export async function fetchProjectsByFeatured(featured : boolean) {
+    const res = await fetch('/projects.json');
+    const data = await res.json();
+    const projectArray = Object.values<Project>(data);
+    if (featured) {
+        return projectArray.filter((project: Project) => project.featured);
+    } else {
+        return projectArray.filter((project: Project) => !project.featured);
     }
 }

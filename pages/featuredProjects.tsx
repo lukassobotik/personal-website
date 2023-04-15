@@ -2,7 +2,7 @@ import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import {useEffect, useState} from "react";
-import {fetchProjects, Project} from "./project/[projectId]";
+import {fetchProjectById, Project} from "./project/[projectId]";
 
 export default function FeaturedProjects() {
     const [projects, setProjects] = useState<Project[]>();
@@ -12,7 +12,7 @@ export default function FeaturedProjects() {
         const projectIds = ["myQuotes", "WidgetSchedule", "MyFavMovies", "vsem-schedule-change-notifier", "TaskLooper"];
         let allProjects: Project[] = [];
 
-        Promise.all(projectIds.map((id) => fetchProjects(id)))
+        Promise.all(projectIds.map((id) => fetchProjectById(id)))
             .then((fetchedProjects) => {
                 allProjects = fetchedProjects.filter((project) => !!project) as Project[];
                 setProjects(allProjects);
@@ -38,8 +38,8 @@ export default function FeaturedProjects() {
                         <h4>
                             {project.technologies}
                         </h4>
-                        {project?.featuredDescription && Object.keys(project.featuredDescription).map((key) => (
-                            <p key={key}>{project.featuredDescription[key]}</p>
+                        {project?.shortDescription && Object.keys(project.shortDescription).map((key) => (
+                            <p key={key}>{project.shortDescription[key]}</p>
                         ))}
                     </div>
                 </Link>
