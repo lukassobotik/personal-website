@@ -6,11 +6,12 @@ import styles from "../../styles/Home.module.css";
 import Navbar from "../../navbar";
 import Image from "next/image";
 
-interface Project {
+export interface Project {
     id: string;
     logoUrl: string;
     name: string;
     technologies: string;
+    featuredDescription: Record<string, string>;
     description: Record<string, string>;
     links: Record<string, { name: string, url: string }>;
     hasHorizontalScreenshots: boolean;
@@ -32,18 +33,7 @@ export default function Project() {
     const [project, setProject] = useState<Project>();
 
     useEffect(() => {
-        async function fetchProjects() {
-            const res = await fetch('/projects.json');
-            const data = await res.json();
-
-            const projectArray = Object.values<Project>(data);
-            const project = projectArray.find(item => item.id === projectId);
-            if (project) {
-                setProject(project);
-            }
-        }
-
-        fetchProjects().then(() => {});
+        fetchProjects(projectId).then((project) => {setProject(project)});
     }, [projectId]);
 
     function renderScreenshots(urls: Record<string, string>, width: number, height: number) {
@@ -91,4 +81,15 @@ export default function Project() {
             </main>
         </>
     )
+}
+
+export async function fetchProjects(projectId : string | string[] | undefined) {
+    const res = await fetch('/projects.json');
+    const data = await res.json();
+
+    const projectArray = Object.values<Project>(data);
+    const project = projectArray.find(item => item.id === projectId);
+    if (project) {
+        return project;
+    }
 }

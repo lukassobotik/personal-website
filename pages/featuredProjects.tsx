@@ -1,85 +1,49 @@
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import {useEffect, useState} from "react";
+import {fetchProjects, Project} from "./project/[projectId]";
 
 export default function FeaturedProjects() {
+    const [projects, setProjects] = useState<Project[]>();
+    const [allProjectsFetched, setAllProjectsFetched] = useState<boolean>(false);
+
+    useEffect(() => {
+        const projectIds = ["myQuotes", "WidgetSchedule", "MyFavMovies", "vsem-schedule-change-notifier", "TaskLooper"];
+        let allProjects: Project[] = [];
+
+        Promise.all(projectIds.map((id) => fetchProjects(id)))
+            .then((fetchedProjects) => {
+                allProjects = fetchedProjects.filter((project) => !!project) as Project[];
+                setProjects(allProjects);
+                setAllProjectsFetched(true);
+                console.log(allProjects);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, []);
+
+    if (!allProjectsFetched) {
+        return <div>Loading projects...</div>;
+    }
+
     return (
         <>
-            <Link href="/project/myQuotes" className={styles.project_post}>
-                <Image src="/images/myQuotes/myQuotes.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
-                <div className={styles.post_text}>
-                    <h2>MyQuotes</h2>
-                    <h4>
-                        Java, Android, Firebase
-                    </h4>
-                    <p>
-                        myQuotes is an Android application where you can Share, Discover and Save New Quotes!
-                    </p>
-                    <p>
-                        This was my first completed Android application that I published on the Google Play Store.
-                    </p>
-                </div>
-            </Link>
-            <Link href="/project/WidgetSchedule" className={styles.project_post}>
-                <Image src="/images/WidgetSchedule/WidgetSchedule.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
-                <div className={styles.post_text}>
-                    <h2>WidgetSchedule</h2>
-                    <h4>
-                        Java, Android, JSoup, SQLite
-                    </h4>
-                    <p>
-                        Turn online schedules into stunning widgets with ease!
-                    </p>
-                    <p>
-                        The application enables schedules to be turned into an Android widget from a URL or URLs of links, which can be effortlessly accessed from the device&apos;s home screen.
-                    </p>
-                </div>
-            </Link>
-            <Link href="/project/MyFavMovies" className={styles.project_post}>
-                <Image src="/images/MyFavMovies/MyFavMovies.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
-                <div className={styles.post_text}>
-                    <h2>MyFavMovies</h2>
-                    <h4>
-                        JavaScript, React, Firebase
-                    </h4>
-                    <p>
-                        MyFavMovies is a website made for finding movies and adding them to your favorites.
-                    </p>
-                    <p>
-                        It uses the The Movie Database API to fetch the movies.
-                    </p>
-                </div>
-            </Link>
-            <Link href="/project/vsem-schedule-change-notifier" className={styles.project_post}>
-                <Image src="/images/schedule-change-notifier/VŠEM.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
-                <div className={styles.post_text}>
-                    <h2>VŠEM Schedule Change Notifier</h2>
-                    <h4>
-                        Java, JavaMail, JSoup
-                    </h4>
-                    <p>
-                        VŠEM Schedule Change Notifier is an app that notifies you about changes in the schedule of your classes.
-                    </p>
-                    <p className={styles.extra_description}>
-                        The application is built using Java, JavaMail and Jsoup. It is deployed on a Raspberry Pi and runs on a Cron job.
-                    </p>
-                </div>
-            </Link>
-            <Link href="/project/TaskLooper" className={styles.project_post}>
-                <Image src="/images/TaskLooper/TaskLooper.png" alt="" width={150} height={150} className={styles.featured_project_image}/>
-                <div className={styles.post_text}>
-                    <h2>TaskLooper</h2>
-                    <h4>
-                        Java, Android, SQLite
-                    </h4>
-                    <p>
-                        TaskLooper is an android app where you manage daily tasks you want to complete.
-                    </p>
-                    <p className={styles.extra_description}>
-                        Although it is similar to my other repository Repeaty, I have slightly different plans and goals for it.
-                    </p>
-                </div>
-            </Link>
+            {projects && projects.map((project, id) => (
+                <Link href={"/project/" + project.id} className={styles.project_post} key={id}>
+                    <Image src={project.logoUrl} alt="" width={150} height={150} className={styles.featured_project_image}/>
+                    <div className={styles.post_text}>
+                        <h2>{project.name}</h2>
+                        <h4>
+                            {project.technologies}
+                        </h4>
+                        {project?.featuredDescription && Object.keys(project.featuredDescription).map((key) => (
+                            <p key={key}>{project.featuredDescription[key]}</p>
+                        ))}
+                    </div>
+                </Link>
+            ))}
         </>
     )
 }
