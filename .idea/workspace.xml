@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2aa5df9f-f76d-4e65-ba75-810598cc8f6c" name="Changes" comment="Featured Projects">
+    <list default="true" id="2aa5df9f-f76d-4e65-ba75-810598cc8f6c" name="Changes" comment="Other Projects">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/featuredProjects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/featuredProjects.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/project/[projectId].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/project/[projectId].tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/projects.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/projects.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +73,7 @@
       <workItem from="1681500097031" duration="345000" />
       <workItem from="1681500445394" duration="1175000" />
       <workItem from="1681548065697" duration="1562000" />
-      <workItem from="1681550040511" duration="11754000" />
+      <workItem from="1681550040511" duration="12384000" />
     </task>
     <task id="LOCAL-00001" summary="WidgetSchedule">
       <created>1681501010026</created>
@@ -105,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681573882331</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Other Projects">
+      <created>1681575036197</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681575036197</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -116,6 +121,7 @@
     <MESSAGE value="Project Loading from a JSON document" />
     <MESSAGE value="All Projects saved in the JSON" />
     <MESSAGE value="Featured Projects" />
-    <option name="LAST_COMMIT_MESSAGE" value="Featured Projects" />
+    <MESSAGE value="Other Projects" />
+    <option name="LAST_COMMIT_MESSAGE" value="Other Projects" />
   </component>
 </project>

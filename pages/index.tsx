@@ -148,7 +148,7 @@ export default function Home() {
             Other Projects
           </h2>
           <div className={styles.grid}>
-            {otherProjects && otherProjects.map((project, id) => (
+            {otherProjects?.map((project, id) => (
                 <Link href={"/project/" + project.id} className={styles.project} key={id}>
                   <div className={styles.post_text}>
                     <h3 className={inter.className}>

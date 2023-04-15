@@ -2,26 +2,27 @@ import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import {useEffect, useState} from "react";
-import {fetchProjectById, Project} from "./project/[projectId]";
+import {fetchProjectById, fetchProjectsByFeatured, Project} from "./project/[projectId]";
 
 export default function FeaturedProjects() {
     const [projects, setProjects] = useState<Project[]>();
     const [allProjectsFetched, setAllProjectsFetched] = useState<boolean>(false);
 
     useEffect(() => {
-        const projectIds = ["myQuotes", "WidgetSchedule", "MyFavMovies", "vsem-schedule-change-notifier", "TaskLooper"];
-        let allProjects: Project[] = [];
+        fetchProjectsByFeatured(true).then((projects) => {
+            const ids: string[] = projects.map((project) => project.id);
 
-        Promise.all(projectIds.map((id) => fetchProjectById(id)))
-            .then((fetchedProjects) => {
-                allProjects = fetchedProjects.filter((project) => !!project) as Project[];
-                setProjects(allProjects);
-                setAllProjectsFetched(true);
-                console.log(allProjects);
-            })
-            .catch((error) => {
-                console.error(error);
-            });
+            Promise.all(ids.map((id) => fetchProjectById(id)))
+                .then((fetchedProjects) => {
+                    const allProjects = fetchedProjects.filter((project) => !!project) as Project[];
+                    setProjects(allProjects);
+                    setAllProjectsFetched(true);
+                    console.log(allProjects);
+                })
+                .catch((error) => {
+                    console.error(error);
+                });
+        });
     }, []);
 
     if (!allProjectsFetched) {
