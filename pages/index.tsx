@@ -6,12 +6,14 @@ import Image from "next/image";
 import FeaturedProjects from "./featuredProjects";
 import {useEffect, useState} from "react";
 import { useRouter } from 'next/router';
+import {fetchProjectsByFeatured, Project} from "./project/[projectId]";
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const router = useRouter();
   const [tabContent, setTabContent] = useState('');
+  const [otherProjects, setOtherProjects] = useState<Project[]>();
 
   function calculateAge() {
     let birthdate = new Date(2007, 5, 10);
@@ -146,94 +148,21 @@ export default function Home() {
             Other Projects
           </h2>
           <div className={styles.grid}>
-            <Link href="/project/portfolio" className={styles.project}>
-              <h3 className={inter.className}>
-                Repeaty <span>-&gt;</span>
-              </h3>
-              <h5 className={inter.className}>
-                Java, Android, SQLite
-              </h5>
-              <p className={inter.className}>
-                Repeaty is an android application to Track and Manage your Habits.
-              </p>
-            </Link>
-            <Link href="/project/portfolio" className={styles.project}>
-              <h3 className={inter.className}>
-                Portfolio Website <span>-&gt;</span>
-              </h3>
-              <h5 className={inter.className}>
-                TypeScript, Next.js, React
-              </h5>
-              <p className={inter.className}>
-                Source code of this website.
-              </p>
-            </Link>
-            <Link href="/project/2048" className={styles.project}>
-              <h3 className={inter.className}>
-                2048 <span>-&gt;</span>
-              </h3>
-              <h5 className={inter.className}>
-                Java, Java GUI
-              </h5>
-              <p className={inter.className}>
-                My recreation of the popular game 2048.
-              </p>
-            </Link>
-            <Link href="/project/word-in-sentence-counter" className={styles.project}>
-              <h3 className={inter.className}>
-                Word Counter <span>-&gt;</span>
-              </h3>
-              <h5 className={inter.className}>
-                C#
-              </h5>
-              <p className={inter.className}>
-                Simple C# application that counts the number of words in a sentence.
-              </p>
-            </Link>
-            <Link href="/project/imdb-scraper" className={styles.project}>
-              <h3 className={inter.className}>
-                IMDb Scraper <span>-&gt;</span>
-              </h3>
-              <h5 className={inter.className}>
-                Java, JSoup
-              </h5>
-              <p className={inter.className}>
-                Simple Java application that scrapes the top 250 section on the IMDb website.
-              </p>
-            </Link>
-            <Link href="/project/bigger-or-smaller" className={styles.project}>
-              <h3 className={inter.className}>
-                Bigger or Smaller <span>-&gt;</span>
-              </h3>
-              <h5 className={inter.className}>
-                Java, Java GUI
-              </h5>
-              <p className={inter.className}>
-                Simple Java Gui application that compares two numbers.
-              </p>
-            </Link>
-            <Link href="/project/roll-two-of-kind" className={styles.project}>
-              <h3 className={inter.className}>
-                Roll Two of a Kind <span>-&gt;</span>
-              </h3>
-              <h5 className={inter.className}>
-                C#
-              </h5>
-              <p className={inter.className}>
-                Test Your Luck By Rolling Two Dice!
-              </p>
-            </Link>
-            <Link href="/project/point-adder" className={styles.project}>
-              <h3 className={inter.className}>
-                Point Adder <span>-&gt;</span>
-              </h3>
-              <h5 className={inter.className}>
-                Java
-              </h5>
-              <p className={inter.className}>
-                Simple Java project made for storing any amount of points. It runs in the system tray.
-              </p>
-            </Link>
+            {otherProjects?.map((project, id) => (
+                <Link href={"/project/" + project.id} className={styles.project} key={id}>
+                  <div className={styles.post_text}>
+                    <h3 className={inter.className}>
+                      {project.name} <span>-&gt;</span>
+                    </h3>
+                    <h5 className={inter.className}>
+                      {project.technologies}
+                    </h5>
+                    <p className={inter.className}>
+                      {project?.shortDescription[1]}
+                    </p>
+                  </div>
+                </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -296,6 +225,11 @@ export default function Home() {
       // @ts-ignore
       setTabContent(homeTab);
     }
+
+    fetchProjectsByFeatured(false).then(projects => {
+      setOtherProjects(projects);
+      console.log(projects);
+    });
 
   }, [router.query.tab]);
 

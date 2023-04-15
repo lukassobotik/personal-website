@@ -1,0 +1,346 @@
+{
+  "2048": {
+    "featured": false,
+    "id": "2048",
+    "name": "2048",
+    "technologies": "Java, Java GUI",
+    "shortDescription": {
+      "1": "My recreation of the popular game 2048."
+    },
+    "description": {
+      "1": "My recreation of the popular game 2048. Built using Java."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/2048"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
+  },
+
+  "bigger-or-smaller": {
+    "featured": false,
+    "id": "bigger-or-smaller",
+    "name": "Bigger or Smaller",
+    "technologies": "Java, Java GUI",
+    "shortDescription": {
+      "1": "Simple Java Gui application that compares two numbers."
+    },
+    "description": {
+      "1": "Bigger or Smaller is a simple Java GUI application that compares two numbers and tells you which one is bigger.",
+      "2": "The application is built using Java and Java GUIs."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/bigger-or-smaller"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
+  },
+
+  "imdb-scraper": {
+    "featured": false,
+    "id": "imdb-scraper",
+    "name": "IMDb Scraper",
+    "technologies": "Java, JSoup",
+    "shortDescription": {
+      "1": "Simple Java application that scrapes the top 250 section on the IMDb website."
+    },
+    "description": {
+      "1": "IMDb Scraper is a simple Java application that scrapes the top 250 section on the IMDb website."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/imdb-scraper"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
+  },
+
+  "MyFavMovies": {
+    "featured": true,
+    "id": "MyFavMovies",
+    "logoUrl": "/images/MyFavMovies/MyFavMovies.png",
+    "name": "MyFavMovies",
+    "technologies": "JavaScript, Firebase, React, TMDb API",
+    "shortDescription": {
+      "1": "MyFavMovies is a website made for finding movies and adding them to your favorites.",
+      "2": "It uses the The Movie Database API to fetch the movies."
+    },
+    "description": {
+      "1": "MyFavMovies is a web application that allows you to search for movies and add them to your favorites.",
+      "2": "It uses the The Movie Database API to fetch the movies.",
+      "3": "You can create an account and login to save your favorite movies or save them to collections that you created. You can also set your language and region preferences. The application will use them to fetch the movies in your language and region. You can set a profile picture and a username. The application is fully responsive and works on mobile devices. This application was my first project using React and developing a web application in general."
+    },
+    "links": {
+      "1": {
+        "name": "Try it Out",
+        "url": "https://lukassobotik.dev/MyFavMovies/"
+      },
+      "2": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/MyFavMovies"
+      }
+    },
+    "hasHorizontalScreenshots": true,
+    "horizontalScreenshots": {
+      "width": 1000,
+      "height": 540,
+      "urls": {
+        "1": "/images/MyFavMovies/sc-1.png",
+        "2": "/images/MyFavMovies/sc-2.png",
+        "3": "/images/MyFavMovies/sc-3.png",
+        "4": "/images/MyFavMovies/sc-4.png",
+        "5": "/images/MyFavMovies/sc-5.png"
+      }
+    },
+    "hasVerticalScreenshots": false
+  },
+
+  "myQuotes": {
+    "featured": true,
+    "id": "myQuotes",
+    "logoUrl": "/images/myQuotes/myQuotes.png",
+    "name": "myQuotes",
+    "technologies": "Java, Android, Firebase",
+    "shortDescription": {
+      "1": "myQuotes is an Android application where you can Share, Discover and Save New Quotes!",
+      "2": "This was my first completed Android application that I published on the Google Play Store."
+    },
+    "description": {
+      "1": "myQuotes is an Android application where you can Share, Discover and Save New Quotes! The application is built using Java and Firebase.",
+      "2": "This was my first completed Android application that I published on the Google Play Store.",
+      "3": "You can create an account and share your own quotes or you can discover new quotes from other users. You can also save quotes to your favorites. You can also search for quotes by author or by quote. You can also change your background color behind the quote. Users can delete their own account and all of their quotes and data."
+    },
+    "links": {
+      "1": {
+        "name": "Try it Out",
+        "url": "https://play.google.com/store/apps/details?id=com.sforge.quotes"
+      },
+      "2": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/Quotes"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": true,
+    "verticalScreenshots": {
+      "width": 270,
+      "height": 530,
+      "urls": {
+        "1": "/images/myQuotes/vid-1.gif",
+        "2": "/images/myQuotes/sc-1.jpg",
+        "3": "/images/myQuotes/sc-2.jpg",
+        "4": "/images/myQuotes/sc-3.jpg",
+        "5": "/images/myQuotes/sc-4.jpg"
+      }
+    }
+  },
+
+  "point-adder": {
+    "featured": false,
+    "id": "point-adder",
+    "name": "Point Adder",
+    "technologies": "Java",
+    "shortDescription": {
+      "1": "Simple Java project made for storing any amount of points. It runs in the system tray."
+    },
+    "description": {
+      "1": "Point Adder is a really simple Java project that runs in the system tray where you have ease of access to add a point to a greater score."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/point-adder"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
+  },
+
+  "portfolio": {
+    "featured": false,
+    "id": "portfolio",
+    "name": "Portfolio Website",
+    "technologies": "TypeScript, Next.js, React",
+    "shortDescription": {
+      "1": "Source code of this website."
+    },
+    "description": {
+      "1": "This website is built using TypeScript, Next.js and React."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/puckyeu.github.io"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
+  },
+
+  "Repeaty": {
+    "featured": false,
+    "id": "Repeaty",
+    "logoUrl": "/images/Repeaty/Repeaty.png",
+    "name": "Repeaty",
+    "technologies": "Java, Android, SQLite",
+    "shortDescription": {
+      "1": "Repeaty is an android application to Track and Manage your Habits."
+    },
+    "description": {
+      "1": "Repeaty is an android application to Track and Manage your Habits.",
+      "2": "Even though it was never finished, it was my first Android application and I learned a lot about Android development. I also learned how to use git and Github. This was the project that got me into programming regularly.",
+      "3": "It's made using Java and Android Studio. It uses SQLite to store the data. It isn't finished, but it has the basic functionality of adding and removing habits, and tracking them. I had planned to add a lot more features, but I lost interest in the project because I lost the need for the application. It also has a rather basic statistics system."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/habit-manager"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
+  },
+
+  "roll-two-of-kind": {
+    "featured": false,
+    "id": "roll-two-of-kind",
+    "name": "Roll Two of a Kind",
+    "technologies": "C#",
+    "shortDescription": {
+      "1": "Test Your Luck By Rolling Two Dice!"
+    },
+    "description": {
+      "1": "Roll Two of a Kind is a simple C# where you can test your luck by rolling two dice."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/roll-two-of-kind"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
+  },
+
+  "TaskLooper": {
+    "featured": true,
+    "id": "TaskLooper",
+    "logoUrl": "/images/TaskLooper/TaskLooper.png",
+    "name": "TaskLooper",
+    "technologies": "Java, Android, SQLite",
+    "shortDescription": {
+      "1": "TaskLooper is an android app where you manage daily tasks you want to complete.",
+      "2": "Although it is similar to my other repository Repeaty, I have slightly different plans and goals for it."
+    },
+    "description": {
+      "1": "Seize the Day, Repeat the Success.",
+      "2": "This lightweight task-repeating Android application is designed to help users keep track of their daily tasks and activities without any unnecessary clutter. The application automatically unchecks completed tasks the next day, making it easy for users to manage their to-do list on a daily basis.",
+      "3": "One of the key benefits of this application is that all the data is stored locally, ensuring user privacy and security. The app is also very simple and easy to use, with a minimalistic interface that doesn't require any complex setup or configuration.",
+      "4": "Although it is similar to my other repository Repeaty, I have slightly different plans and goals for it. Repeaty was more on the habit building side, this is more on the to-do list side."
+    },
+    "links": {
+      "1": {
+        "name": "Try it Out",
+        "url": "https://play.google.com/store/apps/details?id=lukas.sobotik.tasklooper"
+      },
+      "2": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/TaskLooper"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": true,
+    "verticalScreenshots": {
+      "width": 270,
+      "height": 530,
+      "urls": {
+        "1": "/images/TaskLooper/sc-1.jpg",
+        "2": "/images/TaskLooper/sc-2.jpg",
+        "3": "/images/TaskLooper/sc-3.jpg"
+      }
+    }
+  },
+
+  "vsem-schedule-change-notifier": {
+    "featured": true,
+    "id": "vsem-schedule-change-notifier",
+    "logoUrl": "/images/schedule-change-notifier/VŠEM.png",
+    "name": "VŠEM Schedule Change Notifier",
+    "technologies": "Java, JavaMail, JSoup, Raspberry Pi, Cron, Debian",
+    "shortDescription": {
+      "1": "VŠEM Schedule Change Notifier is an app that notifies you about changes in the schedule of your classes.",
+      "2": "The application is built using Java, JavaMail and Jsoup. It is deployed on a Raspberry Pi and runs on a Cron job."
+    },
+    "description": {
+      "1": "VŠEM Schedule Change Notifier is a Java application that notifies you about changes in the schedule of your classes. The application is built using Java, JavaMail and Jsoup. It is deployed on a Raspberry Pi and runs on a Cron job.",
+      "2": "I basically made this application for myself, because I was tired of checking the schedule of my classes on the VŠEM website every day. I wanted to be notified about changes in the schedule of my classes. But decided to make it public, so that other students can use it as well.",
+      "3": "The application is running a Cron job that runs every 1 hour. The Cron job checks the schedule of the classes on the VŠEM website. If there is a change in the schedule, the application sends you an email with the new schedule. On the Raspberry Pi, the application logs all the changes in the schedule, every run of the application and the emails that were sent. The application also logs the errors that occurred during the execution of the application.",
+      "4": "I made my own logging system, because it'd be a waste of resources to use a logging library for such a small application."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/vsem-schedule-change-notifier"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
+  },
+
+  "WidgetSchedule": {
+    "featured": true,
+    "id": "WidgetSchedule",
+    "name": "WidgetSchedule",
+    "technologies": "Java, Android, JSoup, SQLite",
+    "shortDescription": {
+      "1": "Turn online schedules into stunning widgets with ease!",
+      "2": "The application enables schedules to be turned into an Android widget from a URL or URLs of links, which can be effortlessly accessed from the device's home screen."
+    },
+    "description": {
+      "1": "The application aims to offer a convenient and customizable solution to users who require quick access to their schedules. The application enables schedules to be turned into an Android widget from a URL or URLs of links, which can be effortlessly accessed from the device's home screen.",
+      "2": "One of the notable features of the application is the ability to change the color of certain events in the schedule, allowing users to identify and differentiate between different types of events easily. This feature makes managing schedules more convenient for users.",
+      "3": "In summary, a simple and efficient solution is provided by our application for users who need to access their schedules on the go, without requiring them to open a browser or navigate to a specific website."
+    },
+    "links": {
+      "1": {
+        "name": "Try it Out",
+        "url": "https://play.google.com/store/apps/details?id=lukas.sobotik.widgetschedule"
+      },
+      "2": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/WidgetSchedule"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
+  },
+
+  "word-in-sentence-counter": {
+    "featured": false,
+    "id": "word-in-sentence-counter",
+    "name": "Word in a Sentence Counter",
+    "technologies": "C#",
+    "shortDescription": {
+      "1": "Simple C# application that counts the number of words in a sentence."
+    },
+    "description": {
+      "1": "Word in Sentence Counter is a C# application that counts the number of words in a sentence."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/word-in-sentence-counter"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
+  }
+}
