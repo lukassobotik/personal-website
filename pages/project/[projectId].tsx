@@ -4,13 +4,27 @@ import {it} from "node:test";
 import Head from "next/head";
 import styles from "../../styles/Home.module.css";
 import Navbar from "../../navbar";
+import Image from "next/image";
 
 interface Project {
     id: string;
+    logoUrl: string;
     name: string;
     technologies: string;
     description: Record<string, string>;
     links: Record<string, { name: string, url: string }>;
+    hasHorizontalScreenshots: boolean;
+    horizontalScreenshots: {
+        width: number;
+        height: number;
+        urls: Record<string, string>;
+    };
+    hasVerticalScreenshots: boolean;
+    verticalScreenshots: {
+        width: number;
+        height: number;
+        urls: Record<string, string>;
+    };
 }
 export default function Project() {
     const router = useRouter();
@@ -32,6 +46,12 @@ export default function Project() {
         fetchProjects().then(() => {});
     }, [projectId]);
 
+    function renderScreenshots(urls: Record<string, string>, width: number, height: number) {
+        return Object.keys(urls).map((key) => (
+            <Image key={key} src={urls[key]} alt="" width={width} height={height} />
+        ));
+    }
+
     return (
         <>
             <Head>
@@ -41,6 +61,7 @@ export default function Project() {
                 <Navbar/>
                 <div className={styles.project_overview_section}>
                     <div className={styles.overview}>
+                        {project?.logoUrl ? <Image src={project.logoUrl} alt="" width={150} height={150} className={styles.project_image}/> : null}
                         <h1>
                             {project?.name}
                         </h1>
@@ -55,6 +76,16 @@ export default function Project() {
                                 <a key={key} href={project.links[key].url} className={styles.skill}>{project.links[key].name}</a>
                             ))}
                         </div>
+                        {project?.hasHorizontalScreenshots ?
+                            <div className={styles.horizontal_project_images}>
+                                {renderScreenshots(project.horizontalScreenshots.urls, project.horizontalScreenshots.width, project.horizontalScreenshots.height)}
+                            </div>
+                        : null}
+                        {project?.hasVerticalScreenshots ?
+                            <div className={styles.vertical_project_images}>
+                                {renderScreenshots(project.verticalScreenshots.urls, project.verticalScreenshots.width, project.verticalScreenshots.height)}
+                            </div>
+                            : null}
                     </div>
                 </div>
             </main>
