@@ -498,6 +498,28 @@
   position: relative;
 }
 
+.errorParent {
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center
+}
+
+.errorH1 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 49px
+}
+
+.errorDiv {
+  text-align: left;
+  line-height: 49px;
+  height: 49px;
+}
+
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
