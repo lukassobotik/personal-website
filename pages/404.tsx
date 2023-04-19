@@ -8,9 +8,10 @@ export default function Custom404() {
     useEffect(() => {
         console.error("404");
         const { pathname } = router;
-        const isDynamicRoute = /\/projects\/\d+/.test(pathname);
+        const isDynamicRoute = /\/project\/\d+/.test(pathname);
 
         if (isDynamicRoute) {
+            console.log("isDynamic");
             // Handle the dynamic route
             // For example, redirect the user to the correct page
             router.push('/project/[projectId]', '/project/1');
