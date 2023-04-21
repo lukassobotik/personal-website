@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2aa5df9f-f76d-4e65-ba75-810598cc8f6c" name="Changes" comment="404 attempt to automatically reroute">
-      <change beforePath="$PROJECT_DIR$/pages/404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/404.tsx" afterDir="false" />
+    <list default="true" id="2aa5df9f-f76d-4e65-ba75-810598cc8f6c" name="Changes" comment="Removed Custom 404">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +81,8 @@
       <workItem from="1681757320714" duration="1672000" />
       <workItem from="1681831719561" duration="823000" />
       <workItem from="1681841512272" duration="1286000" />
-      <workItem from="1681927192578" duration="1644000" />
+      <workItem from="1681927192578" duration="2519000" />
+      <workItem from="1682015070431" duration="2038000" />
     </task>
     <task id="LOCAL-00001" summary="WidgetSchedule">
       <created>1681501010026</created>
@@ -145,7 +147,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681928633896</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Removed Custom 404">
+      <created>1681929109109</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1681929109109</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,6 +170,7 @@
     <MESSAGE value="New Logo &amp; Resume" />
     <MESSAGE value="Custom 404 Error" />
     <MESSAGE value="404 attempt to automatically reroute" />
-    <option name="LAST_COMMIT_MESSAGE" value="404 attempt to automatically reroute" />
+    <MESSAGE value="Removed Custom 404" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed Custom 404" />
   </component>
 </project>

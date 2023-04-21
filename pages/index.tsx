@@ -32,6 +32,24 @@ export default function Home() {
     router.push('/?tab=contact', undefined, { shallow: true }).then(() => {});
   }
 
+  const renderListOfOtherProjects = (projects : Project[] | undefined) => {
+    return projects?.map((project, id) => (
+        <Link href={"/project/" + project.id} className={styles.project} key={id}>
+          <div className={styles.post_text}>
+            <h3 className={inter.className}>
+              {project.name} <span>-&gt;</span>
+            </h3>
+            <h5 className={inter.className}>
+              {project.technologies}
+            </h5>
+            <p className={inter.className}>
+              {project?.shortDescription[1]}
+            </p>
+          </div>
+        </Link>
+    ))
+  }
+
   const homeTab = (
       <div className={styles.tabContent}>
         <div className={styles.post}>
@@ -148,21 +166,7 @@ export default function Home() {
             Other Projects
           </h2>
           <div className={styles.grid}>
-            {otherProjects?.map((project, id) => (
-                <Link href={"/project/" + project.id} className={styles.project} key={id}>
-                  <div className={styles.post_text}>
-                    <h3 className={inter.className}>
-                      {project.name} <span>-&gt;</span>
-                    </h3>
-                    <h5 className={inter.className}>
-                      {project.technologies}
-                    </h5>
-                    <p className={inter.className}>
-                      {project?.shortDescription[1]}
-                    </p>
-                  </div>
-                </Link>
-            ))}
+            {renderListOfOtherProjects(otherProjects)}
           </div>
         </div>
       </div>
@@ -182,7 +186,7 @@ export default function Home() {
                 Here you can find my LinkedIn profile. You can also contact me there.
               </p>
             </a>
-            <a href="mailto:sobotik.lukas@proton.me" className={styles.card}>
+            <a href="mailto:jobs@lukassobotik.dev" className={styles.card}>
               <h2 className={inter.className}>
                 Email <span>-&gt;</span>
               </h2>
