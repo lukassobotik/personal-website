@@ -298,6 +298,7 @@
   "WidgetSchedule": {
     "featured": true,
     "id": "WidgetSchedule",
+    "logoUrl": "/images/WidgetSchedule/WidgetSchedule.png",
     "name": "WidgetSchedule",
     "technologies": "Java, Android, JSoup, SQLite",
     "shortDescription": {
