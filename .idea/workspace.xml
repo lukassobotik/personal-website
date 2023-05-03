@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2aa5df9f-f76d-4e65-ba75-810598cc8f6c" name="Changes" comment="Web Developer CV">
+    <list default="true" id="2aa5df9f-f76d-4e65-ba75-810598cc8f6c" name="Changes" comment="WidgetSchedule Logo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/projects.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/projects.json" afterDir="false" />
     </list>
@@ -45,7 +45,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/lukas/IdeaProjects/puckyeu.github.io/public/resume&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/lukas/IdeaProjects/puckyeu.github.io/public/images/WidgetSchedule&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -57,6 +57,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/images/WidgetSchedule" />
       <recent name="$PROJECT_DIR$/public/resume" />
       <recent name="$PROJECT_DIR$/public" />
     </key>
@@ -87,7 +88,9 @@
       <workItem from="1682152628047" duration="157000" />
       <workItem from="1682157953269" duration="916000" />
       <workItem from="1682359562652" duration="6000" />
-      <workItem from="1682447671527" duration="672000" />
+      <workItem from="1682447671527" duration="735000" />
+      <workItem from="1682530537401" duration="6000" />
+      <workItem from="1683139463828" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="WidgetSchedule">
       <created>1681501010026</created>
@@ -173,7 +176,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682158261776</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="WidgetSchedule Logo">
+      <created>1682448683337</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1682448683337</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +202,7 @@
     <MESSAGE value="Removed Custom 404" />
     <MESSAGE value="Contact Email Change" />
     <MESSAGE value="Web Developer CV" />
-    <option name="LAST_COMMIT_MESSAGE" value="Web Developer CV" />
+    <MESSAGE value="WidgetSchedule Logo" />
+    <option name="LAST_COMMIT_MESSAGE" value="WidgetSchedule Logo" />
   </component>
 </project>
