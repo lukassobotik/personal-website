@@ -5,7 +5,7 @@ import Head from "next/head";
 import Image from "next/image";
 import FeaturedProjects from "./featuredProjects";
 import {useEffect, useState} from "react";
-import { useRouter } from 'next/router';
+import {useRouter} from 'next/router';
 import {fetchProjectsByFeatured, Project} from "./project/[projectId]";
 
 const inter = Inter({ subsets: ['latin'] })
@@ -16,11 +16,22 @@ export default function Home() {
   const [otherProjects, setOtherProjects] = useState<Project[]>();
 
   function calculateAge() {
-    let birthdate = new Date(2007, 5, 10);
-    let currentTime = new Date().getTime();
-    let birthDateTime = new Date(birthdate).getTime();
-    let ageInYears = (currentTime - birthDateTime) / 31_536_000_000;
-    return Math.floor(ageInYears);
+    let birthdate = new Date(2007, 4, 10);
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const birthdateYear = birthdate.getFullYear();
+    const birthdateMonth = birthdate.getMonth();
+    const birthdateDay = birthdate.getDate();
+
+    let ageInYears = currentYear - birthdateYear;
+
+    if (currentDate.getMonth() < birthdateMonth ||
+        (currentDate.getMonth() === birthdateMonth &&
+            currentDate.getDate() < birthdateDay)) {
+      ageInYears--;
+    }
+
+    return ageInYears;
   }
   function homeClick() {
     router.push('/', undefined, {shallow: true}).then(() => {});
