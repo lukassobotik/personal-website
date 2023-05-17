@@ -140,6 +140,10 @@
         "4": "/images/myQuotes/sc-3.jpg",
         "5": "/images/myQuotes/sc-4.jpg"
       }
+    },
+    "license": {
+      "type": "MIT License",
+      "url": "https://github.com/PuckyEU/Quotes/blob/master/LICENSE"
     }
   },
 
@@ -266,6 +270,10 @@
         "2": "/images/TaskLooper/sc-2.jpg",
         "3": "/images/TaskLooper/sc-3.jpg"
       }
+    },
+    "license": {
+      "type": "MIT License",
+      "url": "https://github.com/PuckyEU/TaskLooper/blob/master/LICENSE"
     }
   },
 
@@ -292,7 +300,11 @@
       }
     },
     "hasHorizontalScreenshots": false,
-    "hasVerticalScreenshots": false
+    "hasVerticalScreenshots": false,
+    "license": {
+      "type": "MIT License",
+      "url": "https://github.com/PuckyEU/vsem-schedule-change-notifier/blob/master/LICENSE"
+    }
   },
 
   "WidgetSchedule": {

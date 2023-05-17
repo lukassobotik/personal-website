@@ -1,6 +1,5 @@
-import { useRouter } from "next/router"
+import {useRouter} from "next/router"
 import {useEffect, useState} from "react";
-import {it} from "node:test";
 import Head from "next/head";
 import styles from "../../styles/Home.module.css";
 import Navbar from "../../navbar";
