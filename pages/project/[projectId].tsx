@@ -27,6 +27,7 @@ export interface Project {
         height: number;
         urls: Record<string, string>;
     };
+    license: { type: string; url: string; };
 }
 export default function Project() {
     const router = useRouter();
@@ -66,6 +67,9 @@ export default function Project() {
                             {project?.links && Object.keys(project.links).map((key) => (
                                 <a key={key} href={project.links[key].url} className={styles.skill}>{project.links[key].name}</a>
                             ))}
+                        </div>
+                        <div className={styles.project_link}>
+                            {project?.license ? <a href={project.license.url} className={styles.skill}>{project.license.type}</a> : null}
                         </div>
                         {project?.hasHorizontalScreenshots ?
                             <div className={styles.horizontal_project_images}>

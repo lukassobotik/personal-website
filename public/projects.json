@@ -322,7 +322,11 @@
       }
     },
     "hasHorizontalScreenshots": false,
-    "hasVerticalScreenshots": false
+    "hasVerticalScreenshots": false,
+    "license": {
+      "type": "MIT License",
+      "url": "https://github.com/PuckyEU/WidgetSchedule/blob/master/LICENSE"
+    }
   },
 
   "word-in-sentence-counter": {
