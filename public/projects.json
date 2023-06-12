@@ -319,9 +319,13 @@
     },
     "description": {
       "1": "Turn online schedules into stunning widgets with ease!",
-      "2": "The application aims to offer a convenient and customizable solution to users who require quick access to their schedules. The application enables schedules to be turned into an Android widget from a URL, which can be effortlessly accessed from the device's home screen.",
-      "3": "One of the notable features of the application is the ability to change the color of certain events in the schedule, allowing users to identify and differentiate between different types of events easily. This feature makes managing schedules more convenient for users.",
-      "4": "In summary, a simple and efficient solution is provided by the application for users who need to access their schedules on the go, without requiring them to open a browser or navigate to a specific website."
+      "2": "WidgetSchedule is a useful and free Android app for managing your schedules. It is open source and respects your privacy by storing all data locally, assuring the security of your information.",
+      "3": "Key Features:",
+      "4": "Schedule Widget: Convert any URL-based schedule into a dynamic Android widget. Simply enter the URL, and WidgetSchedule will retrieve and display the info on your home screen. Keep track of your appointments and events at a glance.",
+      "5": "Customizable Colors: Customize your widget items by selecting from a variety of colors.",
+      "6": "Google Calendar Integration: Export your schedules to Google Calendar with ease. You can synchronize your events and appointments with a few taps, providing smooth coordination across platforms.",
+      "7": "WidgetSchedule is an open-source project, which means that anybody can read, alter, and contribute to its code. This promotes openness, security, and innovation, making WidgetSchedule a dependable and trustworthy scheduling solution.",
+      "8": "Privacy-focused: WidgetSchedule values your privacy. It does not collect or send data from your device to any external servers. All of your schedule information is kept locally, giving you piece of mind."
     },
     "links": {
       "1": {
