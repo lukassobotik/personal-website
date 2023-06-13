@@ -335,6 +335,10 @@
       "2": {
         "name": "Source Code",
         "url": "https://github.com/PuckyEU/WidgetSchedule"
+      },
+      "3": {
+        "name": "Privacy Policy",
+        "url": "https://github.com/PuckyEU/WidgetSchedule/blob/master/PrivacyPolicy.md"
       }
     },
     "hasHorizontalScreenshots": false,
