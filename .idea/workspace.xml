@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2aa5df9f-f76d-4e65-ba75-810598cc8f6c" name="Changes" comment="Licenses">
+    <list default="true" id="2aa5df9f-f76d-4e65-ba75-810598cc8f6c" name="Changes" comment="Widget Schedule Description Update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/projects.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/projects.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,6 +97,8 @@
       <workItem from="1684347931390" duration="979000" />
       <workItem from="1684424815751" duration="13000" />
       <workItem from="1684954116736" duration="48000" />
+      <workItem from="1685559801628" duration="180000" />
+      <workItem from="1687003133373" duration="39000" />
     </task>
     <task id="LOCAL-00001" summary="WidgetSchedule">
       <created>1681501010026</created>
@@ -216,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1684348866030</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Widget Schedule Description Update">
+      <created>1685559902408</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1685559902408</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,6 +250,7 @@
     <MESSAGE value="Fixed the CalculateAge function" />
     <MESSAGE value="License Link" />
     <MESSAGE value="Licenses" />
-    <option name="LAST_COMMIT_MESSAGE" value="Licenses" />
+    <MESSAGE value="Widget Schedule Description Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Widget Schedule Description Update" />
   </component>
 </project>
