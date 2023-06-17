@@ -146,6 +146,48 @@
   color: #999999;
   margin-bottom: 1vh;
 }
+.main_other_projects {
+  font-weight: bold;
+  font-size: 4vh;
+}
+.progressbar {
+  width: 100%;
+  display: flex;
+  height: 2vh;
+}
+.progressbar_parent {
+  width: 100%;
+  position: relative;
+  height: 2vh;
+  border-radius: 1rem;
+  margin-right: 1rem;
+}
+.progressbar_outline {
+  width: 100%;
+  height: 2vh;
+  border: 3px solid white;
+  border-radius: 1rem;
+}
+.progressbar_progress{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2vh;
+  border-radius: 1rem;
+}
+.main_skill {
+  margin-bottom: 1rem;
+}
+.main_skill_item {
+  font-size: 2vh;
+  font-weight: bold;
+  margin-right: 2rem;
+  border-radius: 1rem;
+}
+.all_skills {
+  width: 100%;
+}
+
 
 
 

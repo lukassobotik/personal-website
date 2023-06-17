@@ -3,10 +3,11 @@ import styles from '../styles/Home.module.css'
 import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
-import FeaturedProjects from "./featuredProjects";
+import FetchProjects from "./FetchProjects";
 import {useEffect, useState} from "react";
 import {useRouter} from 'next/router';
 import {fetchProjectsByFeatured, Project} from "./project/[projectId]";
+import ProgressBar from "./ProgressBar";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -171,7 +172,7 @@ export default function Home() {
   );
   const projectsTab = (
       <div className={styles.tabContent}>
-        <FeaturedProjects/>
+        <FetchProjects onlyFeatured/>
         <div className={styles.post}>
           <h2>
             Other Projects
@@ -288,11 +289,42 @@ export default function Home() {
                 <div className={styles.main_contact_item}><Link href={"mailto://jobs@lukassobotik.dev"} className={styles.url}>Email</Link></div>
                 <div className={styles.main_contact_item}><Link href={"https://github.com/PuckyEU"} className={styles.url}>Github</Link></div>
                 <div className={styles.main_contact_item}><Link href={"https://www.buymeacoffee.com/puckyeu"} className={styles.url}>Buy me a coffee</Link></div>
+                <div className={styles.main_contact_item}><Link href={"https://lukassobotik.dev/resume/junior-java-developer.pdf"} className={styles.url}>Resume</Link></div>
               </div>
             </div>
           </div>
           <div className={styles.section_header}>Featured Projects</div>
-          <FeaturedProjects/>
+          <FetchProjects onlyFeatured/>
+          <div className={styles.main_other_projects}>
+            <Link className={styles.url} href={"/projects/"}>All Projects</Link>
+          </div>
+          <div className={styles.section_header}>Skills</div>
+          <div className={styles.all_skills}>
+            <div className={styles.main_skill}>
+              <div className={styles.main_skill_item}>Java</div>
+              <ProgressBar progress={65} color={"#ffffff"} showPercentage/>
+            </div>
+            <div className={styles.main_skill}>
+              <div className={styles.main_skill_item}>Github</div>
+              <ProgressBar progress={85} color={"#ffffff"} showPercentage/>
+            </div>
+            <div className={styles.main_skill}>
+              <div className={styles.main_skill_item}>Javascript</div>
+              <ProgressBar progress={45} color={"#ffffff"} showPercentage/>
+            </div>
+            <div className={styles.main_skill}>
+              <div className={styles.main_skill_item}>Davinci Resolve</div>
+              <ProgressBar progress={60} color={"#ffffff"} showPercentage/>
+            </div>
+            <div className={styles.main_skill}>
+              <div className={styles.main_skill_item}>Firebase</div>
+              <ProgressBar progress={40} color={"#ffffff"} showPercentage/>
+            </div>
+            <div className={styles.main_skill}>
+              <div className={styles.main_skill_item}>C#</div>
+              <ProgressBar progress={10} color={"#ffffff"} showPercentage/>
+            </div>
+          </div>
         </main>
       </>
   )
