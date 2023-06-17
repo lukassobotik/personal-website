@@ -1,15 +1,14 @@
 import styles from "../styles/Home.module.css";
-import Image from "next/image";
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import {fetchProjectById, fetchProjectsByFeatured, Project} from "./project/[projectId]";
 
-export default function FeaturedProjects() {
+export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
     const [projects, setProjects] = useState<Project[]>();
     const [allProjectsFetched, setAllProjectsFetched] = useState<boolean>(false);
 
     useEffect(() => {
-        fetchProjectsByFeatured(true).then((projects) => {
+        fetchProjectsByFeatured(onlyFeatured).then((projects) => {
             const ids: string[] = projects.map((project) => project.id);
 
             Promise.all(ids.map((id) => fetchProjectById(id)))
@@ -22,8 +21,9 @@ export default function FeaturedProjects() {
                 .catch((error) => {
                     console.error(error);
                 });
+            console.log("Logoogoogog", projects);
         });
-    }, []);
+    }, [onlyFeatured]);
 
     function splitTechnologies(technologies: string) {
         return technologies.split(", ");
