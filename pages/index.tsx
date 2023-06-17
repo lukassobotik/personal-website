@@ -284,13 +284,15 @@ export default function Home() {
                 Since December 2021, I&#39;ve been actively programming.</div>
               <div className={styles.main_contact}>
                 <div className={styles.main_contact_header}>Contact</div>
-                <div className={styles.main_contact_item}><Link href={"https://linkedin.com/in/lukassobotik/"}>LinkedIn</Link></div>
-                <div className={styles.main_contact_item}><Link href={"mailto://jobs@lukassobotik.dev"}>Email</Link></div>
-                <div className={styles.main_contact_item}><Link href={"https://github.com/PuckyEU"}>Github</Link></div>
-                <div className={styles.main_contact_item}><Link href={"https://www.buymeacoffee.com/puckyeu"}>Buy me a coffee</Link></div>
+                <div className={styles.main_contact_item}><Link href={"https://linkedin.com/in/lukassobotik/"} className={styles.url}>LinkedIn</Link></div>
+                <div className={styles.main_contact_item}><Link href={"mailto://jobs@lukassobotik.dev"} className={styles.url}>Email</Link></div>
+                <div className={styles.main_contact_item}><Link href={"https://github.com/PuckyEU"} className={styles.url}>Github</Link></div>
+                <div className={styles.main_contact_item}><Link href={"https://www.buymeacoffee.com/puckyeu"} className={styles.url}>Buy me a coffee</Link></div>
               </div>
             </div>
           </div>
+          <div className={styles.section_header}>Featured Projects</div>
+          <FeaturedProjects/>
         </main>
       </>
   )

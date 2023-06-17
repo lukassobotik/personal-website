@@ -25,26 +25,51 @@ export default function FeaturedProjects() {
         });
     }, []);
 
+    function splitTechnologies(technologies: string) {
+        return technologies.split(", ");
+    }
+
     if (!allProjectsFetched) {
-        return <div>Loading projects...</div>;
+        return <div className={styles.loading_projects_text}>Loading projects...</div>;
     }
 
     return (
         <>
-            {projects && projects.map((project, id) => (
-                <Link href={"/project/" + project.id} className={styles.project_post} key={id}>
-                    <Image src={project.logoUrl} alt="" width={150} height={150} className={styles.featured_project_image}/>
-                    <div className={styles.post_text}>
-                        <h2>{project.name}</h2>
-                        <h4>
-                            {project.technologies}
-                        </h4>
-                        {project?.shortDescription && Object.keys(project.shortDescription).map((key) => (
-                            <p key={key}>{project.shortDescription[key]}</p>
-                        ))}
+            <div className={styles.featured_projects_section}>
+                {projects && projects.map((project, id) => (
+                    <div key={id} className={styles.main_featured_project}>
+                        <div className={styles.main_featured_project_info}>
+                            <div className={styles.main_featured_project_info_title}>
+                                <div className={styles.main_featured_project_info_title_year}>{project.year ? project.year : "Year"}</div>
+                                <div className={styles.main_featured_project_info_title_text}><Link href={"/project/" + project.id} className={styles.url}>{project.name}</Link></div>
+                            </div>
+                            <div className={styles.main_featured_project_other_info}>
+                                <div className={styles.main_featured_project_other_info_description}>
+                                    <div className={styles.main_featured_project_other_info_title}>Description</div>
+                                    {project?.shortDescription && Object.keys(project.shortDescription).map((key) => (
+                                        <div key={key} className={styles.main_featured_project_other_info_text}>{project.shortDescription[key]}</div>
+                                    ))}
+                                </div>
+                                <div className={styles.main_featured_project_other_info_technologies}>
+                                    <div className={styles.main_featured_project_other_info_title}>Technologies</div>
+                                    {project?.technologies && splitTechnologies(project?.technologies).map((technology, key) => (
+                                        <div key={key} className={styles.main_featured_project_other_info_text}>{technology}</div>
+                                    ))}
+                                </div>
+                                <div className={styles.main_featured_project_other_info_notes}>
+                                    <div className={styles.main_featured_project_other_info_title}>Links</div>
+                                    {project?.links && Object.keys(project.links).map((key) => (
+                                        <div key={key} className={styles.main_featured_project_other_info_text}><a href={project.links[key].url} className={styles.url}>{project.links[key].name}</a></div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                        <div className={styles.main_featured_project_pictures}>
+
+                        </div>
                     </div>
-                </Link>
-            ))}
+                ))}
+            </div>
         </>
     )
 }

@@ -9,6 +9,7 @@ export interface Project {
     featured: boolean;
     id: string;
     logoUrl: string;
+    year: string;
     name: string;
     technologies: string;
     shortDescription: Record<string, string>;

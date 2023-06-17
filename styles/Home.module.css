@@ -66,7 +66,6 @@
   font-size: 8vh;
 }
 .content_main_short_summary {
-  font-style: italic;
   font-size: 2.5vh;
   color: #999999;
 }
@@ -85,6 +84,75 @@
   color: #999999;
   margin-bottom: 1.5vh;
 }
+.url:hover {
+  text-decoration: underline;
+}
+
+.section_header {
+  margin-top: 10vh;
+  font-weight: bold;
+  font-size: 5vh;
+  margin-bottom: 1vh;
+}
+.loading_projects_text {
+  margin-top: 10vh;
+}
+.featured_projects_section {
+  width: 100%;
+}
+.main_featured_project {
+  width: 100%;
+}
+.main_featured_project_info {
+  margin-bottom: 10vh;
+}
+.main_featured_project_info_title {
+
+}
+.main_featured_project_info_title_text {
+  font-weight: bold;
+  font-size: 4vh;
+  margin-bottom: 1vh;
+}
+.main_featured_project_info_title_year {
+  font-size: 2vh;
+  color: #999999;
+}
+
+.main_featured_project_other_info {
+  display: flex;
+}
+.main_featured_project_other_info_description {
+  width: 50%;
+  margin-right: 2rem;
+  border-radius: 1rem;
+}
+.main_featured_project_other_info_technologies {
+  width: 25%;
+  margin-right: 2rem;
+  border-radius: 1rem;
+}
+.main_featured_project_other_info_notes {
+  width: 25%;
+  border-radius: 1rem;
+}
+.main_featured_project_other_info_title {
+  font-size: 2.5vh;
+  font-weight: bold;
+  margin-bottom: 1vh;
+}
+.main_featured_project_other_info_text {
+  font-size: 2.5vh;
+  color: #999999;
+  margin-bottom: 1vh;
+}
+
+
+
+
+
+
+
 
 @keyframes gradient {
   0% {
