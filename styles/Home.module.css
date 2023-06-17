@@ -1,5 +1,91 @@
 @import url("https://fonts.googleapis.com/css?family=VT323&display=swap");
 
+.main {
+  background-color: hsl(0, 0%, 9%);
+  background-size: 400% 400%;
+  background-position: center;
+  animation: gradient 15s ease infinite;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -5s);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 2rem 12rem 2rem 12rem;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.header {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+}
+.header_name {
+  width: 100%;
+  font-weight: bold;
+}
+.header_tabs {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.header_tabs a {
+  margin-right: 2rem;
+}
+
+.content {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.main_image {
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  aspect-ratio: 12/16;
+  background: #E5E5E5;
+  border-radius: 1rem;
+}
+
+.content_main {
+  height: 100%;
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.content_main_line {
+  font-weight: bold;
+  font-size: 8vh;
+}
+.content_main_short_summary {
+  font-style: italic;
+  font-size: 2.5vh;
+  color: #999999;
+}
+.main_contact {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+}
+.main_contact_header {
+  font-weight: bold;
+  font-size: 4vh;
+  margin-bottom: 1vh;
+}
+.main_contact_item {
+  font-size: 2.5vh;
+  color: #999999;
+  margin-bottom: 1.5vh;
+}
+
 @keyframes gradient {
   0% {
     background-position: 50% 50%;
@@ -184,24 +270,6 @@
 
 .post_text {
   display: inline-block;
-}
-
-
-.main {
-  background-color: hsl(0, 0%, 9%);
-  background-size: 400% 400%;
-  background-position: center;
-  animation: gradient 15s ease infinite;
-  animation-play-state: paused;
-  animation-delay: calc(var(--scroll) * -5s);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  padding: 6rem;
-  min-height: 100vh;
 }
 
 .code {
