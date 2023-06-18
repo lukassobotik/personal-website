@@ -1,7 +1,9 @@
 import styles from "../styles/Home.module.css";
 import Link from "next/link";
 import {useEffect, useState} from "react";
-import {fetchProjectById, fetchProjectsByFeatured, Project} from "./project/[projectId]";
+import {fetchProjectById, fetchProjectsByFeatured, Project} from "./project/[projectId]";// @ts-ignore
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
     const [projects, setProjects] = useState<Project[]>();
@@ -23,6 +25,7 @@ export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
                 });
             console.log("Logoogoogog", projects);
         });
+        AOS.init()
     }, [onlyFeatured]);
 
     function splitTechnologies(technologies: string) {
@@ -37,7 +40,7 @@ export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
         <>
             <div className={styles.featured_projects_section}>
                 {projects && projects.map((project, id) => (
-                    <div key={id} className={styles.main_featured_project}>
+                    <div key={id} className={styles.main_featured_project} data-aos="fade-up">
                         <div className={styles.main_featured_project_info}>
                             <div className={styles.main_featured_project_info_title}>
                                 <div className={styles.main_featured_project_info_title_year}>{project.year ? project.year : "Year"}</div>

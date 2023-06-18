@@ -1,14 +1,15 @@
-import {Inter} from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import Link from "next/link";
 import Head from "next/head";
 import FetchProjects from "./FetchProjects";
 import {useRouter} from 'next/router';
 import Navbar from "../navbar";
+import {useEffect} from "react";
+// @ts-ignore
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Home() {
-  const router = useRouter();
-
   function calculateAge() {
     let birthdate = new Date(2007, 4, 10);
     const currentDate = new Date();
@@ -28,6 +29,32 @@ export default function Home() {
     return ageInYears;
   }
 
+  function decryptEffect() {
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+-=[]{};':\",./<>?`~";
+
+    const el = document.getElementById("content_main_line");
+    const text = "Hi, I'm Lukáš";
+
+    if (el) {
+      let iterations = 0;
+      const interval = setInterval(() => {
+        el.innerHTML = text.split("")
+            .map((letter, index) => {
+              if (index < iterations) return letter;
+
+              return letters[Math.floor(Math.random() * letters.length)]
+            }).join("");
+        if (iterations >= text.length) clearInterval(interval);
+        iterations += 1/3;
+      }, 20);
+    }
+  }
+
+  useEffect(() => {
+    decryptEffect();
+    AOS.init()
+  }, []);
+
   return (
       <>
         <Head>
@@ -38,22 +65,22 @@ export default function Home() {
           <div className={styles.content}>
             <div className={styles.main_image}>.</div>
             <div className={styles.content_main}>
-              <div className={styles.content_main_line}>Hi, I&apos;m Lukáš</div>
-              <div className={styles.content_main_short_summary}>I am a {calculateAge()}-year-old student from the Czech Republic.
+              <div className={styles.content_main_line} id={"content_main_line"} onMouseEnter={decryptEffect}>Hi, I&apos;m Lukáš</div>
+              <div className={styles.content_main_short_summary} data-aos="fade-up">I am a {calculateAge()}-year-old student from the Czech Republic.
                 My interest is programming, thus I&#39;m open to any job or internship opportunities.
                 I am now studying Java, and I have minor knowledge of JavaScript and C#.
                 Since December 2021, I&#39;ve been actively programming.</div>
               <div className={styles.main_contact}>
-                <div className={styles.main_contact_header}>Contact</div>
-                <div className={styles.main_contact_item}><Link href={"https://linkedin.com/in/lukassobotik/"} className={styles.url}>LinkedIn</Link></div>
-                <div className={styles.main_contact_item}><Link href={"mailto://jobs@lukassobotik.dev"} className={styles.url}>Email</Link></div>
-                <div className={styles.main_contact_item}><Link href={"https://github.com/PuckyEU"} className={styles.url}>Github</Link></div>
-                <div className={styles.main_contact_item}><Link href={"https://www.buymeacoffee.com/puckyeu"} className={styles.url}>Buy me a coffee</Link></div>
-                <div className={styles.main_contact_item}><Link href={"https://lukassobotik.dev/resume/junior-java-developer.pdf"} className={styles.url}>Resume</Link></div>
+                <div className={styles.main_contact_header} data-aos="fade-up" data-aos-delay="50">Contact</div>
+                <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="100"><Link href={"https://linkedin.com/in/lukassobotik/"} className={styles.url}>LinkedIn</Link></div>
+                <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="150"><Link href={"mailto://jobs@lukassobotik.dev"} className={styles.url}>Email</Link></div>
+                <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="200"><Link href={"https://github.com/PuckyEU"} className={styles.url}>Github</Link></div>
+                <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="250"><Link href={"https://www.buymeacoffee.com/puckyeu"} className={styles.url}>Buy me a coffee</Link></div>
+                <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="300"><Link href={"https://lukassobotik.dev/resume/junior-java-developer.pdf"} className={styles.url}>Resume</Link></div>
               </div>
             </div>
           </div>
-          <div className={styles.general_section}>
+          <div className={styles.general_section} data-aos="fade-up" data-aos-duration="1000">
             <div className={styles.general_section_title}>Skills</div>
             <div className={styles.general_section_content}>
               <div className={styles.general_section_content_item}>Java</div>
@@ -64,7 +91,7 @@ export default function Home() {
               <div className={styles.general_section_content_item}>C#</div>
             </div>
           </div>
-          <div className={styles.general_section}>
+          <div className={styles.general_section} data-aos="fade-up" data-aos-duration="1000">
             <div className={styles.general_section_title}>Interests</div>
             <div className={styles.general_section_content}>
               <div className={styles.general_section_content_item}><Link className={styles.url} href={"https://www.imdb.com/user/ur150332429/"}>Movies</Link></div>
@@ -73,7 +100,7 @@ export default function Home() {
               <div className={styles.general_section_content_item}>Boxing</div>
             </div>
           </div>
-          <div className={styles.general_section}>
+          <div className={styles.general_section} data-aos="fade-up" data-aos-duration="1000">
             <div className={styles.general_section_title}>Certificates</div>
             <div className={styles.general_section_content}>
               <div className={styles.general_section_content_item}>
