@@ -13,6 +13,7 @@ import {splitTechnologies} from "../FetchProjects";
 export interface Project {
     featured: boolean;
     id: string;
+    github_id: string;
     logoUrl: string;
     year: string;
     name: string;
@@ -38,12 +39,15 @@ export default function Project() {
     const router = useRouter();
     const projectId = router.query.projectId;
     const [project, setProject] = useState<Project>();
-    const { data } = useSwr('/api/getReadme/' + projectId, fetcher);
+    const githubId = project?.github_id ? project?.github_id : projectId;
+    console.log("github id: ", githubId)
 
     useEffect(() => {
         fetchProjectById(projectId).then((project) => {setProject(project)});
     }, [projectId]);
 
+    const { data } = useSwr('/api/getReadme/' + githubId, fetcher);
+    
     function renderScreenshots(urls: Record<string, string>, width: number, height: number) {
         return Object.keys(urls).map((key) => (
             <Image key={key} src={urls[key]} alt="" width={width} height={height} />

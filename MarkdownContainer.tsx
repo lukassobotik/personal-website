@@ -49,6 +49,9 @@ export default function MarkdownContainer({data}: {data: any}) {
                     },
                     p: ({node, ...props}) => {
                         return <p {...props} style={{ marginTop: ".5rem" }} />
+                    },
+                    blockquote: ({node, ...props}) => {
+                        return <blockquote {...props} style={{ display: "none" }} />
                     }
                 }}>{data?.readmeContents ? data?.readmeContents : null}</ReactMarkdown>
             </div>

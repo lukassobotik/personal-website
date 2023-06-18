@@ -193,7 +193,7 @@
 }
 .project_readme {
   margin-top: 2rem;
-  padding: 0.001rem 2rem 2rem 2rem;
+  padding: 2rem;
   border-radius: 1rem;
   border: 2px solid hsl(0, 0%, 18%);
 }
@@ -205,6 +205,8 @@
   border-bottom: 2px solid hsl(0, 0%, 18%);
   display: flex;
   align-items: center;
+  padding: -2rem;
+  margin-top: -2rem;
 }
 .project_readme_title span {
   margin-left: 2rem;
@@ -619,11 +621,12 @@
 }
 
 .project_image {
-  border-radius: 20%;
+  border-radius: 2rem;
 }
 
 .horizontal_project_images {
   margin-top: 2rem;
+  border-radius: 20%;
   display: inline-block;
 }
 
@@ -631,7 +634,9 @@
   border-radius: 10px;
   width: 100%;
   height: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16/8;
+  object-fit: cover;
+  object-position: center;
 }
 
 .vertical_project_images {

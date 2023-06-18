@@ -114,7 +114,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.section_header}>Featured Projects</div>
+          <div className={styles.section_header} data-aos="fade-up">Featured Projects</div>
           <FetchProjects onlyFeatured/>
           <div className={styles.main_other_projects}>
             <Link className={styles.url} href={"/projects/"} data-aos="fade-up">All Projects</Link>

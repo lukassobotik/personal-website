@@ -2,6 +2,7 @@
   "2048": {
     "featured": false,
     "id": "2048",
+    "github_id": "2048",
     "year": "2022",
     "name": "2048",
     "technologies": "Java, Java GUI",
@@ -24,6 +25,7 @@
   "bigger-or-smaller": {
     "featured": false,
     "id": "bigger-or-smaller",
+    "github_id": "bigger-or-smaller",
     "year": "2022",
     "name": "Bigger or Smaller",
     "technologies": "Java, Java GUI",
@@ -47,6 +49,7 @@
   "imdb-scraper": {
     "featured": false,
     "id": "imdb-scraper",
+    "github_id": "imdb-scraper",
     "year": "2022",
     "name": "IMDb Scraper",
     "technologies": "Java, JSoup",
@@ -69,6 +72,7 @@
   "MyFavMovies": {
     "featured": true,
     "id": "MyFavMovies",
+    "github_id": "MyFavMovies",
     "year": "2022",
     "logoUrl": "/images/MyFavMovies/MyFavMovies.png",
     "name": "MyFavMovies",
@@ -110,6 +114,7 @@
   "myQuotes": {
     "featured": true,
     "id": "myQuotes",
+    "github_id": "Quotes",
     "year": "2022",
     "logoUrl": "/images/myQuotes/myQuotes.png",
     "name": "myQuotes",
@@ -155,6 +160,7 @@
   "point-adder": {
     "featured": false,
     "id": "point-adder",
+    "github_id": "point-adder",
     "year": "2022",
     "name": "Point Adder",
     "technologies": "Java",
@@ -177,6 +183,7 @@
   "portfolio": {
     "featured": false,
     "id": "portfolio",
+    "github_id": "puckyeu.github.io",
     "year": "2023",
     "name": "Portfolio Website",
     "technologies": "TypeScript, Next.js, React",
@@ -199,6 +206,7 @@
   "Repeaty": {
     "featured": false,
     "id": "Repeaty",
+    "github_id": "habit-manager",
     "year": "2022",
     "logoUrl": "/images/Repeaty/Repeaty.png",
     "name": "Repeaty",
@@ -224,6 +232,7 @@
   "roll-two-of-kind": {
     "featured": false,
     "id": "roll-two-of-kind",
+    "github_id": "roll-two-of-kind",
     "year": "2022",
     "name": "Roll Two of a Kind",
     "technologies": "C#",
@@ -246,6 +255,7 @@
   "TaskLooper": {
     "featured": true,
     "id": "TaskLooper",
+    "github_id": "TaskLooper",
     "year": "2023",
     "logoUrl": "/images/TaskLooper/TaskLooper.png",
     "name": "TaskLooper",
@@ -290,6 +300,7 @@
   "schedule-change-notifier": {
     "featured": true,
     "id": "schedule-change-notifier",
+    "github_id": "schedule-change-notifier",
     "year": "2023",
     "logoUrl": "/images/schedule-change-notifier/logo.png",
     "name": "Schedule Change Notifier",
@@ -321,6 +332,7 @@
   "WidgetSchedule": {
     "featured": true,
     "id": "WidgetSchedule",
+    "github_id": "WidgetSchedule",
     "year": "2023",
     "logoUrl": "/images/WidgetSchedule/WidgetSchedule.png",
     "name": "WidgetSchedule",
@@ -363,6 +375,7 @@
   "word-in-sentence-counter": {
     "featured": false,
     "id": "word-in-sentence-counter",
+    "github_id": "word-in-sentence-counter",
     "year": "2022",
     "name": "Word in a Sentence Counter",
     "technologies": "C#",
