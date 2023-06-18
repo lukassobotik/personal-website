@@ -8,6 +8,7 @@ import useSwr from "swr";
 import {fetcher} from "../index";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import SyntaxHighlighter from 'react-syntax-highlighter';
 
 export interface Project {
     featured: boolean;
@@ -42,6 +43,12 @@ export default function Project() {
     useEffect(() => {
         fetchProjectById(projectId).then((project) => {setProject(project)});
     }, [projectId]);
+
+    const [ style, setStyle ] = useState({})
+    useEffect(() => {
+        import('react-syntax-highlighter/dist/esm/styles/prism/material-dark')
+            .then(mod => setStyle(mod.default));
+    })
 
     function renderScreenshots(urls: Record<string, string>, width: number, height: number) {
         return Object.keys(urls).map((key) => (
@@ -103,10 +110,26 @@ export default function Project() {
                         h2: ({node, ...props}) => {
                             return <h2 {...props} style={{marginTop: "2rem"}} />
                         },
-                        code: ({node, ...props}) => {
-                            if (props?.inline) return <code {...props} className={styles.inline_code} />
-                            else return <code {...props} className={styles.block_code} />
+                        code: ({node, inline, className, children, ...props}) => {
+                            const match = /language-(\w+)/.exec(className || '')
+                            return !inline && match ? (
+                                <SyntaxHighlighter
+                                    {...props}
+                                    style={style}
+                                    customStyle={{ borderRadius: '6px' }}
+                                    language={match[1]}
+                                    PreTag="div">
+                                    {String(children + match[1]).replace(/\n$/, '')}
+                                </SyntaxHighlighter>
+                            ) : (
+                                <code {...props} className={styles.inline_code}>
+                                    {children}
+                                </code>
+                            )
                         },
+                        a: ({node, ...props}) => {
+                            return <a {...props} style={{ color: "#2f81f7" }} />
+                        }
                     }}>{data?.readmeContents ? data?.readmeContents : null}</ReactMarkdown>
                 </div>
             </main>

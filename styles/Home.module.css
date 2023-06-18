@@ -191,17 +191,6 @@
   background-color: hsla(215, 8%, 47%, .4);
   border-radius: 6px;
 }
-.block_code {
-  display: block;
-  padding: 16px;
-  overflow: auto;
-  font-size: 85%;
-  line-height: 1.45;
-  color: #e6edf3;
-  background-color: #161b22;
-  border-radius: 6px;
-  margin: 0.2rem;
-}
 
 /* Mobile */
 @media (max-width: 850px) {
