@@ -8,6 +8,11 @@ import {useEffect} from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+export async function fetcher(url: string) {
+  const res = await fetch(url);
+  return res.json();
+}
+
 export default function Home() {
   function calculateAge() {
     let birthdate = new Date(2007, 4, 10);
@@ -51,7 +56,7 @@ export default function Home() {
 
   useEffect(() => {
     decryptEffect();
-    AOS.init()
+    AOS.init();
   }, []);
 
   return (
@@ -68,7 +73,8 @@ export default function Home() {
               <div className={styles.content_main_short_summary} data-aos="fade-up">I am a {calculateAge()}-year-old student from the Czech Republic.
                 My interest is programming, thus I&#39;m open to any job or internship opportunities.
                 I am now studying Java, and I have minor knowledge of JavaScript and C#.
-                Since December 2021, I&#39;ve been actively programming.</div>
+                Since December 2021, I&#39;ve been actively programming.
+              </div>
               <div className={styles.main_contact}>
                 <div className={styles.main_contact_header} data-aos="fade-up" data-aos-delay="50">Contact</div>
                 <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="100"><Link href={"https://linkedin.com/in/lukassobotik/"} className={styles.url}>LinkedIn</Link></div>

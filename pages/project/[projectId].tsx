@@ -4,6 +4,10 @@ import Head from "next/head";
 import styles from "../../styles/Home.module.css";
 import Navbar from "../../navbar";
 import Image from "next/image";
+import useSwr from "swr";
+import {fetcher} from "../index";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 export interface Project {
     featured: boolean;
@@ -33,6 +37,7 @@ export default function Project() {
     const router = useRouter();
     const projectId = router.query.projectId;
     const [project, setProject] = useState<Project>();
+    const {data} = useSwr('/api/getReadme/' + projectId, fetcher);
 
     useEffect(() => {
         fetchProjectById(projectId).then((project) => {setProject(project)});
@@ -82,6 +87,27 @@ export default function Project() {
                             </div>
                             : null}
                     </div>
+                </div>
+
+                <div className="readme-container" id={"readme_container"}>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} skipHtml={true} components={{
+                        ol: ({node, ...props}) => {
+                            return <ol {...props} style={{marginLeft: "2rem"}} />
+                        },
+                        ul: ({node, ...props}) => {
+                            return <ul {...props} style={{marginLeft: "2rem"}} />
+                        },
+                        h1: ({node, ...props}) => {
+                            return <h1 {...props} style={{marginTop: "2rem"}} />
+                        },
+                        h2: ({node, ...props}) => {
+                            return <h2 {...props} style={{marginTop: "2rem"}} />
+                        },
+                        code: ({node, ...props}) => {
+                            if (props?.inline) return <code {...props} className={styles.inline_code} />
+                            else return <code {...props} className={styles.block_code} />
+                        },
+                    }}>{data?.readmeContents ? data?.readmeContents : null}</ReactMarkdown>
                 </div>
             </main>
         </>
