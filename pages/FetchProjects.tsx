@@ -23,7 +23,6 @@ export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
                 .catch((error) => {
                     console.error(error);
                 });
-            console.log("Logoogoogog", projects);
         });
         AOS.init()
     }, [onlyFeatured]);

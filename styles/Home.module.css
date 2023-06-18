@@ -179,6 +179,11 @@
 .general_section_content_item_text {
   color: #999999;
 }
+.bottom {
+  width: 100%;
+  max-width: var(--max-width);
+  height: 25vh;
+}
 
 /* Mobile */
 @media (max-width: 850px) {

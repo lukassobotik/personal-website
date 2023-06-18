@@ -2,7 +2,6 @@ import styles from '../styles/Home.module.css'
 import Link from "next/link";
 import Head from "next/head";
 import FetchProjects from "./FetchProjects";
-import {useRouter} from 'next/router';
 import Navbar from "../navbar";
 import {useEffect} from "react";
 // @ts-ignore
@@ -112,8 +111,9 @@ export default function Home() {
           <div className={styles.section_header}>Featured Projects</div>
           <FetchProjects onlyFeatured/>
           <div className={styles.main_other_projects}>
-            <Link className={styles.url} href={"/projects/"}>All Projects</Link>
+            <Link className={styles.url} href={"/projects/"} data-aos="fade-up">All Projects</Link>
           </div>
+          <div className={styles.bottom}/>
         </main>
       </>
   )
