@@ -3,11 +3,8 @@ import styles from '../styles/Home.module.css'
 import Link from "next/link";
 import Head from "next/head";
 import FetchProjects from "./FetchProjects";
-import {useEffect, useState} from "react";
 import {useRouter} from 'next/router';
-import {fetchProjectsByFeatured, Project} from "./project/[projectId]";
-
-const inter = Inter({ subsets: ['latin'] })
+import Navbar from "../navbar";
 
 export default function Home() {
   const router = useRouter();
@@ -37,26 +34,7 @@ export default function Home() {
           <title>Lukáš Sobotík</title>
         </Head>
         <main className={styles.main}>
-          <div className={styles.header}>
-            <div className={styles.header_name}>Lukáš Sobotík</div>
-            <div className={styles.header_tabs}>
-              <Link href="/" className={styles.header_tab}>
-                  <h3 className={inter.className}>
-                      Home
-                  </h3>
-              </Link>
-              <Link href="/projects" className={styles.header_tab}>
-                  <h3 className={inter.className}>
-                      Projects
-                  </h3>
-              </Link>
-              <Link href="/contact" className={styles.header_tab}>
-                  <h3 className={inter.className}>
-                      Contact
-                  </h3>
-              </Link>
-            </div>
-          </div>
+          <Navbar/>
           <div className={styles.content}>
             <div className={styles.main_image}>.</div>
             <div className={styles.content_main}>
@@ -112,65 +90,4 @@ export default function Home() {
         </main>
       </>
   )
-
-  // return (
-  //   <>
-  //     <Head>
-  //       <title>Lukáš Sobotík</title>
-  //     </Head>
-  //     <main className={styles.main}>
-  //       <Image src="/images/banner.jpg" alt="" width={2000} height={300} className={styles.banner}/>
-  //       <div className={styles.splitter}>
-  //         <div className={styles.profile_info}>
-  //           <div className={styles.logo_parent}>
-  //             <Image src="/images/logo.jpg" alt="" width={300} height={300} className={styles.logo}/>
-  //           </div>
-  //           <p className={styles.profile_name_main}>Lukáš Sobotík</p>
-  //           <p className={styles.profile_name}>PuckyEU</p>
-  //           <p className={styles.bio}>At Akademie VŠEM, I&#39;m a student majoring in economics.
-  //             My interest is programming, thus I&#39;m open to any job or internship opportunities.
-  //             I am now studying Java, and I have minor knowledge of JavaScript and C#.
-  //             Since December 2021, I&#39;ve been actively learning programming.
-  //             Since then, I have created Android applications and websites.
-  //           </p>
-  //           <p className={styles.bio}>I don&#39;t currently have any professional expertise in software development, but I&#39;d really like to. </p>
-  //           <p className={styles.bio}>Age: {calculateAge()}</p>
-  //           <p className={styles.bio}>Job Status: Looking for a job</p>
-  //           <p className={styles.profile_link}><a href="/resume/junior-java-developer.pdf">Resume</a></p>
-  //           <p className={styles.profile_link}><a href="https://github.com/PuckyEU/puckyeu.github.io">Source Code</a></p>
-  //           <p className={styles.profile_link}><a href="https://www.buymeacoffee.com/puckyeu">BuyMeACoffee</a></p>
-  //           <p className={styles.profile_link}><a href="https://github.com/PuckyEU">Github</a></p>
-  //           <p className={styles.profile_link}><a href="https://www.linkedin.com/in/lukassobotik/">LinkedIn</a></p>
-  //           <p className={styles.profile_link}><a href="https://play.google.com/store/apps/dev?id=6212701078283176937">Google Play</a></p>
-  //           <p className={styles.profile_link}><a href="https://twitter.com/PuckyEU">Twitter</a></p>
-  //           <p className={styles.profile_link}><a href="https://youtube.com/@PuckyEU">YouTube</a></p>
-  //           <p className={styles.profile_link}><a href="https://www.codewars.com/users/PuckyEU">CodeWars</a></p>
-  //         </div>
-  //         {/*Links*/}
-  //         <div className={styles.description}>
-  //           <div className={styles.links}>
-  //               <span className={styles.navbar_item} onClick={homeClick}>
-  //                   <h4>
-  //                       Home
-  //                   </h4>
-  //               </span>
-  //               <span className={styles.navbar_item} onClick={projectsClick}>
-  //                   <h4>
-  //                       Projects
-  //                   </h4>
-  //               </span>
-  //               <span className={styles.navbar_item} onClick={contactClick}>
-  //                   <h4>
-  //                       Contact
-  //                   </h4>
-  //               </span>
-  //           </div>
-  //       </div>
-  //       </div>
-  //       <div className={styles.tab}>
-  //         {tabContent}
-  //       </div>
-  //     </main>
-  //   </>
-  // )
 }

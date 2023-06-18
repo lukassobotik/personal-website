@@ -4,22 +4,23 @@ import React from "react";
 
 export default function Navbar() {
     return (
-        <div className={styles.navbar_parent}>
-            <div className={styles.navbar}>
-                <Link href="/" className={styles.navbar_item}>
-                    <h4>
+        <div className={styles.header}>
+            <div className={styles.header_name}>Lukáš Sobotík</div>
+            <div className={styles.header_tabs}>
+                <Link href="/" className={styles.header_tab}>
+                    <h3>
                         Home
-                    </h4>
+                    </h3>
                 </Link>
-                <Link href="/?tab=projects" className={styles.navbar_item}>
-                    <h4>
+                <Link href="/projects" className={styles.header_tab}>
+                    <h3>
                         Projects
-                    </h4>
+                    </h3>
                 </Link>
-                <Link href="/?tab=contact" className={styles.navbar_item}>
-                    <h4>
+                <Link href="/contact" className={styles.header_tab}>
+                    <h3>
                         Contact
-                    </h4>
+                    </h3>
                 </Link>
             </div>
         </div>
