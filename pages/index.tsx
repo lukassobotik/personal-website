@@ -2,19 +2,15 @@ import {Inter} from '@next/font/google'
 import styles from '../styles/Home.module.css'
 import Link from "next/link";
 import Head from "next/head";
-import Image from "next/image";
 import FetchProjects from "./FetchProjects";
 import {useEffect, useState} from "react";
 import {useRouter} from 'next/router';
 import {fetchProjectsByFeatured, Project} from "./project/[projectId]";
-import ProgressBar from "./ProgressBar";
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   const router = useRouter();
-  const [tabContent, setTabContent] = useState('');
-  const [otherProjects, setOtherProjects] = useState<Project[]>();
 
   function calculateAge() {
     let birthdate = new Date(2007, 4, 10);
@@ -34,220 +30,6 @@ export default function Home() {
 
     return ageInYears;
   }
-  function homeClick() {
-    router.push('/', undefined, {shallow: true}).then(() => {});
-  }
-  function projectsClick() {
-    router.push('/?tab=projects', undefined, { shallow: true }).then(() => {});
-  }
-  function contactClick() {
-    router.push('/?tab=contact', undefined, { shallow: true }).then(() => {});
-  }
-
-  const renderListOfOtherProjects = (projects : Project[] | undefined) => {
-    return projects?.map((project, id) => (
-        <Link href={"/project/" + project.id} className={styles.project} key={id}>
-          <div className={styles.post_text}>
-            <h3 className={inter.className}>
-              {project.name} <span>-&gt;</span>
-            </h3>
-            <h5 className={inter.className}>
-              {project.technologies}
-            </h5>
-            <p className={inter.className}>
-              {project?.shortDescription[1]}
-            </p>
-          </div>
-        </Link>
-    ))
-  }
-
-  const homeTab = (
-      <div className={styles.tabContent}>
-        <div className={styles.post}>
-          <h2>Skills</h2>
-          <div className={styles.skills}>
-            <Link href="https://www.java.com/" className={styles.skill}>
-              <h3 className={inter.className}>
-                Java <span>-&gt;</span>
-              </h3>
-            </Link>
-            <Link href="https://firebase.google.com/" className={styles.skill}>
-              <h3 className={inter.className}>
-                Firebase <span>-&gt;</span>
-              </h3>
-            </Link>
-            <Link href="https://git-scm.com/" className={styles.skill}>
-              <h3 className={inter.className}>
-                Git <span>-&gt;</span>
-              </h3>
-            </Link>
-            <Link href="https://www.markdownguide.org/" className={styles.skill}>
-              <h3 className={inter.className}>
-                Markdown <span>-&gt;</span>
-              </h3>
-            </Link>
-            <Link href="https://www.javascript.com/" className={styles.skill}>
-              <h3 className={inter.className}>
-                JavaScript <span>-&gt;</span>
-              </h3>
-            </Link>
-            <Link href="https://reactjs.org/" className={styles.skill}>
-              <h3 className={inter.className}>
-                React <span>-&gt;</span>
-              </h3>
-            </Link>
-            <Link href="https://www.arduino.cc/" className={styles.skill}>
-              <h3 className={inter.className}>
-                Arduino <span>-&gt;</span>
-              </h3>
-            </Link>
-            <Link href="https://www.raspberrypi.org/" className={styles.skill}>
-              <h3 className={inter.className}>
-                Raspberry Pi <span>-&gt;</span>
-              </h3>
-            </Link>
-            <Link href="https://www.blackmagicdesign.com/products/davinciresolve" className={styles.skill}>
-              <h3 className={inter.className}>
-                Davinci Resolve <span>-&gt;</span>
-              </h3>
-            </Link>
-            <Link href="https://www.adobe.com/products/photoshop.html" className={styles.skill}>
-              <h3 className={inter.className}>
-                Photoshop <span>-&gt;</span>
-              </h3>
-            </Link>
-            <Link href="https://www.blender.org/" className={styles.skill}>
-              <h3 className={inter.className}>
-                Blender <span>-&gt;</span>
-              </h3>
-            </Link>
-            <Link href="https://learn.microsoft.com/en-us/dotnet/csharp/" className={styles.skill}>
-              <h3 className={inter.className}>
-                C# <span>-&gt;</span>
-              </h3>
-            </Link>
-          </div>
-        </div>
-        <div className={styles.post}>
-          <h2>Interests</h2>
-          <div className={styles.skills}>
-            <Link href="https://www.imdb.com/user/ur150332429/" className={styles.skill}>
-              <h3 className={inter.className}>
-                Movies <span>-&gt;</span>
-              </h3>
-            </Link>
-            <Link href="https://www.chess.com/member/puckyeu" className={styles.skill}>
-              <h3 className={inter.className}>
-                Chess <span>-&gt;</span>
-              </h3>
-            </Link>
-            <div className={styles.skill}>
-              <h3 className={inter.className}>
-                Writing
-              </h3>
-            </div>
-            <div className={styles.skill}>
-              <h3 className={inter.className}>
-                Boxing
-              </h3>
-            </div>
-          </div>
-        </div>
-        <div className={styles.post}>
-          <h2>Certificates</h2>
-          <div className={styles.certificates}>
-            <a href="https://www.efset.org/cert/sW8Md2" className={styles.card}>
-              <h2 className={inter.className}>
-                EF Standard English Test <span>-&gt;</span>
-              </h2>
-              <p className={inter.className}>
-                My result is C2 Proficient.
-                The EF Standard English Test is a free online English test that helps you assess your level of English.
-              </p>
-            </a>
-          </div>
-        </div>
-      </div>
-  );
-  const projectsTab = (
-      <div className={styles.tabContent}>
-        <FetchProjects onlyFeatured/>
-        <div className={styles.post}>
-          <h2>
-            Other Projects
-          </h2>
-          <div className={styles.grid}>
-            {renderListOfOtherProjects(otherProjects)}
-          </div>
-        </div>
-      </div>
-  );
-  const contactTab = (
-      <div className={styles.tabContent}>
-        <div className={styles.post}>
-          <h2>
-            Contact Me
-          </h2>
-          <div className={styles.grid}>
-            <a href="https://www.linkedin.com/in/lukassobotik/" className={styles.card}>
-              <h2 className={inter.className}>
-                LinkedIn <span>-&gt;</span>
-              </h2>
-              <p className={inter.className}>
-                Here you can find my LinkedIn profile. You can also contact me there.
-              </p>
-            </a>
-            <a href="mailto:jobs@lukassobotik.dev" className={styles.card}>
-              <h2 className={inter.className}>
-                Email <span>-&gt;</span>
-              </h2>
-              <p className={inter.className}>
-                This is my email address. You can contact me here. I will try to respond as soon as possible.
-              </p>
-            </a>
-
-            <a href="https://www.buymeacoffee.com/puckyeu" className={styles.card}>
-              <h2 className={inter.className}>
-                Buy Me A Coffee <span>-&gt;</span>
-              </h2>
-              <p className={inter.className}>
-                You can buy me a coffee if you want to support me! I would really appreciate it!
-              </p>
-            </a>
-
-            <a href="/resume/junior-java-developer.pdf" className={styles.card}>
-              <h2 className={inter.className}>
-                CV <span>-&gt;</span>
-              </h2>
-              <p className={inter.className}>
-                Here you can find my CV. You can download it here.
-              </p>
-            </a>
-          </div>
-        </div>
-      </div>
-  );
-
-  useEffect(() => {
-    const tab = router.query.tab;
-    if (tab === "projects") {
-      // @ts-ignore
-      setTabContent(projectsTab);
-    } else if (tab === "contact") {
-      // @ts-ignore
-      setTabContent(contactTab);
-    } else {
-      // @ts-ignore
-      setTabContent(homeTab);
-    }
-
-    fetchProjectsByFeatured(false).then(projects => {
-      setOtherProjects(projects);
-      console.log(projects);
-    });
-
-  }, [router.query.tab]);
 
   return (
       <>
@@ -258,19 +40,19 @@ export default function Home() {
           <div className={styles.header}>
             <div className={styles.header_name}>Lukáš Sobotík</div>
             <div className={styles.header_tabs}>
-              <Link href="/?tab=home" className={styles.header_tab}>
+              <Link href="/" className={styles.header_tab}>
                   <h3 className={inter.className}>
-                      Home <span>-&gt;</span>
+                      Home
                   </h3>
               </Link>
-              <Link href="/?tab=projects" className={styles.header_tab}>
+              <Link href="/projects" className={styles.header_tab}>
                   <h3 className={inter.className}>
-                      Projects <span>-&gt;</span>
+                      Projects
                   </h3>
               </Link>
-              <Link href="/?tab=contact" className={styles.header_tab}>
+              <Link href="/contact" className={styles.header_tab}>
                   <h3 className={inter.className}>
-                      Contact <span>-&gt;</span>
+                      Contact
                   </h3>
               </Link>
             </div>
@@ -279,7 +61,7 @@ export default function Home() {
             <div className={styles.main_image}>.</div>
             <div className={styles.content_main}>
               <div className={styles.content_main_line}>Hi, I&apos;m Lukáš</div>
-              <div className={styles.content_main_short_summary}>I am a 16-year-old student from the Czech Republic.
+              <div className={styles.content_main_short_summary}>I am a {calculateAge()}-year-old student from the Czech Republic.
                 My interest is programming, thus I&#39;m open to any job or internship opportunities.
                 I am now studying Java, and I have minor knowledge of JavaScript and C#.
                 Since December 2021, I&#39;ve been actively programming.</div>
@@ -293,37 +75,39 @@ export default function Home() {
               </div>
             </div>
           </div>
+          <div className={styles.general_section}>
+            <div className={styles.general_section_title}>Skills</div>
+            <div className={styles.general_section_content}>
+              <div className={styles.general_section_content_item}>Java</div>
+              <div className={styles.general_section_content_item}>Github</div>
+              <div className={styles.general_section_content_item}>Javascript</div>
+              <div className={styles.general_section_content_item}>Davinci Resolve</div>
+              <div className={styles.general_section_content_item}>Firebase</div>
+              <div className={styles.general_section_content_item}>C#</div>
+            </div>
+          </div>
+          <div className={styles.general_section}>
+            <div className={styles.general_section_title}>Interests</div>
+            <div className={styles.general_section_content}>
+              <div className={styles.general_section_content_item}><Link className={styles.url} href={"https://www.imdb.com/user/ur150332429/"}>Movies</Link></div>
+              <div className={styles.general_section_content_item}><Link className={styles.url} href={"https://www.chess.com/member/puckyeu"}>Chess</Link></div>
+              <div className={styles.general_section_content_item}>Writing</div>
+              <div className={styles.general_section_content_item}>Boxing</div>
+            </div>
+          </div>
+          <div className={styles.general_section}>
+            <div className={styles.general_section_title}>Certificates</div>
+            <div className={styles.general_section_content}>
+              <div className={styles.general_section_content_item}>
+                <div className={styles.general_section_content_item_title}><Link className={styles.url} href={"https://www.efset.org/cert/sW8Md2"}>EF Standard English Test</Link></div>
+                <div className={styles.general_section_content_item_subtitle}>My result is C2 Proficient. The EF Standard English Test is a free online English test that helps you assess your level of English.</div>
+              </div>
+            </div>
+          </div>
           <div className={styles.section_header}>Featured Projects</div>
           <FetchProjects onlyFeatured/>
           <div className={styles.main_other_projects}>
             <Link className={styles.url} href={"/projects/"}>All Projects</Link>
-          </div>
-          <div className={styles.section_header}>Skills</div>
-          <div className={styles.all_skills}>
-            <div className={styles.main_skill}>
-              <div className={styles.main_skill_item}>Java</div>
-              <ProgressBar progress={65} color={"#ffffff"} showPercentage/>
-            </div>
-            <div className={styles.main_skill}>
-              <div className={styles.main_skill_item}>Github</div>
-              <ProgressBar progress={85} color={"#ffffff"} showPercentage/>
-            </div>
-            <div className={styles.main_skill}>
-              <div className={styles.main_skill_item}>Javascript</div>
-              <ProgressBar progress={45} color={"#ffffff"} showPercentage/>
-            </div>
-            <div className={styles.main_skill}>
-              <div className={styles.main_skill_item}>Davinci Resolve</div>
-              <ProgressBar progress={60} color={"#ffffff"} showPercentage/>
-            </div>
-            <div className={styles.main_skill}>
-              <div className={styles.main_skill_item}>Firebase</div>
-              <ProgressBar progress={40} color={"#ffffff"} showPercentage/>
-            </div>
-            <div className={styles.main_skill}>
-              <div className={styles.main_skill_item}>C#</div>
-              <ProgressBar progress={10} color={"#ffffff"} showPercentage/>
-            </div>
           </div>
         </main>
       </>
