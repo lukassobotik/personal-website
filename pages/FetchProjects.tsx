@@ -56,7 +56,7 @@ export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
                                         <div key={key} className={styles.main_featured_project_other_info_text}>{technology}</div>
                                     ))}
                                 </div>
-                                <div className={styles.main_featured_project_other_info_notes}>
+                                <div className={styles.main_featured_project_other_info_links}>
                                     <div className={styles.main_featured_project_other_info_title}>Links</div>
                                     {project?.links && Object.keys(project.links).map((key) => (
                                         <div key={key} className={styles.main_featured_project_other_info_text}><a href={project.links[key].url} className={styles.url}>{project.links[key].name}</a></div>
