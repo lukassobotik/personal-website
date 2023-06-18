@@ -27,10 +27,6 @@ export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
         AOS.init()
     }, [onlyFeatured]);
 
-    function splitTechnologies(technologies: string) {
-        return technologies.split(", ");
-    }
-
     if (!allProjectsFetched) {
         return <div className={styles.loading_projects_text}>Loading projects...</div>;
     }
@@ -74,4 +70,8 @@ export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
             </div>
         </>
     )
+}
+
+export function splitTechnologies(technologies: string) {
+    return technologies.split(", ");
 }

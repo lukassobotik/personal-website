@@ -6,9 +6,9 @@ import Navbar from "../../navbar";
 import Image from "next/image";
 import useSwr from "swr";
 import {fetcher} from "../index";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import SyntaxHighlighter from 'react-syntax-highlighter';
+import MarkdownContainer from "../../MarkdownContainer";
+import Link from "next/link";
+import {splitTechnologies} from "../FetchProjects";
 
 export interface Project {
     featured: boolean;
@@ -38,17 +38,11 @@ export default function Project() {
     const router = useRouter();
     const projectId = router.query.projectId;
     const [project, setProject] = useState<Project>();
-    const {data} = useSwr('/api/getReadme/' + projectId, fetcher);
+    const { data } = useSwr('/api/getReadme/' + projectId, fetcher);
 
     useEffect(() => {
         fetchProjectById(projectId).then((project) => {setProject(project)});
     }, [projectId]);
-
-    const [ style, setStyle ] = useState({})
-    useEffect(() => {
-        import('react-syntax-highlighter/dist/esm/styles/prism/material-dark')
-            .then(mod => setStyle(mod.default));
-    })
 
     function renderScreenshots(urls: Record<string, string>, width: number, height: number) {
         return Object.keys(urls).map((key) => (
@@ -66,9 +60,10 @@ export default function Project() {
                 <div className={styles.project_overview_section}>
                     <div className={styles.overview}>
                         {project?.logoUrl ? <Image src={project.logoUrl} alt="" width={150} height={150} className={styles.project_image}/> : null}
-                        <h1>
-                            {project?.name}
-                        </h1>
+                        <div className={styles.main_featured_project_info_title}>
+                            <div className={styles.main_featured_project_info_title_year}>{project?.year ? project.year : "Year"}</div>
+                            <div className={styles.main_featured_project_info_title_text}>{project?.name}</div>
+                        </div>
                         <h3>
                             {project?.technologies}
                         </h3>
@@ -83,6 +78,10 @@ export default function Project() {
                         <div className={styles.project_link}>
                             {project?.license ? <a href={project.license.url} className={styles.skill}>{project.license.type}</a> : null}
                         </div>
+                        <div className={styles.project_readme}>
+                            <div className={styles.project_readme_title}><span>README.md</span></div>
+                            <MarkdownContainer data={data} />
+                        </div>
                         {project?.hasHorizontalScreenshots ?
                             <div className={styles.horizontal_project_images}>
                                 {renderScreenshots(project.horizontalScreenshots.urls, project.horizontalScreenshots.width, project.horizontalScreenshots.height)}
@@ -94,43 +93,6 @@ export default function Project() {
                             </div>
                             : null}
                     </div>
-                </div>
-
-                <div className="readme-container" id={"readme_container"}>
-                    <ReactMarkdown remarkPlugins={[remarkGfm]} skipHtml={true} components={{
-                        ol: ({node, ...props}) => {
-                            return <ol {...props} style={{marginLeft: "2rem"}} />
-                        },
-                        ul: ({node, ...props}) => {
-                            return <ul {...props} style={{marginLeft: "2rem"}} />
-                        },
-                        h1: ({node, ...props}) => {
-                            return <h1 {...props} style={{marginTop: "2rem"}} />
-                        },
-                        h2: ({node, ...props}) => {
-                            return <h2 {...props} style={{marginTop: "2rem"}} />
-                        },
-                        code: ({node, inline, className, children, ...props}) => {
-                            const match = /language-(\w+)/.exec(className || '')
-                            return !inline && match ? (
-                                <SyntaxHighlighter
-                                    {...props}
-                                    style={style}
-                                    customStyle={{ borderRadius: '6px' }}
-                                    language={match[1]}
-                                    PreTag="div">
-                                    {String(children + match[1]).replace(/\n$/, '')}
-                                </SyntaxHighlighter>
-                            ) : (
-                                <code {...props} className={styles.inline_code}>
-                                    {children}
-                                </code>
-                            )
-                        },
-                        a: ({node, ...props}) => {
-                            return <a {...props} style={{ color: "#2f81f7" }} />
-                        }
-                    }}>{data?.readmeContents ? data?.readmeContents : null}</ReactMarkdown>
                 </div>
             </main>
         </>
