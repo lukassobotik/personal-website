@@ -21,8 +21,6 @@ export default async function getRepo(req: NextApiRequest, res: NextApiResponse)
         if (data.encoding === "base64") {
             // @ts-ignore
             const readmeContents = Buffer.from(data.content, "base64").toString("utf-8");
-            console.log(readmeContents);
-
             const newData = {
                 ...data,
                 readmeContents: readmeContents,

@@ -213,6 +213,33 @@
   margin-right: 2rem;
 }
 
+.project_header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.project_header_github_info {
+  display: flex;
+  align-items: center;
+  background-color: hsla(215, 8%, 47%, .4);
+  border-radius: 2rem;
+  border: 2px solid white;
+}
+.project_header_github_info div {
+  border-right: 2px solid white;
+  padding: .5rem 1rem;
+}
+.project_header_github_info div:last-child {
+  margin-right: 0;
+  border-right: none;
+}
+.project_header_github_info div:first-child {
+  margin-left: 0;
+}
+.project_technologies {
+  margin-top: -.5rem;
+}
+
 /* Mobile */
 @media (max-width: 850px) {
   .main {
@@ -622,6 +649,7 @@
 
 .project_image {
   border-radius: 2rem;
+  margin-bottom: .5rem;
 }
 
 .horizontal_project_images {

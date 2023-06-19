@@ -9,6 +9,9 @@ import {fetcher} from "../index";
 import MarkdownContainer from "../../MarkdownContainer";
 import Link from "next/link";
 import {splitTechnologies} from "../FetchProjects";
+// @ts-ignore
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export interface Project {
     featured: boolean;
@@ -44,10 +47,15 @@ export default function Project() {
 
     useEffect(() => {
         fetchProjectById(projectId).then((project) => {setProject(project)});
+        AOS.init();
     }, [projectId]);
 
-    const { data } = useSwr('/api/getReadme/' + githubId, fetcher);
-    
+    const { data : readmeData } = useSwr('/api/getReadme/' + githubId, fetcher);
+    const { data : repoData } = useSwr('/api/getRepo/' + githubId, fetcher);
+    const { data : commitData } = useSwr('/api/getCommits/' + githubId, fetcher);
+    console.log("repo data: ", repoData);
+    console.log("commit data: ", commitData);
+
     function renderScreenshots(urls: Record<string, string>, width: number, height: number) {
         return Object.keys(urls).map((key) => (
             <Image key={key} src={urls[key]} alt="" width={width} height={height} />
@@ -64,11 +72,18 @@ export default function Project() {
                 <div className={styles.project_overview_section}>
                     <div className={styles.overview}>
                         {project?.logoUrl ? <Image src={project.logoUrl} alt="" width={150} height={150} className={styles.project_image}/> : null}
-                        <div className={styles.main_featured_project_info_title}>
-                            <div className={styles.main_featured_project_info_title_year}>{project?.year ? project.year : "Year"}</div>
-                            <div className={styles.main_featured_project_info_title_text}>{project?.name}</div>
+                        <div className={styles.project_header}>
+                            <div className={styles.main_featured_project_info_title}>
+                                <div className={styles.main_featured_project_info_title_year}>{project?.year ? project.year : "Year"}</div>
+                                <div className={styles.main_featured_project_info_title_text}>{project?.name}</div>
+                            </div>
+                            {commitData ? <div className={styles.project_header_github_info} data-aos="fade-left">
+                                <div><Link className={styles.url} href={"https://github.com/PuckyEU/" + githubId + "/commits"}>{commitData?.length} {commitData?.length == 1 ? "Commit" : "Commits"}</Link></div>
+                                <div><Link className={styles.url} href={"https://github.com/PuckyEU/" + githubId + "/stargazers"}>{repoData?.stargazers_count} {repoData?.stargazers_count == 1 ? "Star" : "Stars"}</Link></div>
+                                <div><Link className={styles.url} href={"https://github.com/PuckyEU/" + githubId + "/forks"}>{repoData?.forks_count} {repoData?.forks_count == 1 ? "Fork" : "Forks"}</Link></div>
+                            </div> : null}
                         </div>
-                        <h3>
+                        <h3 className={styles.project_technologies}>
                             {project?.technologies}
                         </h3>
                         {project?.description && Object.keys(project.description).map((key) => (
@@ -84,7 +99,7 @@ export default function Project() {
                         </div>
                         <div className={styles.project_readme}>
                             <div className={styles.project_readme_title}><span>README.md</span></div>
-                            <MarkdownContainer data={data} />
+                            <MarkdownContainer data={readmeData} />
                         </div>
                         {project?.hasHorizontalScreenshots ?
                             <div className={styles.horizontal_project_images}>
