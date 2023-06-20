@@ -79,6 +79,7 @@ export default function Project() {
                             </div>
                             {commitData ? <div className={styles.project_header_github_info} data-aos="fade-left">
                                 <div><Link className={styles.url} href={"https://github.com/PuckyEU/" + githubId + "/commits"}>{commitData?.length} {commitData?.length == 1 ? "Commit" : "Commits"}</Link></div>
+                                <div><Link className={styles.url} href={"https://github.com/PuckyEU/" + githubId + "/issues"}>{repoData?.open_issues} {repoData?.open_issues == 1 ? "Issue" : "Issues"}</Link></div>
                                 <div><Link className={styles.url} href={"https://github.com/PuckyEU/" + githubId + "/stargazers"}>{repoData?.stargazers_count} {repoData?.stargazers_count == 1 ? "Star" : "Stars"}</Link></div>
                                 <div><Link className={styles.url} href={"https://github.com/PuckyEU/" + githubId + "/forks"}>{repoData?.forks_count} {repoData?.forks_count == 1 ? "Fork" : "Forks"}</Link></div>
                             </div> : null}
