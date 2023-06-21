@@ -86,7 +86,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.general_section} data-aos="fade-up" data-aos-duration="1000">
+          <div className={styles.general_section} data-aos="fade-up">
             <div className={styles.general_section_title}>Skills</div>
             <div className={styles.general_section_content}>
               <div className={styles.general_section_content_item}>Java</div>
@@ -97,7 +97,7 @@ export default function Home() {
               <div className={styles.general_section_content_item}>C#</div>
             </div>
           </div>
-          <div className={styles.general_section} data-aos="fade-up" data-aos-duration="1000">
+          <div className={styles.general_section} data-aos="fade-up">
             <div className={styles.general_section_title}>Interests</div>
             <div className={styles.general_section_content}>
               <div className={styles.general_section_content_item}><Link className={styles.url} href={"https://www.imdb.com/user/ur150332429/"}>Movies</Link></div>
@@ -106,7 +106,7 @@ export default function Home() {
               <div className={styles.general_section_content_item}>Boxing</div>
             </div>
           </div>
-          <div className={styles.general_section} data-aos="fade-up" data-aos-duration="1000">
+          <div className={styles.general_section} data-aos="fade-up">
             <div className={styles.general_section_title}>Certificates</div>
             <div className={styles.general_section_content}>
               <div className={styles.general_section_content_item}>
