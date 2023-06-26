@@ -73,7 +73,7 @@ export default function Home() {
               <div className={styles.content_main_line} id={"content_main_line"} onMouseEnter={decryptEffect}>Hi, I&apos;m Lukáš</div>
               <div className={styles.content_main_short_summary} data-aos="fade-up">I am a {calculateAge()}-year-old student from the Czech Republic.
                 My interest is programming, thus I&#39;m open to any job or internship opportunities.
-                I am now studying Java, and I have minor knowledge of JavaScript and C#.
+                I am now learning Java, and I have minor knowledge of JavaScript and C#.
                 Since December 2021, I&#39;ve been actively programming.
               </div>
               <div className={styles.main_contact}>
