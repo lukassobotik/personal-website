@@ -27,6 +27,9 @@ export default function MarkdownContainer({data}: {data: any}) {
                     h2: ({node, ...props}) => {
                         return <h2 {...props} style={{marginTop: "2rem"}} />
                     },
+                    h3: ({node, ...props}) => {
+                        return <h2 {...props} style={{marginTop: "2rem"}} />
+                    },
                     code: ({node, inline, className, children, ...props}) => {
                         const match = /language-(\w+)/.exec(className || '')
                         return !inline && match ? (
