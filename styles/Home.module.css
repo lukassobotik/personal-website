@@ -96,6 +96,12 @@
 .url:hover {
   text-decoration: underline;
 }
+.contact_header {
+  font-weight: bold;
+  font-size: 4vh;
+  margin-bottom: 1vh;
+  margin-top: 4rem;
+}
 
 .section_header {
   margin-top: 10vh;
