@@ -136,6 +136,10 @@
       "2": {
         "name": "Source Code",
         "url": "https://github.com/PuckyEU/Quotes"
+      },
+      "3": {
+        "name": "Privacy Policy",
+        "url": "https://github.com/PuckyEU/Quotes/blob/master/PrivacyPolicy.md"
       }
     },
     "hasHorizontalScreenshots": false,
@@ -191,7 +195,7 @@
       "1": "Source code of this website."
     },
     "description": {
-      "1": "This website is built using TypeScript, Next.js and React."
+      "1": "Source code of this website. It's built using TypeScript, Next.js and React."
     },
     "links": {
       "1": {
