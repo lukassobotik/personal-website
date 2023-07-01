@@ -91,9 +91,13 @@ export default function Home() {
             <div className={styles.general_section_content}>
               <div className={styles.general_section_content_item}>Java</div>
               <div className={styles.general_section_content_item}>Github</div>
-              <div className={styles.general_section_content_item}>Javascript</div>
+              <div className={styles.general_section_content_item}>JavaScript</div>
+              <div className={styles.general_section_content_item}>TypeScript</div>
               <div className={styles.general_section_content_item}>Davinci Resolve</div>
               <div className={styles.general_section_content_item}>Firebase</div>
+              <div className={styles.general_section_content_item}>Gimp</div>
+              <div className={styles.general_section_content_item}>Photoshop</div>
+              <div className={styles.general_section_content_item}>Blender</div>
               <div className={styles.general_section_content_item}>C#</div>
             </div>
           </div>
