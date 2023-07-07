@@ -1,4 +1,27 @@
 {
+  "SightlessKnight": {
+    "featured": true,
+    "id": "SightlessKnight",
+    "github_id": "SightlessKnight",
+    "year": "2023",
+    "logoUrl": "",
+    "name": "SightlessKnight",
+    "technologies": "Java, LibGDX",
+    "shortDescription": {
+      "1": "Chess application that helps people learn chess blindfolded."
+    },
+    "description": {
+      "1": "Chess application that helps people learn chess blindfolded."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/SightlessKnight"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
+  },
   "2048": {
     "featured": false,
     "id": "2048",
