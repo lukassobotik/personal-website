@@ -22,6 +22,169 @@
     "hasHorizontalScreenshots": false,
     "hasVerticalScreenshots": false
   },
+
+  "myQuotes": {
+    "featured": true,
+    "id": "myQuotes",
+    "github_id": "Quotes",
+    "year": "2022",
+    "logoUrl": "/images/myQuotes/myQuotes.png",
+    "name": "myQuotes",
+    "technologies": "Java, Android, Firebase",
+    "shortDescription": {
+      "1": "myQuotes is an Android application where you can Share, Discover and Save New Quotes!",
+      "2": "This was my first completed Android application that I published on the Google Play Store."
+    },
+    "description": {
+      "1": "myQuotes is an Android application where you can Share, Discover and Save New Quotes! The application is built using Java and Firebase.",
+      "2": "This was my first completed Android application that I published on the Google Play Store.",
+      "3": "You can create an account and share your own quotes or you can discover new quotes from other users. You can also save quotes to your favorites. You can also search for quotes by author or by quote. You can also change your background color behind the quote. Users can delete their own account and all of their quotes and data."
+    },
+    "links": {
+      "1": {
+        "name": "Try it Out",
+        "url": "https://play.google.com/store/apps/details?id=com.sforge.quotes"
+      },
+      "2": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/Quotes"
+      },
+      "3": {
+        "name": "Privacy Policy",
+        "url": "https://github.com/PuckyEU/Quotes/blob/master/PrivacyPolicy.md"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": true,
+    "verticalScreenshots": {
+      "width": 270,
+      "height": 530,
+      "urls": {
+        "1": "/images/myQuotes/vid-1.gif",
+        "2": "/images/myQuotes/sc-1.jpg",
+        "3": "/images/myQuotes/sc-2.jpg",
+        "4": "/images/myQuotes/sc-3.jpg",
+        "5": "/images/myQuotes/sc-4.jpg"
+      }
+    },
+    "license": {
+      "type": "MIT License",
+      "url": "https://github.com/PuckyEU/Quotes/blob/master/LICENSE"
+    }
+  },
+
+  "WidgetSchedule": {
+    "featured": true,
+    "id": "WidgetSchedule",
+    "github_id": "WidgetSchedule",
+    "year": "2023",
+    "logoUrl": "/images/WidgetSchedule/WidgetSchedule.png",
+    "name": "WidgetSchedule",
+    "technologies": "Java, Android, JSoup, SQLite",
+    "shortDescription": {
+      "1": "Turn online schedules into stunning widgets with ease!",
+      "2": "The application enables schedules to be turned into an Android widget from a URL, which can be effortlessly accessed from the device's home screen."
+    },
+    "description": {
+      "1": "Turn online schedules into stunning widgets with ease!",
+      "2": "WidgetSchedule is a useful and free Android app for managing your schedules. It is open source and respects your privacy by storing all data locally, assuring the security of your information."
+    },
+    "links": {
+      "1": {
+        "name": "Try it Out",
+        "url": "https://play.google.com/store/apps/details?id=lukas.sobotik.widgetschedule"
+      },
+      "2": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/WidgetSchedule"
+      },
+      "3": {
+        "name": "Privacy Policy",
+        "url": "https://github.com/PuckyEU/WidgetSchedule/blob/master/PrivacyPolicy.md"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false,
+    "license": {
+      "type": "MIT License",
+      "url": "https://github.com/PuckyEU/WidgetSchedule/blob/master/LICENSE"
+    }
+  },
+
+  "MyFavMovies": {
+    "featured": true,
+    "id": "MyFavMovies",
+    "github_id": "MyFavMovies",
+    "year": "2022",
+    "logoUrl": "/images/MyFavMovies/MyFavMovies.png",
+    "name": "MyFavMovies",
+    "technologies": "JavaScript, Firebase, React, TMDb API",
+    "shortDescription": {
+      "1": "MyFavMovies is a website made for finding movies and adding them to your favorites.",
+      "2": "It uses the The Movie Database API to fetch the movies."
+    },
+    "description": {
+      "1": "MyFavMovies is a web application that allows you to search for movies and add them to your favorites.",
+      "2": "It uses the The Movie Database API to fetch the movies.",
+      "3": "You can create an account and login to save your favorite movies or save them to collections that you created. You can also set your language and region preferences. The application will use them to fetch the movies in your language and region. You can set a profile picture and a username. The application is fully responsive and works on mobile devices. This application was my first project using React and developing a web application in general."
+    },
+    "links": {
+      "1": {
+        "name": "Try it Out",
+        "url": "https://lukassobotik.dev/MyFavMovies/"
+      },
+      "2": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/MyFavMovies"
+      }
+    },
+    "hasHorizontalScreenshots": true,
+    "horizontalScreenshots": {
+      "width": 1000,
+      "height": 540,
+      "urls": {
+        "1": "/images/MyFavMovies/sc-1.png",
+        "2": "/images/MyFavMovies/sc-2.png",
+        "3": "/images/MyFavMovies/sc-3.png",
+        "4": "/images/MyFavMovies/sc-4.png",
+        "5": "/images/MyFavMovies/sc-5.png"
+      }
+    },
+    "hasVerticalScreenshots": false
+  },
+
+  "schedule-change-notifier": {
+    "featured": true,
+    "id": "schedule-change-notifier",
+    "github_id": "schedule-change-notifier",
+    "year": "2023",
+    "logoUrl": "/images/schedule-change-notifier/logo.png",
+    "name": "Schedule Change Notifier",
+    "technologies": "Java, JavaMail, JSoup, Raspberry Pi, Cron, Debian",
+    "shortDescription": {
+      "1": "Schedule Change Notifier is an app that notifies you about changes in the schedule of your classes.",
+      "2": "The application is built using Java, JavaMail and Jsoup. It is deployed on a Raspberry Pi and runs on a Cron job."
+    },
+    "description": {
+      "1": "Schedule Change Notifier is a Java application that notifies you about changes in the schedule of your classes. The application is built using Java, JavaMail and Jsoup. It is deployed on a Raspberry Pi and runs on a Cron job.",
+      "2": "I basically made this application for myself, because I was tired of checking the schedule of my classes on the school website every day. I wanted to be notified about changes in the schedule of my classes. But decided to make it public, so that other students can use it as well.",
+      "3": "The application is running a Cron job that runs every 1 hour. The Cron job checks the schedule of the classes on the school website. If there is a change in the schedule, the application sends you an email with the new schedule. On the Raspberry Pi, the application logs all the changes in the schedule, every run of the application and the emails that were sent. The application also logs the errors that occurred during the execution of the application.",
+      "4": "I made my own logging system, because it'd be a waste of resources to use a logging library for such a small application."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/PuckyEU/schedule-change-notifier"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false,
+    "license": {
+      "type": "MIT License",
+      "url": "https://github.com/PuckyEU/schedule-change-notifier/blob/master/LICENSE"
+    }
+  },
+
   "2048": {
     "featured": false,
     "id": "2048",
@@ -90,98 +253,6 @@
     },
     "hasHorizontalScreenshots": false,
     "hasVerticalScreenshots": false
-  },
-
-  "MyFavMovies": {
-    "featured": true,
-    "id": "MyFavMovies",
-    "github_id": "MyFavMovies",
-    "year": "2022",
-    "logoUrl": "/images/MyFavMovies/MyFavMovies.png",
-    "name": "MyFavMovies",
-    "technologies": "JavaScript, Firebase, React, TMDb API",
-    "shortDescription": {
-      "1": "MyFavMovies is a website made for finding movies and adding them to your favorites.",
-      "2": "It uses the The Movie Database API to fetch the movies."
-    },
-    "description": {
-      "1": "MyFavMovies is a web application that allows you to search for movies and add them to your favorites.",
-      "2": "It uses the The Movie Database API to fetch the movies.",
-      "3": "You can create an account and login to save your favorite movies or save them to collections that you created. You can also set your language and region preferences. The application will use them to fetch the movies in your language and region. You can set a profile picture and a username. The application is fully responsive and works on mobile devices. This application was my first project using React and developing a web application in general."
-    },
-    "links": {
-      "1": {
-        "name": "Try it Out",
-        "url": "https://lukassobotik.dev/MyFavMovies/"
-      },
-      "2": {
-        "name": "Source Code",
-        "url": "https://github.com/PuckyEU/MyFavMovies"
-      }
-    },
-    "hasHorizontalScreenshots": true,
-    "horizontalScreenshots": {
-      "width": 1000,
-      "height": 540,
-      "urls": {
-        "1": "/images/MyFavMovies/sc-1.png",
-        "2": "/images/MyFavMovies/sc-2.png",
-        "3": "/images/MyFavMovies/sc-3.png",
-        "4": "/images/MyFavMovies/sc-4.png",
-        "5": "/images/MyFavMovies/sc-5.png"
-      }
-    },
-    "hasVerticalScreenshots": false
-  },
-
-  "myQuotes": {
-    "featured": true,
-    "id": "myQuotes",
-    "github_id": "Quotes",
-    "year": "2022",
-    "logoUrl": "/images/myQuotes/myQuotes.png",
-    "name": "myQuotes",
-    "technologies": "Java, Android, Firebase",
-    "shortDescription": {
-      "1": "myQuotes is an Android application where you can Share, Discover and Save New Quotes!",
-      "2": "This was my first completed Android application that I published on the Google Play Store."
-    },
-    "description": {
-      "1": "myQuotes is an Android application where you can Share, Discover and Save New Quotes! The application is built using Java and Firebase.",
-      "2": "This was my first completed Android application that I published on the Google Play Store.",
-      "3": "You can create an account and share your own quotes or you can discover new quotes from other users. You can also save quotes to your favorites. You can also search for quotes by author or by quote. You can also change your background color behind the quote. Users can delete their own account and all of their quotes and data."
-    },
-    "links": {
-      "1": {
-        "name": "Try it Out",
-        "url": "https://play.google.com/store/apps/details?id=com.sforge.quotes"
-      },
-      "2": {
-        "name": "Source Code",
-        "url": "https://github.com/PuckyEU/Quotes"
-      },
-      "3": {
-        "name": "Privacy Policy",
-        "url": "https://github.com/PuckyEU/Quotes/blob/master/PrivacyPolicy.md"
-      }
-    },
-    "hasHorizontalScreenshots": false,
-    "hasVerticalScreenshots": true,
-    "verticalScreenshots": {
-      "width": 270,
-      "height": 530,
-      "urls": {
-        "1": "/images/myQuotes/vid-1.gif",
-        "2": "/images/myQuotes/sc-1.jpg",
-        "3": "/images/myQuotes/sc-2.jpg",
-        "4": "/images/myQuotes/sc-3.jpg",
-        "5": "/images/myQuotes/sc-4.jpg"
-      }
-    },
-    "license": {
-      "type": "MIT License",
-      "url": "https://github.com/PuckyEU/Quotes/blob/master/LICENSE"
-    }
   },
 
   "point-adder": {
@@ -321,76 +392,6 @@
     "license": {
       "type": "MIT License",
       "url": "https://github.com/PuckyEU/TaskLooper/blob/master/LICENSE"
-    }
-  },
-
-  "schedule-change-notifier": {
-    "featured": true,
-    "id": "schedule-change-notifier",
-    "github_id": "schedule-change-notifier",
-    "year": "2023",
-    "logoUrl": "/images/schedule-change-notifier/logo.png",
-    "name": "Schedule Change Notifier",
-    "technologies": "Java, JavaMail, JSoup, Raspberry Pi, Cron, Debian",
-    "shortDescription": {
-      "1": "Schedule Change Notifier is an app that notifies you about changes in the schedule of your classes.",
-      "2": "The application is built using Java, JavaMail and Jsoup. It is deployed on a Raspberry Pi and runs on a Cron job."
-    },
-    "description": {
-      "1": "Schedule Change Notifier is a Java application that notifies you about changes in the schedule of your classes. The application is built using Java, JavaMail and Jsoup. It is deployed on a Raspberry Pi and runs on a Cron job.",
-      "2": "I basically made this application for myself, because I was tired of checking the schedule of my classes on the school website every day. I wanted to be notified about changes in the schedule of my classes. But decided to make it public, so that other students can use it as well.",
-      "3": "The application is running a Cron job that runs every 1 hour. The Cron job checks the schedule of the classes on the school website. If there is a change in the schedule, the application sends you an email with the new schedule. On the Raspberry Pi, the application logs all the changes in the schedule, every run of the application and the emails that were sent. The application also logs the errors that occurred during the execution of the application.",
-      "4": "I made my own logging system, because it'd be a waste of resources to use a logging library for such a small application."
-    },
-    "links": {
-      "1": {
-        "name": "Source Code",
-        "url": "https://github.com/PuckyEU/schedule-change-notifier"
-      }
-    },
-    "hasHorizontalScreenshots": false,
-    "hasVerticalScreenshots": false,
-    "license": {
-      "type": "MIT License",
-      "url": "https://github.com/PuckyEU/schedule-change-notifier/blob/master/LICENSE"
-    }
-  },
-
-  "WidgetSchedule": {
-    "featured": true,
-    "id": "WidgetSchedule",
-    "github_id": "WidgetSchedule",
-    "year": "2023",
-    "logoUrl": "/images/WidgetSchedule/WidgetSchedule.png",
-    "name": "WidgetSchedule",
-    "technologies": "Java, Android, JSoup, SQLite",
-    "shortDescription": {
-      "1": "Turn online schedules into stunning widgets with ease!",
-      "2": "The application enables schedules to be turned into an Android widget from a URL, which can be effortlessly accessed from the device's home screen."
-    },
-    "description": {
-      "1": "Turn online schedules into stunning widgets with ease!",
-      "2": "WidgetSchedule is a useful and free Android app for managing your schedules. It is open source and respects your privacy by storing all data locally, assuring the security of your information."
-      },
-    "links": {
-      "1": {
-        "name": "Try it Out",
-        "url": "https://play.google.com/store/apps/details?id=lukas.sobotik.widgetschedule"
-      },
-      "2": {
-        "name": "Source Code",
-        "url": "https://github.com/PuckyEU/WidgetSchedule"
-      },
-      "3": {
-        "name": "Privacy Policy",
-        "url": "https://github.com/PuckyEU/WidgetSchedule/blob/master/PrivacyPolicy.md"
-      }
-    },
-    "hasHorizontalScreenshots": false,
-    "hasVerticalScreenshots": false,
-    "license": {
-      "type": "MIT License",
-      "url": "https://github.com/PuckyEU/WidgetSchedule/blob/master/LICENSE"
     }
   },
 
