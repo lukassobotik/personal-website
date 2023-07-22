@@ -22,6 +22,7 @@ export default function Contact() {
                 <div className={styles.main_contact_item}><Link className={styles.url} href="https://twitter.com/PuckyEU">Twitter</Link></div>
                 <div className={styles.main_contact_item}><Link className={styles.url} href="https://youtube.com/@PuckyEU">YouTube</Link></div>
                 <div className={styles.main_contact_item}><Link className={styles.url} href="https://www.codewars.com/users/PuckyEU">CodeWars</Link></div>
+                <div className={styles.main_contact_item}><Link className={styles.url} href="https://leetcode.com/lukassobotik/">LeetCode</Link></div>
             </main>
         </>
     )
