@@ -6,7 +6,7 @@
     "year": "2023",
     "logoUrl": "",
     "name": "SightlessKnight",
-    "technologies": "Java, LibGDX",
+    "technologies": "Java, Vaadin",
     "shortDescription": {
       "1": "Chess application that helps people learn chess blindfolded."
     },
@@ -16,7 +16,7 @@
     "links": {
       "1": {
         "name": "Source Code",
-        "url": "https://github.com/PuckyEU/SightlessKnight"
+        "url": "https://github.com/lukassobotik/SightlessKnight"
       }
     },
     "hasHorizontalScreenshots": false,
@@ -47,11 +47,11 @@
       },
       "2": {
         "name": "Source Code",
-        "url": "https://github.com/PuckyEU/Quotes"
+        "url": "https://github.com/lukassobotik/Quotes"
       },
       "3": {
         "name": "Privacy Policy",
-        "url": "https://github.com/PuckyEU/Quotes/blob/master/PrivacyPolicy.md"
+        "url": "https://github.com/lukassobotik/Quotes/blob/master/PrivacyPolicy.md"
       }
     },
     "hasHorizontalScreenshots": false,
@@ -69,7 +69,7 @@
     },
     "license": {
       "type": "MIT License",
-      "url": "https://github.com/PuckyEU/Quotes/blob/master/LICENSE"
+      "url": "https://github.com/lukassobotik/Quotes/blob/master/LICENSE"
     }
   },
 
@@ -96,18 +96,18 @@
       },
       "2": {
         "name": "Source Code",
-        "url": "https://github.com/PuckyEU/WidgetSchedule"
+        "url": "https://github.com/lukassobotik/WidgetSchedule"
       },
       "3": {
         "name": "Privacy Policy",
-        "url": "https://github.com/PuckyEU/WidgetSchedule/blob/master/PrivacyPolicy.md"
+        "url": "https://github.com/lukassobotik/WidgetSchedule/blob/master/PrivacyPolicy.md"
       }
     },
     "hasHorizontalScreenshots": false,
     "hasVerticalScreenshots": false,
     "license": {
       "type": "MIT License",
-      "url": "https://github.com/PuckyEU/WidgetSchedule/blob/master/LICENSE"
+      "url": "https://github.com/lukassobotik/WidgetSchedule/blob/master/LICENSE"
     }
   },
 
@@ -131,11 +131,11 @@
     "links": {
       "1": {
         "name": "Try it Out",
-        "url": "https://lukassobotik.dev/MyFavMovies/"
+        "url": "https://myfavmovies.lukassobotik.dev/"
       },
       "2": {
         "name": "Source Code",
-        "url": "https://github.com/PuckyEU/MyFavMovies"
+        "url": "https://github.com/lukassobotik/MyFavMovies"
       }
     },
     "hasHorizontalScreenshots": true,
@@ -174,14 +174,14 @@
     "links": {
       "1": {
         "name": "Source Code",
-        "url": "https://github.com/PuckyEU/schedule-change-notifier"
+        "url": "https://github.com/lukassobotik/schedule-change-notifier"
       }
     },
     "hasHorizontalScreenshots": false,
     "hasVerticalScreenshots": false,
     "license": {
       "type": "MIT License",
-      "url": "https://github.com/PuckyEU/schedule-change-notifier/blob/master/LICENSE"
+      "url": "https://github.com/lukassobotik/schedule-change-notifier/blob/master/LICENSE"
     }
   },
 
@@ -201,7 +201,7 @@
     "links": {
       "1": {
         "name": "Source Code",
-        "url": "https://github.com/PuckyEU/2048"
+        "url": "https://github.com/lukassobotik/2048"
       }
     },
     "hasHorizontalScreenshots": false,
@@ -225,7 +225,7 @@
     "links": {
       "1": {
         "name": "Source Code",
-        "url": "https://github.com/PuckyEU/bigger-or-smaller"
+        "url": "https://github.com/lukassobotik/bigger-or-smaller"
       }
     },
     "hasHorizontalScreenshots": false,
@@ -248,7 +248,7 @@
     "links": {
       "1": {
         "name": "Source Code",
-        "url": "https://github.com/PuckyEU/imdb-scraper"
+        "url": "https://github.com/lukassobotik/imdb-scraper"
       }
     },
     "hasHorizontalScreenshots": false,
@@ -271,7 +271,7 @@
     "links": {
       "1": {
         "name": "Source Code",
-        "url": "https://github.com/PuckyEU/point-adder"
+        "url": "https://github.com/lukassobotik/point-adder"
       }
     },
     "hasHorizontalScreenshots": false,
@@ -281,7 +281,7 @@
   "portfolio": {
     "featured": false,
     "id": "portfolio",
-    "github_id": "puckyeu.github.io",
+    "github_id": "personal-website",
     "year": "2023",
     "name": "Portfolio Website",
     "technologies": "TypeScript, Next.js, React",
@@ -294,7 +294,7 @@
     "links": {
       "1": {
         "name": "Source Code",
-        "url": "https://github.com/PuckyEU/puckyeu.github.io"
+        "url": "https://github.com/lukassobotik/personal-website"
       }
     },
     "hasHorizontalScreenshots": false,
@@ -320,7 +320,7 @@
     "links": {
       "1": {
         "name": "Source Code",
-        "url": "https://github.com/PuckyEU/habit-manager"
+        "url": "https://github.com/lukassobotik/habit-manager"
       }
     },
     "hasHorizontalScreenshots": false,
@@ -343,7 +343,7 @@
     "links": {
       "1": {
         "name": "Source Code",
-        "url": "https://github.com/PuckyEU/roll-two-of-kind"
+        "url": "https://github.com/lukassobotik/roll-two-of-kind"
       }
     },
     "hasHorizontalScreenshots": false,
@@ -375,7 +375,7 @@
       },
       "2": {
         "name": "Source Code",
-        "url": "https://github.com/PuckyEU/TaskLooper"
+        "url": "https://github.com/lukassobotik/TaskLooper"
       }
     },
     "hasHorizontalScreenshots": false,
@@ -391,7 +391,7 @@
     },
     "license": {
       "type": "MIT License",
-      "url": "https://github.com/PuckyEU/TaskLooper/blob/master/LICENSE"
+      "url": "https://github.com/lukassobotik/TaskLooper/blob/master/LICENSE"
     }
   },
 
@@ -411,7 +411,7 @@
     "links": {
       "1": {
         "name": "Source Code",
-        "url": "https://github.com/PuckyEU/word-in-sentence-counter"
+        "url": "https://github.com/lukassobotik/word-in-sentence-counter"
       }
     },
     "hasHorizontalScreenshots": false,
