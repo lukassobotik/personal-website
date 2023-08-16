@@ -12,7 +12,7 @@ export default async function getRepo(req: NextApiRequest, res: NextApiResponse)
 
     try {
         const { data } = await octokit.repos.getContent({
-            owner: "PuckyEU",
+            owner: "lukassobotik",
             repo: `${repoId}`,
             path: "README.md",
         });
