@@ -14,7 +14,7 @@ export default function Contact() {
                 <h1 className={styles.contact_header}>Contact</h1>
                 <div className={styles.main_contact_item}><Link className={styles.url} href="/resume/junior-java-developer.pdf">Resume</Link></div>
                 <div className={styles.main_contact_item}><Link className={styles.url} href="https://github.com/lukassobotik/personal-website">Source Code</Link></div>
-                <div className={styles.main_contact_item}><Link className={styles.url} href="https://www.buymeacoffee.com/lukassobotik">BuyMeACoffee</Link></div>
+                <div className={styles.main_contact_item}><Link className={styles.url} href="https://www.buymeacoffee.com/lukassobotik">Buy me a coffee</Link></div>
                 <div className={styles.main_contact_item}><Link className={styles.url} href="https://github.com/lukassobotik">Github</Link></div>
                 <div className={styles.main_contact_item}><Link className={styles.url} href="https://www.linkedin.com/in/lukassobotik/">LinkedIn</Link></div>
                 <div className={styles.main_contact_item}><Link className={styles.url} href="https://www.freelancer.com/u/lukassobotik">Freelancer</Link></div>
