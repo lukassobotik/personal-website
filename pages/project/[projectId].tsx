@@ -87,16 +87,15 @@ export default function Project() {
                         <h3 className={styles.project_technologies}>
                             {project?.technologies}
                         </h3>
-                        {project?.description && Object.keys(project.description).map((key) => (
-                            <p key={key}>{project.description[key]}</p>
-                        ))}
+                        <div className={styles.project_paragraph_parent}>
+                            {project?.description && Object.keys(project.description).map((key) => (
+                                <p key={key}>{project.description[key]}</p>
+                            ))}
+                        </div>
                         <div className={styles.project_link}>
                             {project?.links && Object.keys(project.links).map((key) => (
                                 <a key={key} href={project.links[key].url} className={styles.skill}>{project.links[key].name}</a>
                             ))}
-                        </div>
-                        <div className={styles.project_link}>
-                            {project?.license ? <a href={project.license.url} className={styles.skill}>{project.license.type}</a> : null}
                         </div>
                         <div className={styles.project_readme}>
                             <div className={styles.project_readme_title}><span>README.md</span></div>

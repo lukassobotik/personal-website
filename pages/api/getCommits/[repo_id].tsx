@@ -13,7 +13,7 @@ export default async function getRepo(req: NextApiRequest, res: NextApiResponse)
     const commits: any[] = [];
     let page = 1;
     let response = await octokit.repos.listCommits({
-        owner: "PuckyEU",
+        owner: "lukassobotik",
         repo: `${repoId}`,
         per_page: 100,
         page: page,
@@ -24,7 +24,7 @@ export default async function getRepo(req: NextApiRequest, res: NextApiResponse)
         commits.push(...response.data);
         page++;
         response = await octokit.repos.listCommits({
-            owner: "PuckyEU",
+            owner: "lukassobotik",
             repo: `${repoId}`,
             per_page: 100,
             page: page,

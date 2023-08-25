@@ -235,7 +235,7 @@
 .project_header_github_info {
   display: flex;
   align-items: center;
-  background-color: hsla(215, 8%, 47%, .4);
+  background-color: hsla(0, 0%, 0%, 0.32);
   border-radius: 2rem;
   border: 2px solid white;
 }
@@ -251,7 +251,10 @@
   margin-left: 0;
 }
 .project_technologies {
-  margin-top: -.5rem;
+  margin-top: -.25rem;
+}
+.project_paragraph_parent {
+  margin-top: .5rem;
 }
 
 /* Mobile */
