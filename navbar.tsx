@@ -5,7 +5,7 @@ import React from "react";
 export default function Navbar() {
     return (
         <div className={styles.header}>
-            <div className={styles.header_name}>Lukáš Sobotík</div>
+            <Link href="/" className={styles.header_name}>Lukáš Sobotík</Link>
             <div className={styles.header_tabs}>
                 <Link href="/" className={styles.header_tab}>
                     <h3>
