@@ -8,6 +8,7 @@ import Image from "next/image";
 // @ts-ignore
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import LazyLoadingImage from "../LazyLoadingImage";
 
 export async function fetcher(url: string) {
   const res = await fetch(url);
@@ -68,7 +69,7 @@ export default function Home() {
         <main className={styles.main}>
           <Navbar/>
           <div className={styles.content}>
-            <div className={styles.main_image} data-aos="fade-right"><Image alt="." src={"/images/banner.jpg"} width={800} height={1200}/></div>
+            <div className={styles.main_image} data-aos="fade-right"><LazyLoadingImage alt="." src={"/images/banner.jpg"} width={800} height={1200}/></div>
             <div className={styles.content_main}>
               <div className={styles.content_main_line} id={"content_main_line"} onMouseEnter={decryptEffect}>Hi, I&apos;m Lukáš</div>
               <div className={styles.content_main_short_summary} data-aos="fade-up">I am a {calculateAge()}-year-old student from the Czech Republic.
