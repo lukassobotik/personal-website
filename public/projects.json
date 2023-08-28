@@ -289,7 +289,7 @@
       "1": "Source code of this website."
     },
     "description": {
-      "1": "Source code of this website. It's built using TypeScript, Next.js and React."
+      "1": "Source code of this website. It's built using TypeScript, Next.js and React. It is hosted on Vercel."
     },
     "links": {
       "1": {
@@ -338,7 +338,7 @@
       "1": "Test Your Luck By Rolling Two Dice!"
     },
     "description": {
-      "1": "Roll Two of a Kind is a simple C# where you can test your luck by rolling two dice."
+      "1": "Roll Two of a Kind is a simple C# application where you can test your luck by rolling two dice."
     },
     "links": {
       "1": {
