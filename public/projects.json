@@ -193,7 +193,7 @@
     "github_id": "2048",
     "year": "2022",
     "name": "2048",
-    "technologies": "Java, Java GUI",
+    "technologies": "Java, Swing",
     "shortDescription": {
       "1": "My recreation of the popular game 2048."
     },
@@ -216,9 +216,9 @@
     "github_id": "bigger-or-smaller",
     "year": "2022",
     "name": "Bigger or Smaller",
-    "technologies": "Java, Java GUI",
+    "technologies": "Java, Swing",
     "shortDescription": {
-      "1": "Simple Java Gui application that compares two numbers."
+      "1": "Simple Java GUI application that compares two numbers."
     },
     "description": {
       "1": "Bigger or Smaller is a simple Java GUI application that compares two numbers and tells you which one is bigger.",
