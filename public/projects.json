@@ -198,7 +198,9 @@
       "1": "My recreation of the popular game 2048."
     },
     "description": {
-      "1": "My recreation of the popular game 2048. Built using Java."
+      "1": "My recreation of the popular game 2048. Built using Java.",
+      "2": "It is built with Java and Swing",
+      "3": "This project was my first time creating a more advanced Swing application."
     },
     "links": {
       "1": {
@@ -222,7 +224,8 @@
     },
     "description": {
       "1": "Bigger or Smaller is a simple Java GUI application that compares two numbers and tells you which one is bigger.",
-      "2": "The application is built using Java and Java GUIs."
+      "2": "The application is built using Java and Swing.",
+      "3": "This project taught me the basics of Swing."
     },
     "links": {
       "1": {
@@ -245,7 +248,8 @@
       "1": "Simple Java application that scrapes the top 250 section on the IMDb website."
     },
     "description": {
-      "1": "IMDb Scraper is a simple Java application that scrapes the top 250 section on the IMDb website."
+      "1": "IMDb Scraper is a simple Java application that scrapes the top 250 section on the IMDb website.",
+      "2": "It was my first project where I learnt the basics of web scraping."
     },
     "links": {
       "1": {
