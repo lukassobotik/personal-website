@@ -3,7 +3,7 @@
 <h1 align="center"><a href="https://lukassobotik.dev">lukassobotik.dev</a></h1>
 <h3 align="center">My Personal Website</h3>
 <p align="center">
-<a href="https://lukassobotik.dev">Website</a> | <a href="https://lukassobotik.dev/resume/junior-java-developer.pdf">CV</a> | <a href="https://www.buymeacoffee.com/lukassobotik">Buy Me A Coffee</a> | <a href="https://www.linkedin.com/in/lukassobotik/">LinkedIn</a>
+<a href="https://lukassobotik.dev">Website</a> | <a href="https://lukassobotik.dev/resume/junior-java-developer.pdf">CV</a> | <a href="https://www.buymeacoffee.com/lukassobotik">Buy Me A Coffee</a> | <a href="https://www.linkedin.com/in/lukassobotik/">LinkedIn</a> | <a href="https://github.com/lukassobotik/personal-website/blob/main/LICENSE">License</a>
 </p>
 </p>
 
