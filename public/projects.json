@@ -128,7 +128,8 @@
       "1": "MyFavMovies is a web application that allows you to search for movies and add them to your favorites.",
       "2": "It uses the The Movie Database API to fetch the movies.",
       "3": "This application was my first project using React and developing a web application in general.",
-      "4": "You can create an account and login to save your favorite movies or save them to collections that you created. You can also set your language and region preferences. The application will use them to fetch the movies in your language and region. You can set a profile picture and a username. The application is fully responsive and works on mobile devices."
+      "4": "This Project isn't perfect, there are many things I'd love to add and many things that could be improved, but I don't want to get stuck on one project for a long time. I might return to add a feature or two down the line, or I might even start from scratch, but nothing's for certain. This doesn't mean I'm completely giving up on this project, I just want to move on to other things. So if you find any bugs, please let me know, and I'll try to fix them.",
+      "5": "You can create an account and login to save your favorite movies or save them to collections that you created. You can also set your language and region preferences. The application will use them to fetch the movies in your language and region. You can set a profile picture and a username. The application is fully responsive and works on mobile devices."
     },
     "links": {
       "1": {
