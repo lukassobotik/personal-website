@@ -8,10 +8,12 @@
     "name": "SightlessKnight",
     "technologies": "Java, Vaadin",
     "shortDescription": {
-      "1": "Chess application that helps people learn chess blindfolded."
+      "1": "Learn blindfolded chess easily!",
+      "2": "Chess application that helps people learn chess blindfolded."
     },
     "description": {
-      "1": "A Cross-Platform Chess application that helps people learn chess blindfolded."
+      "1": "Learn blindfolded chess easily!",
+      "2": "A Cross-Platform Chess application that helps people learn chess blindfolded."
     },
     "links": {
       "1": {
