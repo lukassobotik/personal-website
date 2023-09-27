@@ -97,10 +97,11 @@ export default function Project() {
                                 <a key={key} href={project.links[key].url} className={styles.skill}>{project.links[key].name}</a>
                             ))}
                         </div>
-                        <div className={styles.project_readme}>
+                        {readmeData ? <div className={styles.project_readme} data-aos="fade-up">
                             <div className={styles.project_readme_title}><span>README.md</span></div>
                             <MarkdownContainer data={readmeData} />
-                        </div>
+                        </div> : null}
+
                         {project?.hasHorizontalScreenshots ?
                             <div className={styles.horizontal_project_images}>
                                 {renderScreenshots(project.horizontalScreenshots.urls, project.horizontalScreenshots.width, project.horizontalScreenshots.height)}
