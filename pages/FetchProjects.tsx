@@ -27,15 +27,13 @@ export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
         AOS.init()
     }, [onlyFeatured]);
 
-    if (!allProjectsFetched) {
-        return <div className={styles.loading_projects_text}>Loading projects...</div>;
-    }
+
 
     return (
         <>
             <div className={styles.featured_projects_section}>
                 {projects && projects.map((project, id) => (
-                    <div key={id} className={styles.main_featured_project} data-aos="fade-up">
+                    <div key={id} className={styles.main_featured_project} data-aos="fade-up" data-aos-delay={`${id}00`} data-aos-once="true">
                         <div className={styles.main_featured_project_info}>
                             <div className={styles.main_featured_project_info_title}>
                                 <div className={styles.main_featured_project_info_title_year}>{project.year ? project.year : "Year"}</div>
