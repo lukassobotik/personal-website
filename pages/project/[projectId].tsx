@@ -8,7 +8,6 @@ import useSwr from "swr";
 import {fetcher} from "../index";
 import MarkdownContainer from "../../MarkdownContainer";
 import Link from "next/link";
-import {splitTechnologies} from "../FetchProjects";
 // @ts-ignore
 import AOS from 'aos';
 import 'aos/dist/aos.css';

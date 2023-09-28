@@ -7,7 +7,6 @@ import 'aos/dist/aos.css';
 
 export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
     const [projects, setProjects] = useState<Project[]>();
-    const [allProjectsFetched, setAllProjectsFetched] = useState<boolean>(false);
 
     useEffect(() => {
         fetchProjectsByFeatured(onlyFeatured).then((projects) => {
@@ -17,7 +16,6 @@ export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
                 .then((fetchedProjects) => {
                     const allProjects = fetchedProjects.filter((project) => !!project) as Project[];
                     setProjects(allProjects);
-                    setAllProjectsFetched(true);
                     console.log(allProjects);
                 })
                 .catch((error) => {
@@ -26,8 +24,6 @@ export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
         });
         AOS.init()
     }, [onlyFeatured]);
-
-
 
     return (
         <>
