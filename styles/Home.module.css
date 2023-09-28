@@ -26,6 +26,8 @@
 .header_name {
   width: 100%;
   font-weight: bold;
+  font-family: "VT323", monospace;
+  font-size: 1.5rem;
 }
 .header_tabs {
   width: 100%;
