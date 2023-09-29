@@ -141,3 +141,60 @@ export async function fetchProjectsByFeatured(featured : boolean) {
         return projectArray.filter((project: Project) => !project.featured);
     }
 }
+
+export async function fetchProjectsByTechnologies(technologies: string | string[]) {
+    const res = await fetch('/projects.json');
+    const data = await res.json();
+    const projectArray = Object.values<Project>(data);
+
+    // Ensure technologies is always an array
+    const technologyArray = Array.isArray(technologies) ? technologies : [technologies];
+
+    if (!technologies) {
+        return projectArray;
+    }
+
+    // Filter projects by the specified technologies
+    const filteredProjects = projectArray.filter((project) => {
+        const projectTechnologies = Object.values(project.technologies);
+        return technologyArray.every((tech) => projectTechnologies.includes(tech));
+    });
+
+    // Sort the filtered projects by the "featured" property
+    return filteredProjects.sort((a, b) => {
+        if (a.featured && !b.featured) {
+            return -1; // Move "a" (featured) before "b" (not featured)
+        } else if (!a.featured && b.featured) {
+            return 1; // Move "b" (featured) before "a" (not featured)
+        } else {
+            return 0; // Leave the order unchanged
+        }
+    });
+}
+
+export async function getAllTechnologiesSortedByFrequency() {
+    const allTechnologies: string[] = [];
+    const res = await fetch('/projects.json');
+    const data = await res.json();
+    const projectArray = Object.values<Project>(data);
+
+    // Iterate through projects and collect technologies
+    for (const project of projectArray) {
+        const projectTechnologies: string[] = Object.values(project.technologies);
+        allTechnologies.push(...projectTechnologies);
+    }
+
+    // Create a map to count the frequency of each technology
+    const technologyFrequencyMap = new Map<string, number>();
+
+    for (const technology of allTechnologies) {
+        if (technologyFrequencyMap.has(technology)) {
+            technologyFrequencyMap.set(technology, technologyFrequencyMap.get(technology)! + 1);
+        } else {
+            technologyFrequencyMap.set(technology, 1);
+        }
+    }
+
+    // Sort technologies by frequency in descending order
+    return Array.from(technologyFrequencyMap.entries()).sort((a, b) => b[1] - a[1]);
+}
