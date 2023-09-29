@@ -19,7 +19,7 @@ export interface Project {
     logoUrl: string;
     year: string;
     name: string;
-    technologies: string;
+    technologies: Record<string, string>;
     shortDescription: Record<string, string>;
     description: Record<string, string>;
     links: Record<string, { name: string, url: string }>;
@@ -84,7 +84,9 @@ export default function Project() {
                             </div> : null}
                         </div>
                         <h3 className={styles.project_technologies}>
-                            {project?.technologies}
+                            {project?.technologies && Object.keys(project.technologies).map((key) => {
+                                return project.technologies[key]}
+                            ).join(", ")}
                         </h3>
                         <div className={styles.project_paragraph_parent}>
                             {project?.description && Object.keys(project.description).map((key) => (

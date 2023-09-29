@@ -44,8 +44,8 @@ export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
                                 </div>
                                 <div className={styles.main_featured_project_other_info_technologies}>
                                     <div className={styles.main_featured_project_other_info_title}>Technologies</div>
-                                    {project?.technologies && splitTechnologies(project?.technologies).map((technology, key) => (
-                                        <div key={key} className={styles.main_featured_project_other_info_text}>{technology}</div>
+                                    {project?.technologies && Object.keys(project.technologies).map((key) => (
+                                        <div key={key} className={styles.main_featured_project_other_info_text}>{project.technologies[key]}</div>
                                     ))}
                                 </div>
                                 <div className={styles.main_featured_project_other_info_links}>
@@ -64,8 +64,4 @@ export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
             </div>
         </>
     )
-}
-
-export function splitTechnologies(technologies: string) {
-    return technologies.split(", ");
 }

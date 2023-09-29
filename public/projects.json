@@ -6,7 +6,10 @@
     "year": "2023",
     "logoUrl": "/images/SightlessKnight/SightlessKnight.png",
     "name": "SightlessKnight",
-    "technologies": "Java, Vaadin",
+    "technologies": {
+      "1": "Java",
+      "2": "Vaadin"
+    },
     "shortDescription": {
       "1": "Learn blindfolded chess easily!",
       "2": "Chess application that helps people learn chess blindfolded."
@@ -32,7 +35,11 @@
     "year": "2022",
     "logoUrl": "/images/myQuotes/myQuotes.png",
     "name": "myQuotes",
-    "technologies": "Java, Android, Firebase",
+    "technologies": {
+      "1": "Java",
+      "2": "Android",
+      "3": "Firebase"
+    },
     "shortDescription": {
       "1": "myQuotes is an Android application where you can Share, Discover and Save New Quotes!",
       "2": "This was my first completed Android application that I published on the Google Play Store."
@@ -82,7 +89,12 @@
     "year": "2023",
     "logoUrl": "/images/WidgetSchedule/WidgetSchedule.png",
     "name": "WidgetSchedule",
-    "technologies": "Java, Android, JSoup, SQLite",
+    "technologies": {
+      "1": "Java",
+      "2": "Android",
+      "3": "JSoup",
+      "4": "SQLite"
+    },
     "shortDescription": {
       "1": "Turn online schedules into stunning widgets with ease!",
       "2": "The application enables schedules to be turned into an Android widget from a URL, which can be effortlessly accessed from the device's home screen."
@@ -121,7 +133,12 @@
     "year": "2022",
     "logoUrl": "/images/MyFavMovies/MyFavMovies.png",
     "name": "MyFavMovies",
-    "technologies": "JavaScript, Firebase, React, TMDb API",
+    "technologies": {
+      "1": "JavaScript",
+      "2": "Firebase",
+      "3": "React",
+      "4": "TMDb API"
+    },
     "shortDescription": {
       "1": "MyFavMovies is a website made for finding movies and adding them to your favorites.",
       "2": "It uses the The Movie Database API to fetch the movies."
@@ -165,7 +182,14 @@
     "year": "2023",
     "logoUrl": "/images/schedule-change-notifier/logo.png",
     "name": "Schedule Change Notifier",
-    "technologies": "Java, JavaMail, JSoup, Raspberry Pi, Cron, Debian",
+    "technologies": {
+      "1": "Java",
+      "2": "JavaMail",
+      "3": "JSoup",
+      "4": "Raspberry Pi",
+      "5": "Cron",
+      "6": "Debian"
+    },
     "shortDescription": {
       "1": "Schedule Change Notifier is an app that notifies you about changes in the schedule of your classes.",
       "2": "The application is built using Java, JavaMail and Jsoup. It is deployed on a Raspberry Pi and runs on a Cron job."
@@ -196,7 +220,10 @@
     "github_id": "2048",
     "year": "2022",
     "name": "2048",
-    "technologies": "Java, Swing",
+    "technologies": {
+      "1": "Java",
+      "2": "Swing"
+    },
     "shortDescription": {
       "1": "My recreation of the popular game 2048."
     },
@@ -221,7 +248,10 @@
     "github_id": "bigger-or-smaller",
     "year": "2022",
     "name": "Bigger or Smaller",
-    "technologies": "Java, Swing",
+    "technologies": {
+      "1": "Java",
+      "2": "Swing"
+    },
     "shortDescription": {
       "1": "Simple Java GUI application that compares two numbers."
     },
@@ -246,7 +276,10 @@
     "github_id": "imdb-scraper",
     "year": "2022",
     "name": "IMDb Scraper",
-    "technologies": "Java, JSoup",
+    "technologies": {
+      "1": "Java",
+      "2": "JSoup"
+    },
     "shortDescription": {
       "1": "Simple Java application that scrapes the top 250 section on the IMDb website."
     },
@@ -270,7 +303,9 @@
     "github_id": "point-adder",
     "year": "2022",
     "name": "Point Adder",
-    "technologies": "Java",
+    "technologies": {
+      "1": "Java"
+    },
     "shortDescription": {
       "1": "Simple Java project made for storing any amount of points. It runs in the system tray."
     },
@@ -293,7 +328,11 @@
     "github_id": "personal-website",
     "year": "2023",
     "name": "Portfolio Website",
-    "technologies": "TypeScript, Next.js, React",
+    "technologies": {
+      "1": "TypeScript",
+      "2": "Next.js",
+      "3": "React"
+    },
     "shortDescription": {
       "1": "Source code of this website."
     },
@@ -317,7 +356,11 @@
     "year": "2022",
     "logoUrl": "/images/Repeaty/Repeaty.png",
     "name": "Repeaty",
-    "technologies": "Java, Android, SQLite",
+    "technologies": {
+      "1": "Java",
+      "2": "Android",
+      "3": "SQLite"
+    },
     "shortDescription": {
       "1": "Repeaty is an android application to Track and Manage your Habits."
     },
@@ -342,7 +385,9 @@
     "github_id": "roll-two-of-kind",
     "year": "2022",
     "name": "Roll Two of a Kind",
-    "technologies": "C#",
+    "technologies": {
+      "1": "C#"
+    },
     "shortDescription": {
       "1": "Test Your Luck By Rolling Two Dice!"
     },
@@ -366,7 +411,11 @@
     "year": "2023",
     "logoUrl": "/images/TaskLooper/TaskLooper.png",
     "name": "TaskLooper",
-    "technologies": "Java, Android, SQLite",
+    "technologies": {
+      "1": "Java",
+      "2": "Android",
+      "3": "SQLite"
+    },
     "shortDescription": {
       "1": "TaskLooper is an android app where you manage daily tasks you want to complete.",
       "2": "Although it is similar to my other repository Repeaty, I have slightly different plans and goals for it."
@@ -410,7 +459,9 @@
     "github_id": "word-in-sentence-counter",
     "year": "2022",
     "name": "Word in a Sentence Counter",
-    "technologies": "C#",
+    "technologies": {
+      "1": "C#"
+    },
     "shortDescription": {
       "1": "Simple C# application that counts the number of words in a sentence."
     },
