@@ -3,7 +3,12 @@ import styles from "../../styles/Home.module.css";
 import Head from "next/head";
 import Navbar from "../../navbar";
 import {ChangeEvent, useEffect, useState} from "react";
-import {fetchProjectsByTechnologies, getAllTechnologiesSortedByFrequency, Project} from "../project/[projectId]";
+import {
+    fetchProjectsByTechnologies,
+    getAllTechnologiesSortedByFrequency,
+    getAllYears,
+    Project
+} from "../project/[projectId]";
 import ProjectOverview from "../../ProjectOverview";
 
 export default function AllProjects() {
@@ -13,6 +18,7 @@ export default function AllProjects() {
 
     useEffect(() => {
         getAllTechnologies();
+        getAllYears().then((i) => console.log(i));
     }, []);
 
     useEffect(() => {

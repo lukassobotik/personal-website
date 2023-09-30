@@ -198,3 +198,23 @@ export async function getAllTechnologiesSortedByFrequency() {
     // Sort technologies by frequency in descending order
     return Array.from(technologyFrequencyMap.entries()).sort((a, b) => b[1] - a[1]);
 }
+
+export async function getAllYears() {
+    const uniqueYearsSet = new Set<string>();
+    const res = await fetch('/projects.json');
+    const data = await res.json();
+    const projectArray = Object.values<Project>(data);
+
+    // Iterate through projects and collect unique years
+    for (const project of projectArray) {
+        const projectYear = project.year;
+        if (projectYear) {
+            uniqueYearsSet.add(projectYear);
+        }
+    }
+
+    // Convert the unique years set to an array and sort it in descending order
+    return Array.from(uniqueYearsSet).sort((a, b) => {
+        return parseInt(b, 10) - parseInt(a, 10);
+    });
+}
