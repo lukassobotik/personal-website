@@ -120,6 +120,18 @@ export default function Project() {
     )
 }
 
+function sortProjectsByFeatured(filteredProjects: Project[]) {
+    return filteredProjects.sort((a, b) => {
+        if (a.featured && !b.featured) {
+            return -1; // Move "a" (featured) before "b" (not featured)
+        } else if (!a.featured && b.featured) {
+            return 1; // Move "b" (featured) before "a" (not featured)
+        } else {
+            return 0; // Leave the order unchanged
+        }
+    });
+}
+
 export async function fetchProjectById(projectId : string | string[] | undefined) {
     const res = await fetch('/projects.json');
     const data = await res.json();
@@ -147,29 +159,18 @@ export async function fetchProjectsByTechnologies(technologies: string | string[
     const data = await res.json();
     const projectArray = Object.values<Project>(data);
 
-    // Ensure technologies is always an array
     const technologyArray = Array.isArray(technologies) ? technologies : [technologies];
 
     if (!technologies) {
         return projectArray;
     }
 
-    // Filter projects by the specified technologies
     const filteredProjects = projectArray.filter((project) => {
         const projectTechnologies = Object.values(project.technologies);
         return technologyArray.every((tech) => projectTechnologies.includes(tech));
     });
 
-    // Sort the filtered projects by the "featured" property
-    return filteredProjects.sort((a, b) => {
-        if (a.featured && !b.featured) {
-            return -1; // Move "a" (featured) before "b" (not featured)
-        } else if (!a.featured && b.featured) {
-            return 1; // Move "b" (featured) before "a" (not featured)
-        } else {
-            return 0; // Leave the order unchanged
-        }
-    });
+    return sortProjectsByFeatured(filteredProjects);
 }
 
 export async function getAllTechnologiesSortedByFrequency() {
@@ -178,13 +179,11 @@ export async function getAllTechnologiesSortedByFrequency() {
     const data = await res.json();
     const projectArray = Object.values<Project>(data);
 
-    // Iterate through projects and collect technologies
     for (const project of projectArray) {
         const projectTechnologies: string[] = Object.values(project.technologies);
         allTechnologies.push(...projectTechnologies);
     }
 
-    // Create a map to count the frequency of each technology
     const technologyFrequencyMap = new Map<string, number>();
 
     for (const technology of allTechnologies) {
@@ -199,13 +198,32 @@ export async function getAllTechnologiesSortedByFrequency() {
     return Array.from(technologyFrequencyMap.entries()).sort((a, b) => b[1] - a[1]);
 }
 
-export async function getAllYears() {
+export async function fetchProjectsByYear(year: string | string[]) {
+    const res = await fetch('/projects.json');
+    const data = await res.json();
+    const projectArray = Object.values<Project>(data);
+
+    const technologyArray = Array.isArray(year) ? year : [year];
+
+    if (!year) {
+        return projectArray;
+    }
+
+    const filteredProjects = projectArray.filter((project) => {
+        return technologyArray.every((year) => project.year === year);
+    });
+
+    console.log("FILTERED PROJECTS year: " + filteredProjects + " SORTED " + sortProjectsByFeatured(filteredProjects));
+
+    return sortProjectsByFeatured(filteredProjects);
+}
+
+export async function getAllYearsDescending() {
     const uniqueYearsSet = new Set<string>();
     const res = await fetch('/projects.json');
     const data = await res.json();
     const projectArray = Object.values<Project>(data);
 
-    // Iterate through projects and collect unique years
     for (const project of projectArray) {
         const projectYear = project.year;
         if (projectYear) {
@@ -213,7 +231,6 @@ export async function getAllYears() {
         }
     }
 
-    // Convert the unique years set to an array and sort it in descending order
     return Array.from(uniqueYearsSet).sort((a, b) => {
         return parseInt(b, 10) - parseInt(a, 10);
     });
