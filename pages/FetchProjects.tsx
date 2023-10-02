@@ -1,7 +1,6 @@
 import styles from "../styles/Home.module.css";
-import Link from "next/link";
 import {useEffect, useState} from "react";
-import {fetchProjectById, fetchProjectsByFeatured, Project} from "./project/[projectId]";// @ts-ignore
+import {fetchProjectById, fetchProjectsByFeatured, Project} from "./project/[projectId]"; // @ts-ignore
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ProjectOverview from "../ProjectOverview";

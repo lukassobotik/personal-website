@@ -1,10 +1,10 @@
-import FetchProjects from "../FetchProjects";
 import styles from "../../styles/Home.module.css";
 import Head from "next/head";
 import Navbar from "../../navbar";
-import {ChangeEvent, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {
-    fetchProjectsByTechnologies, fetchProjectsByYear,
+    fetchProjectsByTechnologies,
+    fetchProjectsByYear,
     getAllTechnologiesSortedByFrequency,
     getAllYearsDescending,
     Project
@@ -21,12 +21,9 @@ export default function AllProjects() {
     useEffect(() => {
         getAllTechnologies();
         getAllYears();
-
-        fetchProjectsByYear(["2022"]).then((projects) => console.log("PROEJCT : " + projects));
     }, []);
 
     useEffect(() => {
-        console.log("TAG SELECTED ", selectedTechnologyTags);
         const filterProjects = async () => {
             const technologies = selectedTechnologyTags.map((tech) => tech.trim());
             const years = selectedYearTags.map((year) => year.trim());
@@ -34,14 +31,13 @@ export default function AllProjects() {
             const filteredTechnologyProjects = await fetchProjectsByTechnologies(technologies);
             const filteredYearProjects = await fetchProjectsByYear(years);
 
-            function func(arr1: Project[], arr2: Project[]): Project[] {
-                return arr1.filter((val1) => {
-                    return arr2.find((val2) => val1.id === val2.id);
+            function findIntersection(array1: Project[], array2: Project[]): Project[] {
+                return array1.filter((value1) => {
+                    return array2.find((value2) => value1.id === value2.id);
                 });
             }
 
-            const filteredProjects = func(filteredTechnologyProjects, filteredYearProjects);
-            console.log("FILTERING PROJECTS: " + "TECHNOLOGIES: " + technologies + " YEARS: " + years + " RESULT: " + filteredProjects);
+            const filteredProjects= findIntersection(filteredTechnologyProjects, filteredYearProjects);
             setFilteredProjects(filteredProjects);
         };
 
