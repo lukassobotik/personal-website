@@ -404,6 +404,32 @@
     "hasVerticalScreenshots": false
   },
 
+  "hey-google-open-on-computer": {
+    "featured": false,
+    "id": "hey-google-open-on-computer",
+    "github_id": "Hey-Google-Open-On-Computer",
+    "year": "2023",
+    "name": "Hey Google, Open ... On My Computer",
+    "technologies": {
+      "1": "Raspberry Pi"
+    },
+    "shortDescription": {
+      "1": "Guide on how to set up a Google Assistant command to open an application on your computer."
+    },
+    "description": {
+      "1": "Guide on how to set up a Google Assistant command to open an application on your computer.",
+      "2": "It will require manual setup and almost no coding."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/lukassobotik/Hey-Google-Open-On-Computer"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
+  },
+
   "TaskLooper": {
     "featured": false,
     "id": "TaskLooper",
