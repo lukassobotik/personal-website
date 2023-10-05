@@ -10,6 +10,11 @@ import {
     Project
 } from "../project/[projectId]";
 import ProjectOverview from "../../ProjectOverview";
+import {useRouter} from "next/router";
+import {func} from "prop-types";
+// @ts-ignore
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function AllProjects() {
     const [selectedTechnologyTags, setSelectedTechnologyTags] = useState<string[]>([]);
@@ -21,6 +26,7 @@ export default function AllProjects() {
     useEffect(() => {
         getAllTechnologies();
         getAllYears();
+        AOS.init();
     }, []);
 
     useEffect(() => {
@@ -95,16 +101,16 @@ export default function AllProjects() {
                 <Navbar/>
                 <div className={styles.featured_projects_section}>
                     <h1 className={styles.tags_title}>Projects Filter ({filteredProjects.length} Project{filteredProjects.length == 1 ? "" : "s"})</h1>
-                    <h2 className={styles.tags_title}>Technology</h2>
-                    <div className={styles.tags}>
+                    <h2 className={styles.tags_title} data-aos="fade-right" data-aos-delay="50">Technology</h2>
+                    <div className={styles.tags} data-aos="fade-right" data-aos-delay="50">
                         {technologies && technologies.map((technology, key) => (
-                            <div id={technology[0]} key={key} className={styles.tag} onClick={() => technologyTagClicked(technology[0])}>{technology[0]} ({technology[1]})</div>
+                            <div id={technology[0]} key={key} className={styles.tag} onClick={() => technologyTagClicked(technology[0])} data-aos="fade-right" data-aos-delay={key * 50}>{technology[0]} ({technology[1]})</div>
                         ))}
                     </div>
-                    <h2 className={styles.tags_title}>Year</h2>
-                    <div className={styles.tags}>
+                    <h2 className={styles.tags_title} data-aos="fade-right" data-aos-delay="50">Year</h2>
+                    <div className={styles.tags} data-aos="fade-right" data-aos-delay="50">
                         {years && years.map((year, key) => (
-                            <div id={year} key={key} className={styles.tag} onClick={() => yearTagClicked(year)}>{year}</div>
+                            <div id={year} key={key} className={styles.tag} onClick={() => yearTagClicked(year)} data-aos="fade-right" data-aos-delay={key * 50}>{year}</div>
                         ))}
                     </div>
 
