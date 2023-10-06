@@ -42,7 +42,6 @@ export default function Project() {
     const projectId = router.query.projectId;
     const [project, setProject] = useState<Project>();
     const githubId = project?.github_id ? project?.github_id : projectId;
-    console.log("github id: ", githubId)
 
     useEffect(() => {
         fetchProjectById(projectId).then((project) => {setProject(project)});
@@ -52,8 +51,6 @@ export default function Project() {
     const { data : readmeData } = useSwr('/api/getReadme/' + githubId, fetcher);
     const { data : repoData } = useSwr('/api/getRepo/' + githubId, fetcher);
     const { data : commitData } = useSwr('/api/getCommits/' + githubId, fetcher);
-    console.log("repo data: ", repoData);
-    console.log("commit data: ", commitData);
 
     function renderScreenshots(urls: Record<string, string>, width: number, height: number) {
         return Object.keys(urls).map((key) => (
@@ -77,10 +74,10 @@ export default function Project() {
                                 <div className={styles.main_featured_project_info_title_text}>{project?.name}</div>
                             </div>
                             {commitData ? <div className={styles.project_header_github_info} data-aos="fade-left">
-                                <div><Link className={styles.url} href={"https://github.com/PuckyEU/" + githubId + "/commits"}>{commitData?.length} {commitData?.length == 1 ? "Commit" : "Commits"}</Link></div>
-                                <div><Link className={styles.url} href={"https://github.com/PuckyEU/" + githubId + "/issues"}>{repoData?.open_issues} {repoData?.open_issues == 1 ? "Issue" : "Issues"}</Link></div>
-                                <div><Link className={styles.url} href={"https://github.com/PuckyEU/" + githubId + "/stargazers"}>{repoData?.stargazers_count} {repoData?.stargazers_count == 1 ? "Star" : "Stars"}</Link></div>
-                                <div><Link className={styles.url} href={"https://github.com/PuckyEU/" + githubId + "/forks"}>{repoData?.forks_count} {repoData?.forks_count == 1 ? "Fork" : "Forks"}</Link></div>
+                                <div><Link className={styles.url} href={"https://github.com/lukassobotik/" + githubId + "/commits"}>{commitData?.length} {commitData?.length == 1 ? "Commit" : "Commits"}</Link></div>
+                                <div><Link className={styles.url} href={"https://github.com/lukassobotik/" + githubId + "/issues"}>{repoData?.open_issues} {repoData?.open_issues == 1 ? "Issue" : "Issues"}</Link></div>
+                                <div><Link className={styles.url} href={"https://github.com/lukassobotik/" + githubId + "/stargazers"}>{repoData?.stargazers_count} {repoData?.stargazers_count == 1 ? "Star" : "Stars"}</Link></div>
+                                <div><Link className={styles.url} href={"https://github.com/lukassobotik/" + githubId + "/forks"}>{repoData?.forks_count} {repoData?.forks_count == 1 ? "Fork" : "Forks"}</Link></div>
                             </div> : null}
                         </div>
                         <h3 className={styles.project_technologies}>
@@ -212,8 +209,6 @@ export async function fetchProjectsByYear(year: string | string[]) {
     const filteredProjects = projectArray.filter((project) => {
         return technologyArray.every((year) => project.year === year);
     });
-
-    console.log("FILTERED PROJECTS year: " + filteredProjects + " SORTED " + sortProjectsByFeatured(filteredProjects));
 
     return sortProjectsByFeatured(filteredProjects);
 }
