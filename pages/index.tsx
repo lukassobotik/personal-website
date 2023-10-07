@@ -82,7 +82,7 @@ export default function Home() {
                 <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="150"><Link href={"mailto://jobs@lukassobotik.dev"} className={styles.url}>Email</Link></div>
                 <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="200"><Link href={"https://github.com/lukassobotik"} className={styles.url}>Github</Link></div>
                 <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="250"><Link href={"https://www.buymeacoffee.com/lukassobotik"} className={styles.url}>Buy me a coffee</Link></div>
-                <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="300"><Link href={"https://lukassobotik.dev/resume/junior-java-developer.pdf"} className={styles.url}>Resume</Link></div>
+                <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="300"><Link href={"/resume/junior-java-developer.pdf"} className={styles.url}>Resume</Link></div>
               </div>
             </div>
           </div>
