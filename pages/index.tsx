@@ -86,7 +86,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.general_section} data-aos="fade-up">
+          <div className={styles.general_section} data-aos="fade-up" data-aos-once={true}>
             <div className={styles.general_section_title}>Skills</div>
             <div className={styles.general_section_content}>
               <div className={styles.general_section_content_item}>Java</div>
@@ -101,7 +101,7 @@ export default function Home() {
               <div className={styles.general_section_content_item}>C#</div>
             </div>
           </div>
-          <div className={styles.general_section} data-aos="fade-up">
+          <div className={styles.general_section} data-aos="fade-up" data-aos-once={true}>
             <div className={styles.general_section_title}>Interests</div>
             <div className={styles.general_section_content}>
               <div className={styles.general_section_content_item}><Link className={styles.url} href={"https://www.imdb.com/user/ur150332429/"}>Movies</Link></div>
@@ -110,7 +110,7 @@ export default function Home() {
               <div className={styles.general_section_content_item}>Boxing</div>
             </div>
           </div>
-          <div className={styles.general_section} data-aos="fade-up">
+          <div className={styles.general_section} data-aos="fade-up" data-aos-once={true}>
             <div className={styles.general_section_title}>Certificates</div>
             <div className={styles.general_section_content}>
               <div className={styles.general_section_content_item}>
@@ -119,10 +119,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className={styles.section_header} data-aos="fade-up">Featured Projects</div>
+          <div className={styles.section_header} data-aos="fade-up" data-aos-once={true}>Featured Projects</div>
           <FetchProjects onlyFeatured/>
-          <div className={styles.main_other_projects}>
-            <Link className={styles.url} href={"/projects/"} data-aos="fade-up">All Projects</Link>
+          <div className={styles.main_other_projects} data-aos="fade-up" data-aos-once={true}>
+            <Link className={styles.url} href={"/projects/"}>All Projects</Link>
           </div>
           <div className={styles.bottom}/>
         </main>
