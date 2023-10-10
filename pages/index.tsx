@@ -89,16 +89,16 @@ export default function Home() {
           <div className={styles.general_section} data-aos="fade-up" data-aos-once={true}>
             <div className={styles.general_section_title}>Skills</div>
             <div className={styles.general_section_content}>
-              <div className={styles.general_section_content_item}><Link className={styles.url} href={"/projects?technologies=java"}>Java</Link></div>
+              <div className={styles.general_section_content_item}><Link className={styles.url} href={"/projects?technology=java"}>Java</Link></div>
               <div className={styles.general_section_content_item}>Github</div>
-              <div className={styles.general_section_content_item}><Link className={styles.url} href={"/projects?technologies=javascript"}>JavaScript</Link></div>
-              <div className={styles.general_section_content_item}><Link className={styles.url} href={"/projects?technologies=typescript"}>TypeScript</Link></div>
+              <div className={styles.general_section_content_item}><Link className={styles.url} href={"/projects?technology=javascript"}>JavaScript</Link></div>
+              <div className={styles.general_section_content_item}><Link className={styles.url} href={"/projects?technology=typescript"}>TypeScript</Link></div>
               <div className={styles.general_section_content_item}>Davinci Resolve</div>
-              <div className={styles.general_section_content_item}><Link className={styles.url} href={"/projects?technologies=firebase"}>Firebase</Link></div>
+              <div className={styles.general_section_content_item}><Link className={styles.url} href={"/projects?technology=firebase"}>Firebase</Link></div>
               <div className={styles.general_section_content_item}>Gimp</div>
               <div className={styles.general_section_content_item}>Photoshop</div>
               <div className={styles.general_section_content_item}>Blender</div>
-              <div className={styles.general_section_content_item}><Link className={styles.url} href={"/projects?technologies=csharp"}>C#</Link></div>
+              <div className={styles.general_section_content_item}><Link className={styles.url} href={"/projects?technology=csharp"}>C#</Link></div>
             </div>
           </div>
           <div className={styles.general_section} data-aos="fade-up" data-aos-once={true}>
