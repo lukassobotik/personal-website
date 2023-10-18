@@ -285,10 +285,24 @@
   font-size: 1.5vh;
   font-weight: bold;
   cursor: pointer;
+  animation: tag-fade-out .25s;
+}
+.tag:hover{
+  background-color: #505050;
+  animation: tag-fade-in .25s;
 }
 .tag_project_number {
   margin-top: -.5rem;
   margin-bottom: 1rem;
+}
+
+@keyframes tag-fade-in {
+  0% { background-color: #131313; }
+  100% { background-color: #505050; }
+}
+@keyframes tag-fade-out {
+  0% { background-color: #505050; }
+  100% { background-color: #131313; }
 }
 
 /* Mobile */
