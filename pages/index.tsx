@@ -111,6 +111,14 @@ export default function Home() {
             </div>
           </div>
           <div className={styles.general_section} data-aos="fade-up" data-aos-once={true}>
+            <div className={styles.general_section_title}>Languages</div>
+            <div className={styles.general_section_content}>
+              <div className={styles.general_section_content_item}>Czech - Native Proficiency</div>
+              <div className={styles.general_section_content_item}>English - Full Professional Proficiency</div>
+              <div className={styles.general_section_content_item}>Spanish - Elementary Proficiency</div>
+            </div>
+          </div>
+          <div className={styles.general_section} data-aos="fade-up" data-aos-once={true}>
             <div className={styles.general_section_title}>Certificates</div>
             <div className={styles.general_section_content}>
               <div className={styles.general_section_content_item}>
