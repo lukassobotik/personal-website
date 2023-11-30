@@ -15,7 +15,13 @@ export async function fetcher(url: string) {
 }
 
 export default function Home() {
-  function calculateAge() {
+
+  /**
+   * Calculates the age in years based on my birthdate.
+   *
+   * @returns {number} The age in years.
+   */
+  function calculateAge(): number {
     let birthdate = new Date(2007, 4, 10);
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
@@ -34,7 +40,12 @@ export default function Home() {
     return ageInYears;
   }
 
-  function decryptEffect() {
+  /**
+   * Creates a decrypt effect and displays it on the page.
+   *
+   * @returns {void}
+   */
+  function decryptEffect(): void {
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+-=[]{};':\",./<>?`~";
 
     const el = document.getElementById("content_main_line");
