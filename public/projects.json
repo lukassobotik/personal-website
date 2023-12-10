@@ -502,5 +502,31 @@
     },
     "hasHorizontalScreenshots": false,
     "hasVerticalScreenshots": false
+  },
+
+  "minecraft-test-plugins": {
+    "featured": false,
+    "id": "minecraft-test-plugins",
+    "github_id": "minecraft-test-plugins",
+    "year": "2022",
+    "name": "Minecraft Test Plugins",
+    "technologies": {
+      "1": "Java",
+      "2": "Spigot"
+    },
+    "shortDescription": {
+      "1": "Minecraft plugins I made for testing purposes."
+    },
+    "description": {
+      "1": "Minecraft plugins I made for testing purposes. These are just my experiments that don't have any specific purpose."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/lukassobotik/minecraft-test-plugins"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
   }
 }
