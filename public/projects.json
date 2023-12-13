@@ -192,7 +192,7 @@
     },
     "shortDescription": {
       "1": "Schedule Change Notifier is an app that notifies you about changes in the schedule of your classes.",
-      "2": "The application is built using Java, JavaMail and Jsoup. It is deployed on a Raspberry Pi and runs on a Cron job."
+      "2": "The application is built using Java, JavaMail and Jsoup. It was deployed on a Raspberry Pi and used to run on a Cron job."
     },
     "description": {
       "1": "Schedule Change Notifier is a Java application that notifies you about changes in the schedule of your classes. The application is built using Java, JavaMail and Jsoup. It is deployed on a Raspberry Pi and runs on a Cron job.",
