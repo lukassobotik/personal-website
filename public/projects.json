@@ -195,7 +195,7 @@
       "2": "The application is built using Java, JavaMail and Jsoup. It was deployed on a Raspberry Pi and used to run on a Cron job."
     },
     "description": {
-      "1": "Schedule Change Notifier is a Java application that notifies you about changes in the schedule of your classes. The application is built using Java, JavaMail and Jsoup. It is deployed on a Raspberry Pi and runs on a Cron job.",
+      "1": "Schedule Change Notifier is a Java application that notifies you about changes in the schedule of your classes. The application is built using Java, JavaMail and Jsoup. It was deployed on a Raspberry Pi and used to run on a Cron job.",
       "2": "I basically made this application for myself, because I was tired of checking the schedule of my classes on the school website every day. I wanted to be notified about changes in the schedule of my classes. But decided to make it public, so that other students can use it as well.",
       "3": "The application used to run a Cron job every 1 hour. The Cron job checks the schedule of the classes on the school website. If there is a change in the schedule, the application sends you an email with the new schedule. On the Raspberry Pi, the application logs all the changes in the schedule, every run of the application and the emails that were sent. The application also logs the errors that occurred during the execution of the application.",
       "4": "I made my own logging system, because I thought it'd be a waste of resources to use a logging library for such a small application."
