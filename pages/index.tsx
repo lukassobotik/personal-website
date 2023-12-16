@@ -17,9 +17,13 @@ export async function fetcher(url: string) {
 export default function Home() {
 
   /**
-   * Calculates the age in years based on my birthdate.
+   * The `calculateAge` function calculates the age of a person born on May 10, 2007.
+   * It uses the current date to calculate the age in years.
+   * If the current month and day are before the birth month and day, it subtracts one from the age.
    *
-   * @returns {number} The age in years.
+   * This function does not take any parameters.
+   *
+   * @returns {number} The calculated age in years.
    */
   function calculateAge(): number {
     let birthdate = new Date(2007, 4, 10);
@@ -41,7 +45,11 @@ export default function Home() {
   }
 
   /**
-   * Creates a decrypt effect and displays it on the page.
+   * The `decryptEffect` function is responsible for creating a decrypting text effect on the webpage.
+   * It selects an element with the id "content_main_line" and replaces its content with a string of random characters,
+   * gradually revealing the original text ("Hi, I'm Lukáš") in a decrypting-like animation.
+   *
+   * This function does not take any parameters and does not return any value.
    *
    * @returns {void}
    */
