@@ -52,7 +52,16 @@ export default function Project() {
     const { data : repoData } = useSwr('/api/getRepo/' + githubId, fetcher);
     const { data : commitData } = useSwr('/api/getCommits/' + githubId, fetcher);
 
-    function renderScreenshots(urls: Record<string, string>, width: number, height: number) {
+    /**
+     * The `renderScreenshots` function is responsible for rendering the screenshots of a project.
+     * It takes a record of URLs, width and height as parameters and returns an array of Image components.
+     *
+     * @param {Record<string, string>} urls - A record of URLs where each key is the identifier of the image and the value is the URL of the image.
+     * @param {number} width - The width of the image.
+     * @param {number} height - The height of the image.
+     * @returns {JSX.Element[]} An array of Image components with the specified width and height, and source set to the provided URLs.
+     */
+    function renderScreenshots(urls: Record<string, string>, width: number, height: number): JSX.Element[] {
         return Object.keys(urls).map((key) => (
             <Image key={key} src={urls[key]} alt="" width={width} height={height} />
         ));
