@@ -61,6 +61,10 @@
       "3": {
         "name": "Privacy Policy",
         "url": "https://github.com/lukassobotik/Quotes/blob/master/PrivacyPolicy.md"
+      },
+      "4": {
+        "name": "Account Deletion",
+        "url": "https://myquotes.account.lukassobotik.dev"
       }
     },
     "hasHorizontalScreenshots": false,
