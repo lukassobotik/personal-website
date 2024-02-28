@@ -22,6 +22,42 @@ export default function AllProjects() {
     const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
     const [technologies, setTechnologies] = useState<[string, number][]>();
     const [years, setYears] = useState<string[]>();
+    const router = useRouter();
+
+    // useEffect(() => {
+    //     getAllTechnologies().then(() => {
+    //         getAllYears().then(() => {
+    //             const techQuery = router.query.technology as string | undefined;
+    //             const yearQuery = router.query.year as string | undefined;
+    //
+    //             /**
+    //              * Parses the query string and returns an array of technologies
+    //              * Must be in the format of "technology1,technology2,technology3"
+    //              * "getAllYears()" must be called before this function
+    //              * @param query
+    //              */
+    //             function parseQuery(query: string | undefined) {
+    //                 if (typeof query === "string") {
+    //                     let array = query.split(",");
+    //                     array.forEach((element, index) => {
+    //                         technologies?.forEach((technology) => {
+    //                             if (technology[0].trim().toLowerCase() === element.trim().toLowerCase()) {
+    //                                 setSelectedTechnologyTags([...selectedTechnologyTags, element.trim().toLowerCase()]);
+    //                                 technologyTagClicked(element);
+    //                                 console.log("tag from query: " + element.trim().toLowerCase())
+    //                             }
+    //                         });
+    //                     });
+    //                 }
+    //             }
+    //
+    //             // Call parseQuery with the query parameters
+    //             parseQuery(techQuery);
+    //             parseQuery(yearQuery);
+    //         });
+    //     });
+    //
+    // }, []);
 
     useEffect(() => {
         getAllTechnologies();
@@ -56,6 +92,7 @@ export default function AllProjects() {
             if (tagParent) {
                 tagParent.style.backgroundColor = "#131313";
                 tagParent.style.color = "#ffffff"
+                tagParent.classList.remove("tag_selected");
             }
 
             return prevTags.filter((t) => t !== tag);
@@ -64,6 +101,7 @@ export default function AllProjects() {
             if (tagParent) {
                 tagParent.style.backgroundColor = "#ffffff";
                 tagParent.style.color = "#131313"
+                tagParent.classList.add("tag_selected");
             }
 
             return [...prevTags, tag];

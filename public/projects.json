@@ -1,33 +1,4 @@
 {
-  "SightlessKnight": {
-    "featured": true,
-    "id": "SightlessKnight",
-    "github_id": "SightlessKnight",
-    "year": "2023",
-    "logoUrl": "/images/SightlessKnight/SightlessKnight.png",
-    "name": "SightlessKnight",
-    "technologies": {
-      "1": "Java",
-      "2": "Vaadin"
-    },
-    "shortDescription": {
-      "1": "Learn blindfolded chess easily!",
-      "2": "Chess application that helps people learn chess blindfolded or train visualisation."
-    },
-    "description": {
-      "1": "Learn blindfolded chess easily!",
-      "2": "A Cross-Platform Chess application that helps people learn chess blindfolded or train visualisation."
-    },
-    "links": {
-      "1": {
-        "name": "Source Code",
-        "url": "https://github.com/lukassobotik/SightlessKnight"
-      }
-    },
-    "hasHorizontalScreenshots": false,
-    "hasVerticalScreenshots": false
-  },
-
   "myQuotes": {
     "featured": true,
     "id": "myQuotes",
@@ -73,17 +44,46 @@
       "width": 270,
       "height": 530,
       "urls": {
-        "1": "/images/myQuotes/vid-1.gif",
-        "2": "/images/myQuotes/sc-1.jpg",
-        "3": "/images/myQuotes/sc-2.jpg",
-        "4": "/images/myQuotes/sc-3.jpg",
-        "5": "/images/myQuotes/sc-4.jpg"
+        "1": "/images/myQuotes/sc-1.png",
+        "2": "/images/myQuotes/sc-2.png",
+        "3": "/images/myQuotes/sc-3.png",
+        "4": "/images/myQuotes/sc-4.png",
+        "5": "/images/myQuotes/sc-5.png"
       }
     },
     "license": {
       "type": "MIT License",
       "url": "https://github.com/lukassobotik/Quotes/blob/master/LICENSE"
     }
+  },
+
+  "SightlessKnight": {
+    "featured": true,
+    "id": "SightlessKnight",
+    "github_id": "SightlessKnight",
+    "year": "2023",
+    "logoUrl": "/images/SightlessKnight/SightlessKnight.png",
+    "name": "SightlessKnight",
+    "technologies": {
+      "1": "Java",
+      "2": "Vaadin"
+    },
+    "shortDescription": {
+      "1": "Learn blindfolded chess easily!",
+      "2": "Chess application that helps people learn chess blindfolded or train visualisation."
+    },
+    "description": {
+      "1": "Learn blindfolded chess easily!",
+      "2": "A Cross-Platform Chess application that helps people learn chess blindfolded or train visualisation."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/lukassobotik/SightlessKnight"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
   },
 
   "CropThatImage": {
