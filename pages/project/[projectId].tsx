@@ -35,12 +35,14 @@ export interface Project {
         height: number;
         urls: Record<string, string>;
     };
+    trailerUrl: string;
     license: { type: string; url: string; };
 }
 export default function Project() {
     const router = useRouter();
     const projectId = router.query.projectId;
     const [project, setProject] = useState<Project>();
+    const [showingTrailer, setShowingTrailer] = useState(false);
     const githubId = project?.github_id ? project?.github_id : projectId;
 
     useEffect(() => {
@@ -67,70 +69,106 @@ export default function Project() {
         ));
     }
 
+    function showTrailer() {
+        if (project?.trailerUrl) {
+            setShowingTrailer(!showingTrailer);
+        }
+    }
+
+    function escapeTrailer() {
+        if (showingTrailer) {
+            setShowingTrailer(false);
+        }
+    }
+
     return (
         <>
             <Head>
                 <title>{project?.name}</title>
             </Head>
-            <main className={styles.main}>
+            <main className={styles.main} onClick={escapeTrailer}>
                 <Navbar/>
                 <div className={styles.project_overview_section}>
+                    {showingTrailer ? <div className={styles.trailer_back} onClick={showTrailer}>x</div> : null}
+                    {showingTrailer ? <div className={styles.trailer} data-aos="fade-up">
+                            <iframe width="1920" height="1080"
+                                    src={`https://www.youtube.com/embed/${project?.trailerUrl}?rel=0&amp;autoplay=1`}
+                                    title="YouTube video player" frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen>
+                            </iframe>
+                        </div>
+                        : null}
                     <div className={styles.overview}>
                         {project?.logoUrl ? <Image src={project.logoUrl} alt="" width={150} height={150} className={styles.project_image}/> : null}
-                        <div className={styles.project_header}>
-                            <div className={styles.main_featured_project_info_title}>
-                                <div className={styles.main_featured_project_info_title_year}>{project?.year ? project.year : "Year"}</div>
-                                <div className={styles.main_featured_project_info_title_text}>{project?.name}</div>
+                            <div className={styles.project_header}>
+                                <div className={styles.main_featured_project_info_title}>
+                                    <div
+                                        className={styles.main_featured_project_info_title_year}>{project?.year ? project.year : "Year"}</div>
+                                    <div className={styles.main_featured_project_info_title_text}>{project?.name}</div>
+                                    {project?.trailerUrl ?
+                                        <div className={styles.main_featured_project_info_title_trailer} onClick={showTrailer}>Play Trailer</div>
+                                    : null}
+                                </div>
+                                {commitData ? <div className={styles.project_header_github_info} data-aos="fade-left">
+                                    <div><Link className={styles.url}
+                                               href={"https://github.com/lukassobotik/" + githubId + "/commits"}>{commitData?.length} {commitData?.length == 1 ? "Commit" : "Commits"}</Link>
+                                    </div>
+                                    <div><Link className={styles.url}
+                                               href={"https://github.com/lukassobotik/" + githubId + "/issues"}>{repoData?.open_issues} {repoData?.open_issues == 1 ? "Issue" : "Issues"}</Link>
+                                    </div>
+                                    <div><Link className={styles.url}
+                                               href={"https://github.com/lukassobotik/" + githubId + "/stargazers"}>{repoData?.stargazers_count} {repoData?.stargazers_count == 1 ? "Star" : "Stars"}</Link>
+                                    </div>
+                                    <div><Link className={styles.url}
+                                               href={"https://github.com/lukassobotik/" + githubId + "/forks"}>{repoData?.forks_count} {repoData?.forks_count == 1 ? "Fork" : "Forks"}</Link>
+                                    </div>
+                                </div> : null}
                             </div>
-                            {commitData ? <div className={styles.project_header_github_info} data-aos="fade-left">
-                                <div><Link className={styles.url} href={"https://github.com/lukassobotik/" + githubId + "/commits"}>{commitData?.length} {commitData?.length == 1 ? "Commit" : "Commits"}</Link></div>
-                                <div><Link className={styles.url} href={"https://github.com/lukassobotik/" + githubId + "/issues"}>{repoData?.open_issues} {repoData?.open_issues == 1 ? "Issue" : "Issues"}</Link></div>
-                                <div><Link className={styles.url} href={"https://github.com/lukassobotik/" + githubId + "/stargazers"}>{repoData?.stargazers_count} {repoData?.stargazers_count == 1 ? "Star" : "Stars"}</Link></div>
-                                <div><Link className={styles.url} href={"https://github.com/lukassobotik/" + githubId + "/forks"}>{repoData?.forks_count} {repoData?.forks_count == 1 ? "Fork" : "Forks"}</Link></div>
+                            <h3 className={styles.project_technologies}>
+                                {project?.technologies && Object.keys(project.technologies).map((key) => {
+                                        return project.technologies[key]
+                                    }
+                                ).join(", ")}
+                            </h3>
+                            <div className={styles.project_paragraph_parent}>
+                                {project?.description && Object.keys(project.description).map((key) => (
+                                    <p key={key}>{project.description[key]}</p>
+                                ))}
+                            </div>
+                            <div className={styles.project_link}>
+                                {project?.links && Object.keys(project.links).map((key) => (
+                                    <a key={key} href={project.links[key].url}
+                                       className={styles.skill}>{project.links[key].name}</a>
+                                ))}
+                            </div>
+                            {readmeData ? <div className={styles.project_readme} data-aos="fade-up">
+                                <div className={styles.project_readme_title}><span>README.md</span></div>
+                                <MarkdownContainer data={readmeData}/>
                             </div> : null}
-                        </div>
-                        <h3 className={styles.project_technologies}>
-                            {project?.technologies && Object.keys(project.technologies).map((key) => {
-                                return project.technologies[key]}
-                            ).join(", ")}
-                        </h3>
-                        <div className={styles.project_paragraph_parent}>
-                            {project?.description && Object.keys(project.description).map((key) => (
-                                <p key={key}>{project.description[key]}</p>
-                            ))}
-                        </div>
-                        <div className={styles.project_link}>
-                            {project?.links && Object.keys(project.links).map((key) => (
-                                <a key={key} href={project.links[key].url} className={styles.skill}>{project.links[key].name}</a>
-                            ))}
-                        </div>
-                        {readmeData ? <div className={styles.project_readme} data-aos="fade-up">
-                            <div className={styles.project_readme_title}><span>README.md</span></div>
-                            <MarkdownContainer data={readmeData} />
-                        </div> : null}
 
-                        {project?.hasHorizontalScreenshots ?
-                            <div className={styles.horizontal_project_images}>
-                                {renderScreenshots(project.horizontalScreenshots.urls, project.horizontalScreenshots.width, project.horizontalScreenshots.height)}
-                            </div>
-                        : null}
-                        {project?.hasVerticalScreenshots ?
-                            <div className={styles.vertical_project_images}>
-                                {renderScreenshots(project.verticalScreenshots.urls, project.verticalScreenshots.width, project.verticalScreenshots.height)}
-                            </div>
-                            : null}
+                            {project?.hasHorizontalScreenshots ?
+                                <div className={styles.horizontal_project_images}>
+                                    {renderScreenshots(project.horizontalScreenshots.urls, project.horizontalScreenshots.width, project.horizontalScreenshots.height)}
+                                </div>
+                                : null}
+                            {project?.hasVerticalScreenshots ?
+                                <div className={styles.vertical_project_images}>
+                                    {renderScreenshots(project.verticalScreenshots.urls, project.verticalScreenshots.width, project.verticalScreenshots.height)}
+                                </div>
+                                : null}
+                        </div>
                     </div>
-                </div>
-            </main>
-        </>
-    )
-}
+                        </main>
+                        </>
+                        )
+                    }
 
-function sortProjectsByFeatured(filteredProjects: Project[]) {
-    return filteredProjects.sort((a, b) => {
-        if (a.featured && !b.featured) {
-            return -1; // Move "a" (featured) before "b" (not featured)
-        } else if (!a.featured && b.featured) {
+                    function sortProjectsByFeatured(filteredProjects: Project[]) {
+                    return filteredProjects.sort((a, b) => {
+                    if (a.featured && !b.featured) {
+                    return -1; // Move "a" (featured) before "b" (not featured)
+                } else if (!a.featured && b.featured) {
             return 1; // Move "b" (featured) before "a" (not featured)
         } else {
             return 0; // Leave the order unchanged

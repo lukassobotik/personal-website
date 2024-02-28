@@ -164,6 +164,14 @@
   color: #999999;
   margin-bottom: 1vh;
 }
+.main_featured_project_info_title_trailer {
+  font-size: 2.5vh;
+  font-style: italic;
+  color: #999999;
+  margin-bottom: 1vh;
+  margin-top: -.5vh;
+  cursor: pointer;
+}
 .main_other_projects {
   font-weight: bold;
   font-size: 4vh;
@@ -294,6 +302,37 @@
 .tag_project_number {
   margin-top: -.5rem;
   margin-bottom: 1rem;
+}
+
+.trailer {
+  width: 90vw;
+  height: 90vh;
+  border-radius: 1rem;
+  top: 5vh;
+  left: 5vw;
+  border: 2px solid hsl(0, 0%, 18%);
+  overflow: hidden;
+  position: absolute;
+}
+
+.trailer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.trailer_back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2.5vw;
+  border-radius: 1rem;
+  background-color: hsl(0, 0%, 9%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 200ms;
 }
 
 @keyframes tag-fade-in {
