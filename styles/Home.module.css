@@ -230,11 +230,21 @@
   display: flex;
   align-items: center;
   padding: -2rem;
-  margin-top: -2rem;
+  margin-top: -1.75rem;
 }
 .project_readme_title span {
   margin-left: 2rem;
   margin-right: 2rem;
+  cursor: pointer;
+}
+.project_readme_span {
+
+}
+.project_readme_span_active {
+
+}
+.license_parent {
+  margin-top: 2rem;
 }
 
 .project_header {

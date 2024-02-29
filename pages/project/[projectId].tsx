@@ -43,6 +43,8 @@ export default function Project() {
     const projectId = router.query.projectId;
     const [project, setProject] = useState<Project>();
     const [showingTrailer, setShowingTrailer] = useState(false);
+    const [showingReadme, setShowingReadme] = useState(true);
+    const [showingLicense, setShowingLicense] = useState(false);
     const githubId = project?.github_id ? project?.github_id : projectId;
 
     useEffect(() => {
@@ -53,6 +55,7 @@ export default function Project() {
     const { data : readmeData } = useSwr('/api/getReadme/' + githubId, fetcher);
     const { data : repoData } = useSwr('/api/getRepo/' + githubId, fetcher);
     const { data : commitData } = useSwr('/api/getCommits/' + githubId, fetcher);
+    const { data : licenseData } = useSwr('/api/getLicense/' + githubId, fetcher);
 
     /**
      * The `renderScreenshots` function is responsible for rendering the screenshots of a project.
@@ -78,6 +81,30 @@ export default function Project() {
     function escapeTrailer() {
         if (showingTrailer) {
             setShowingTrailer(false);
+        }
+    }
+
+    function showReadme() {
+        setShowingReadme(true);
+        underlineTab(true, document.getElementById("readme_tab")!);
+        if (project?.license) {
+            setShowingLicense(false);
+            underlineTab(false, document.getElementById("license_tab")!);
+        }
+    }
+
+    function showLicense() {
+        setShowingLicense(true);
+        underlineTab(true, document.getElementById("license_tab")!);
+        setShowingReadme(false);
+        underlineTab(false, document.getElementById("readme_tab")!);
+    }
+
+    function underlineTab(underline : boolean, {style}: HTMLElement) {
+        if (underline) {
+            style.borderBottom = "2px solid #2f81f7";
+        } else {
+            style.borderBottom = "none";
         }
     }
 
@@ -111,25 +138,24 @@ export default function Project() {
                                     : null}
                                 </div>
                                 {commitData ? <div className={styles.project_header_github_info} data-aos="fade-left">
-                                    <div><Link className={styles.url}
-                                               href={"https://github.com/lukassobotik/" + githubId + "/commits"}>{commitData?.length} {commitData?.length == 1 ? "Commit" : "Commits"}</Link>
+                                    <div>
+                                        <Link className={styles.url} href={"https://github.com/lukassobotik/" + githubId + "/commits"}>{commitData?.length} {commitData?.length == 1 ? "Commit" : "Commits"}</Link>
                                     </div>
-                                    <div><Link className={styles.url}
-                                               href={"https://github.com/lukassobotik/" + githubId + "/issues"}>{repoData?.open_issues} {repoData?.open_issues == 1 ? "Issue" : "Issues"}</Link>
+                                    <div>
+                                        <Link className={styles.url} href={"https://github.com/lukassobotik/" + githubId + "/issues"}>{repoData?.open_issues} {repoData?.open_issues == 1 ? "Issue" : "Issues"}</Link>
                                     </div>
-                                    <div><Link className={styles.url}
-                                               href={"https://github.com/lukassobotik/" + githubId + "/stargazers"}>{repoData?.stargazers_count} {repoData?.stargazers_count == 1 ? "Star" : "Stars"}</Link>
+                                    <div>
+                                        <Link className={styles.url} href={"https://github.com/lukassobotik/" + githubId + "/stargazers"}>{repoData?.stargazers_count} {repoData?.stargazers_count == 1 ? "Star" : "Stars"}</Link>
                                     </div>
-                                    <div><Link className={styles.url}
-                                               href={"https://github.com/lukassobotik/" + githubId + "/forks"}>{repoData?.forks_count} {repoData?.forks_count == 1 ? "Fork" : "Forks"}</Link>
+                                    <div>
+                                        <Link className={styles.url} href={"https://github.com/lukassobotik/" + githubId + "/forks"}>{repoData?.forks_count} {repoData?.forks_count == 1 ? "Fork" : "Forks"}</Link>
                                     </div>
                                 </div> : null}
                             </div>
                             <h3 className={styles.project_technologies}>
                                 {project?.technologies && Object.keys(project.technologies).map((key) => {
-                                        return project.technologies[key]
-                                    }
-                                ).join(", ")}
+                                    return project.technologies[key]
+                                }).join(", ")}
                             </h3>
                             <div className={styles.project_paragraph_parent}>
                                 {project?.description && Object.keys(project.description).map((key) => (
@@ -143,32 +169,37 @@ export default function Project() {
                                 ))}
                             </div>
                             {readmeData ? <div className={styles.project_readme} data-aos="fade-up">
-                                <div className={styles.project_readme_title}><span>README.md</span></div>
-                                <MarkdownContainer data={readmeData}/>
+                                <div className={styles.project_readme_title}>
+                                    <span id="readme_tab" className={styles.project_readme_span} style={{borderBottom: "2px solid #2f81f7"}} onClick={showReadme}>README.md</span>
+                                    {project?.license ? <span id="license_tab" className={styles.project_readme_span} onClick={showLicense}>License</span> : null}
+                                        </div>
+                                    {showingReadme ? <MarkdownContainer data={readmeData}/>
+                                : null}
+                                {showingLicense ? <div className={styles.license_parent}><MarkdownContainer data={licenseData}/></div> : null}
                             </div> : null}
 
                             {project?.hasHorizontalScreenshots ?
                                 <div className={styles.horizontal_project_images}>
                                     {renderScreenshots(project.horizontalScreenshots.urls, project.horizontalScreenshots.width, project.horizontalScreenshots.height)}
                                 </div>
-                                : null}
+                            : null}
                             {project?.hasVerticalScreenshots ?
                                 <div className={styles.vertical_project_images}>
                                     {renderScreenshots(project.verticalScreenshots.urls, project.verticalScreenshots.width, project.verticalScreenshots.height)}
                                 </div>
-                                : null}
-                        </div>
+                            : null}
                     </div>
-                        </main>
-                        </>
-                        )
-                    }
+                </div>
+            </main>
+        </>
+    )
+}
 
-                    function sortProjectsByFeatured(filteredProjects: Project[]) {
-                    return filteredProjects.sort((a, b) => {
-                    if (a.featured && !b.featured) {
-                    return -1; // Move "a" (featured) before "b" (not featured)
-                } else if (!a.featured && b.featured) {
+function sortProjectsByFeatured(filteredProjects: Project[]) {
+    return filteredProjects.sort((a, b) => {
+        if (a.featured && !b.featured) {
+            return -1; // Move "a" (featured) before "b" (not featured)
+        } else if (!a.featured && b.featured) {
             return 1; // Move "b" (featured) before "a" (not featured)
         } else {
             return 0; // Leave the order unchanged
