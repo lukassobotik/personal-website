@@ -808,8 +808,8 @@
   text-align: left;
 }
 
-.overview p {
-  margin-bottom: 1rem;
+.overview_paragraph {
+  margin-block-end: .5em;
 }
 
 .featured_projects {

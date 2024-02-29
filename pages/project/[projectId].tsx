@@ -133,7 +133,7 @@ export default function Project() {
                             </h3>
                             <div className={styles.project_paragraph_parent}>
                                 {project?.description && Object.keys(project.description).map((key) => (
-                                    <p key={key}>{project.description[key]}</p>
+                                    <p className={styles.overview_paragraph} key={key}>{project.description[key]}</p>
                                 ))}
                             </div>
                             <div className={styles.project_link}>
