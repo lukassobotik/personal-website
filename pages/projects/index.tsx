@@ -23,7 +23,6 @@ function AllProjects() {
     const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
     const [technologies, setTechnologies] = useState<[string, number][]>();
     const [years, setYears] = useState<string[]>();
-    const router = useRouter();
     const searchParams = useSearchParams();
     const technologyQuery = searchParams.get("technology");
     const yearQuery = searchParams.get("year");
@@ -46,7 +45,6 @@ function AllProjects() {
             if (typeof query === "string") {
                 let array = query.split(",");
                 array.forEach((element, index) => {
-                    console.log(element);
                     technologies?.forEach((technology) => {
                         if (technology[0].trim().toLowerCase() === element.trim().toLowerCase()) {
                             technologyTagClicked(technology[0]);
