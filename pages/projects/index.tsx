@@ -46,14 +46,17 @@ function AllProjects() {
             if (typeof query === "string") {
                 let array = query.split(",");
                 array.forEach((element, index) => {
+                    console.log(element);
                     technologies?.forEach((technology) => {
                         if (technology[0].trim().toLowerCase() === element.trim().toLowerCase()) {
-                            technologyTagClicked(element);
+                            technologyTagClicked(technology[0]);
+                        } else if (technology[0].trim() === "C#" && element.trim().toLowerCase() === "c-sharp") {
+                            technologyTagClicked("C#");
                         }
                     });
                     years?.forEach((year) => {
                         if (year.trim().toLowerCase() === element.trim().toLowerCase()) {
-                            yearTagClicked(element);
+                            yearTagClicked(year);
                         }
                     });
                 });
