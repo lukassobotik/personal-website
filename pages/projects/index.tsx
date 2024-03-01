@@ -26,6 +26,7 @@ function AllProjects() {
     const searchParams = useSearchParams();
     const technologyQuery = searchParams.get("technology");
     const yearQuery = searchParams.get("year");
+    const router = useRouter();
 
     useEffect(() => {
         getQuery().then(r => {});

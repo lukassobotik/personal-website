@@ -52,10 +52,37 @@ export default function Project() {
         AOS.init();
     }, [projectId]);
 
+    async function scrollToHeading() {
+        await new Promise(resolve => setTimeout(resolve, 500));
+        const handleHashChange = () => {
+            const element = document.getElementById(router.asPath.split('#')[1]);
+
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Check on initial load
+        handleHashChange();
+
+        // Add listener for subsequent hash changes
+        window.addEventListener('hashchange', handleHashChange);
+
+        return () => {
+            window.removeEventListener('hashchange', handleHashChange);
+        }
+    }
+
     const { data : readmeData } = useSwr('/api/getReadme/' + githubId, fetcher);
     const { data : repoData } = useSwr('/api/getRepo/' + githubId, fetcher);
     const { data : commitData } = useSwr('/api/getCommits/' + githubId, fetcher);
     const { data : licenseData } = useSwr('/api/getLicense/' + githubId, fetcher);
+
+    useEffect(() => {
+        if (readmeData && showingReadme) {
+            scrollToHeading().then(r => {});
+        }
+    }, [readmeData]);
 
     /**
      * The `renderScreenshots` function is responsible for rendering the screenshots of a project.

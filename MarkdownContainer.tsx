@@ -2,7 +2,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import styles from "./styles/Home.module.css";
-import {useEffect, useState} from "react";
+import React, {ReactNode, useEffect, useState} from "react";
 
 export default function MarkdownContainer({data}: {data: any}) {
     const [ style, setStyle ] = useState({})
@@ -10,6 +10,12 @@ export default function MarkdownContainer({data}: {data: any}) {
         import('react-syntax-highlighter/dist/esm/styles/prism/material-dark')
             .then(mod => setStyle(mod.default));
     })
+
+    function getHeadingId(children: ReactNode) {
+        const text = React.Children.toArray(children).join('');
+        const cleanedText = text.replace(/[^a-z0-9\s]/gi, '');
+        return cleanedText.toLowerCase().replace(/ /g, "-");
+    }
 
     return (
         <>
@@ -21,14 +27,14 @@ export default function MarkdownContainer({data}: {data: any}) {
                     ul: ({node, ...props}) => {
                         return <ul {...props} style={{marginLeft: "2rem"}} />
                     },
-                    h1: ({node, ...props}) => {
-                        return <h1 {...props} style={{marginTop: "2rem"}} />
+                    h1: ({node, children, ...props}) => {
+                        return <h1 {...props} style={{marginTop: "2rem"}}>{children}</h1>
                     },
-                    h2: ({node, ...props}) => {
-                        return <h2 {...props} style={{marginTop: "2rem"}} />
+                    h2: ({node, children, ...props}) => {
+                        return <h2 {...props} id={getHeadingId(children)} style={{marginTop: "2rem"}}>{children}</h2>
                     },
-                    h3: ({node, ...props}) => {
-                        return <h2 {...props} style={{marginTop: "2rem"}} />
+                    h3: ({node, children, ...props}) => {
+                        return <h3 {...props} style={{marginTop: "2rem"}}>{children}</h3>
                     },
                     code: ({node, inline, className, children, ...props}) => {
                         const match = /language-(\w+)/.exec(className || '')
