@@ -1,7 +1,7 @@
 import styles from "../../styles/Home.module.css";
 import Head from "next/head";
 import Navbar from "../../navbar";
-import {useEffect, useState} from "react";
+import {Suspense, useEffect, useState} from "react";
 import {
     fetchProjectsByTechnologies,
     fetchProjectsByYear,
@@ -15,49 +15,55 @@ import {func} from "prop-types";
 // @ts-ignore
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import {useSearchParams} from "next/navigation";
 
-export default function AllProjects() {
+function AllProjects() {
     const [selectedTechnologyTags, setSelectedTechnologyTags] = useState<string[]>([]);
     const [selectedYearTags, setSelectedYearTags] = useState<string[]>([]);
     const [filteredProjects, setFilteredProjects] = useState<Project[]>([]);
     const [technologies, setTechnologies] = useState<[string, number][]>();
     const [years, setYears] = useState<string[]>();
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const technologyQuery = searchParams.get("technology");
+    const yearQuery = searchParams.get("year");
 
-    // useEffect(() => {
-    //     getAllTechnologies().then(() => {
-    //         getAllYears().then(() => {
-    //             const techQuery = router.query.technology as string | undefined;
-    //             const yearQuery = router.query.year as string | undefined;
-    //
-    //             /**
-    //              * Parses the query string and returns an array of technologies
-    //              * Must be in the format of "technology1,technology2,technology3"
-    //              * "getAllYears()" must be called before this function
-    //              * @param query
-    //              */
-    //             function parseQuery(query: string | undefined) {
-    //                 if (typeof query === "string") {
-    //                     let array = query.split(",");
-    //                     array.forEach((element, index) => {
-    //                         technologies?.forEach((technology) => {
-    //                             if (technology[0].trim().toLowerCase() === element.trim().toLowerCase()) {
-    //                                 setSelectedTechnologyTags([...selectedTechnologyTags, element.trim().toLowerCase()]);
-    //                                 technologyTagClicked(element);
-    //                                 console.log("tag from query: " + element.trim().toLowerCase())
-    //                             }
-    //                         });
-    //                     });
-    //                 }
-    //             }
-    //
-    //             // Call parseQuery with the query parameters
-    //             parseQuery(techQuery);
-    //             parseQuery(yearQuery);
-    //         });
-    //     });
-    //
-    // }, []);
+    useEffect(() => {
+        getQuery().then(r => {});
+    }, [technologyQuery, yearQuery]);
+
+    async function getQuery() {
+        const technologies = await getAllTechnologies();
+        const years = await getAllYears();
+
+        /**
+         * Parses the query string and returns an array of technologies
+         * Must be in the format of "technology1,technology2,technology3"
+         * "getAllYears()" must be called before this function
+         * @param query
+         */
+        function parseQuery(query: string | undefined | null) {
+            if (typeof query === "string") {
+                let array = query.split(",");
+                array.forEach((element, index) => {
+                    technologies?.forEach((technology) => {
+                        if (technology[0].trim().toLowerCase() === element.trim().toLowerCase()) {
+                            technologyTagClicked(element);
+                        }
+                    });
+                    years?.forEach((year) => {
+                        if (year.trim().toLowerCase() === element.trim().toLowerCase()) {
+                            yearTagClicked(element);
+                        }
+                    });
+                });
+            }
+        }
+
+        // Call parseQuery with the query parameters
+        parseQuery(technologyQuery?.toString());
+        parseQuery(yearQuery?.toString());
+    }
 
     useEffect(() => {
         getAllTechnologies();
@@ -123,11 +129,13 @@ export default function AllProjects() {
     async function getAllTechnologies() {
         let technologies = await getAllTechnologiesSortedByFrequency();
         setTechnologies(technologies);
+        return technologies;
     }
 
     async function getAllYears() {
         let years = await getAllYearsDescending();
         setYears(years);
+        return years;
     }
 
     return (
@@ -159,4 +167,12 @@ export default function AllProjects() {
             </main>
         </>
     )
+}
+
+export default function ProjectsSuspense() {
+    return <>
+        <Suspense>
+            <AllProjects/>
+        </Suspense>
+    </>
 }
