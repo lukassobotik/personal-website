@@ -1,0 +1,26 @@
+{
+  "The Great Chicken Heist": {
+    "id": "the-great-chicken-heist",
+    "title": "The Great Chicken Heist",
+    "description": {
+      "1": "Status: In Development",
+      "2": "My roles: Director, Cinematographer, Co-Writer, Producer, Editor",
+      "3": "The Great Chicken Heist is a short movie about 3 guys who find out that chicken prices are through the roof. They decide to steal a chicken from a chicken competition to have a nice chicken dinner."
+    },
+    "shortDescription": {
+      "1": "Status: In Development",
+      "2": "The Great Chicken Heist is a short movie about 3 guys who find out that chicken prices are through the roof. They decide to steal a chicken from a chicken competition to have a nice chicken dinner."
+    },
+    "genres": {
+      "1": "Comedy",
+      "2": "Short"
+    },
+    "year": "2024",
+    "links": {
+      "1": {
+        "name": "Watch the movie",
+        "url": "/movie/the-great-chicken-heist"
+      }
+    }
+  }
+}

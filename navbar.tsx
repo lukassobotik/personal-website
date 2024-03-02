@@ -17,6 +17,11 @@ export default function Navbar() {
                         Projects
                     </h3>
                 </Link>
+                {/*<Link href="/movies" className={styles.header_tab}>*/}
+                {/*    <h3>*/}
+                {/*        Movies*/}
+                {/*    </h3>*/}
+                {/*</Link>*/}
                 <Link href="/contact" className={styles.header_tab}>
                     <h3>
                         Contact

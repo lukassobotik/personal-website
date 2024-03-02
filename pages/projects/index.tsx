@@ -163,7 +163,7 @@ function AllProjects() {
                     </div>
 
                     {filteredProjects && filteredProjects.map((project, id) => (
-                        <ProjectOverview key={id} project={project} id={id}></ProjectOverview>
+                        <ProjectOverview key={id} project={project} id={id} isMovie={false}></ProjectOverview>
                     ))}
                 </div>
             </main>

@@ -39,7 +39,7 @@ export default function FetchProjects({onlyFeatured}: {onlyFeatured: boolean}) {
         <>
             <div className={styles.featured_projects_section}>
                 {projects && projects.map((project, id) => (
-                    <ProjectOverview key={id} project={project} id={id}></ProjectOverview>
+                    <ProjectOverview key={id} project={project} id={id} isMovie={false}></ProjectOverview>
                 ))}
             </div>
         </>

@@ -5,8 +5,9 @@ import {Project} from "./pages/project/[projectId]";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import {useEffect} from "react";
+import {Movie} from "./pages/movie/[movieId]";
 
-export default function ProjectOverview({project, id} : {project : Project, id : number}) {
+export default function ProjectOverview({project, id, isMovie} : {project : Project | Movie, id : number, isMovie : boolean}) {
     useEffect(() => {
         AOS.init();
     }, []);
@@ -16,7 +17,11 @@ export default function ProjectOverview({project, id} : {project : Project, id :
             <div className={styles.main_featured_project_info}>
                 <div className={styles.main_featured_project_info_title}>
                     <div className={styles.main_featured_project_info_title_year}>{project.year ? project.year : "Year"}</div>
-                    <div className={styles.main_featured_project_info_title_text}><Link href={"/project/" + project.id} className={styles.url}>{project.name}</Link></div>
+                    {!isMovie ?
+                        <div className={styles.main_featured_project_info_title_text}><Link href={"/project/" + project.id} className={styles.url}>{(project as Project).name}</Link></div>
+                        :
+                        <div className={styles.main_featured_project_info_title_text}><Link href={"/movie/" + project.id} className={styles.url}>{(project as Movie).title}</Link></div>
+                    }
                 </div>
                 <div className={styles.main_featured_project_other_info}>
                     <div className={styles.main_featured_project_other_info_description}>
@@ -26,10 +31,21 @@ export default function ProjectOverview({project, id} : {project : Project, id :
                         ))}
                     </div>
                     <div className={styles.main_featured_project_other_info_technologies}>
-                        <div className={styles.main_featured_project_other_info_title}>Technologies</div>
-                        {project?.technologies && Object.keys(project.technologies).map((key) => (
-                            <div key={key} className={styles.main_featured_project_other_info_text}>{project.technologies[key]}</div>
-                        ))}
+                        {!isMovie ?
+                            <div>
+                                <div className={styles.main_featured_project_other_info_title}>Technologies</div>
+                                {(project as Project)?.technologies && Object.keys((project as Project).technologies).map((key) => (
+                                    <div key={key} className={styles.main_featured_project_other_info_text}>{(project as Project).technologies[key]}</div>
+                                ))}
+                            </div>
+                            :
+                            <div>
+                                <div className={styles.main_featured_project_other_info_title}>Genres</div>
+                                {(project as Movie)?.genres && Object.keys((project as Movie).genres).map((key) => (
+                                    <div key={key} className={styles.main_featured_project_other_info_text}>{(project as Movie).genres[key]}</div>
+                                ))}
+                            </div>
+                        }
                     </div>
                     <div className={styles.main_featured_project_other_info_links}>
                         <div className={styles.main_featured_project_other_info_title}>Links</div>
