@@ -1,7 +1,7 @@
 import styles from "./styles/Home.module.css";
 // @ts-ignore
 import AOS from 'aos';
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useState} from "react";
 
 export interface TimelineItem {
     title: string;
@@ -15,23 +15,7 @@ export default function Timeline() {
     const [leftItems, setLeftItems] = useState<TimelineItem[]>([]);
     const [rightItems, setRightItems] = useState<TimelineItem[]>([]);
 
-    useEffect(() => {
-        AOS.init();
-
-        fetchData().then((data) => {
-            console.log(data);
-            setTimelineItems(data);
-            splitItemsEvenly();
-        });
-    }, [splitItemsEvenly]);
-
-    async function fetchData() {
-        const res = await fetch('/experience.json');
-        const data = await res.json();
-        return Object.values<TimelineItem>(data);
-    }
-
-    function splitItemsEvenly() {
+    const splitItemsEvenly = useCallback(() => {
         let leftItems: TimelineItem[] = [];
         let rightItems: TimelineItem[] = [];
 
@@ -45,6 +29,28 @@ export default function Timeline() {
 
         setLeftItems(leftItems);
         setRightItems(rightItems);
+    }, [timelineItems]);
+
+    useEffect(() => {
+        AOS.init();
+
+        if (timelineItems.length > 0) {
+            console.log("Timeline items already fetched");
+            splitItemsEvenly();
+            return;
+        }
+
+        fetchData().then((data) => {
+            console.log(data);
+            setTimelineItems(data);
+            splitItemsEvenly();
+        });
+    }, [splitItemsEvenly, timelineItems.length]);
+
+    async function fetchData() {
+        const res = await fetch('/experience.json');
+        const data = await res.json();
+        return Object.values<TimelineItem>(data);
     }
 
     return (
