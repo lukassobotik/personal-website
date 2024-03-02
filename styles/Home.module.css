@@ -345,6 +345,69 @@
   transition: background-color 200ms;
 }
 
+.timeline_heading {
+  font-weight: bold;
+  font-size: 5vh;
+  margin-top: 10vh;
+  margin-bottom: 2vh;
+}
+
+.timeline {
+  position: relative;
+  height: 60vh;
+  width: 1rem;
+  margin: auto;
+}
+
+.timeline_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(to bottom, #464646, #bdbdbd, #464646);
+  width: 100%;
+  height: 100%;
+  border-radius: 5rem;
+}
+
+.timeline_item_point {
+  position: absolute;
+  width: 2rem;
+  background: #ffffff;
+  border-radius: 100%;
+  aspect-ratio: 1/1;
+  left: -.5rem;
+  border: 3px solid #000000;
+}
+
+.timeline_right_item_content {
+  position: absolute;
+  left: 2rem;
+  width: 45vw;
+  bottom: 0;
+  transform: translateY(75%);
+}
+
+.timeline_left_item_content {
+  position: absolute;
+  text-align: right;
+  right: 2rem;
+  width: 30vw;
+  bottom: 0;
+  transform: translateY(70%);
+}
+
+.timeline_item {
+  position: absolute;
+}
+
+.timeline_item_duration {
+  color: #999999;
+}
+
+.timeline_item_paragraph {
+  color: #999999;
+}
+
 @keyframes tag-fade-in {
   0% { background-color: #131313; }
   100% { background-color: #505050; }
@@ -373,6 +436,12 @@
   }
   .project_technologies {
     margin-top: .5rem;
+  }
+  .timeline_left_item_content {
+    transform: translateY(15%);
+  }
+  .timeline_right_item_content {
+    transform: translateY(75%);
   }
 }
 
