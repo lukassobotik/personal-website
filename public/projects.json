@@ -58,35 +58,6 @@
     }
   },
 
-  "SightlessKnight": {
-    "featured": true,
-    "id": "SightlessKnight",
-    "github_id": "SightlessKnight",
-    "year": "2023",
-    "logoUrl": "/images/SightlessKnight/SightlessKnight.png",
-    "name": "SightlessKnight",
-    "technologies": {
-      "1": "Java",
-      "2": "Vaadin"
-    },
-    "shortDescription": {
-      "1": "Learn blindfolded chess easily!",
-      "2": "Chess application that helps people learn chess blindfolded or train visualisation."
-    },
-    "description": {
-      "1": "Learn blindfolded chess easily!",
-      "2": "A Cross-Platform Chess application that helps people learn chess blindfolded or train visualisation."
-    },
-    "links": {
-      "1": {
-        "name": "Source Code",
-        "url": "https://github.com/lukassobotik/SightlessKnight"
-      }
-    },
-    "hasHorizontalScreenshots": false,
-    "hasVerticalScreenshots": false
-  },
-
   "CropThatImage": {
     "featured": true,
     "id": "CropThatImage",
@@ -115,6 +86,35 @@
         "url": "https://github.com/lukassobotik/CropThatImage"
       }
     }
+  },
+
+  "SightlessKnight": {
+    "featured": true,
+    "id": "SightlessKnight",
+    "github_id": "SightlessKnight",
+    "year": "2023",
+    "logoUrl": "/images/SightlessKnight/SightlessKnight.png",
+    "name": "SightlessKnight",
+    "technologies": {
+      "1": "Java",
+      "2": "Vaadin"
+    },
+    "shortDescription": {
+      "1": "Learn blindfolded chess easily!",
+      "2": "Chess application that helps people learn chess blindfolded or train visualisation."
+    },
+    "description": {
+      "1": "Learn blindfolded chess easily!",
+      "2": "A Cross-Platform Chess application that helps people learn chess blindfolded or train visualisation."
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/lukassobotik/SightlessKnight"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
   },
 
   "WidgetSchedule": {
