@@ -74,7 +74,8 @@
     },
     "description": {
       "1": "CropThatImage is a web application that automatically crops the edges of an image.",
-      "2": "I built this application because I found a thread on the web where people were asking for a tool that would automatically crop the edges of an image. I thought it was a great idea and decided to build it myself."
+      "2": "I built this application because I found a thread on the web where people were asking for a tool that would automatically crop the edges of an image. I thought it was a great idea and decided to build it myself.",
+      "3": "All the cropping is done on the client side, so the image never leaves your device."
     },
     "links": {
       "1": {
