@@ -7,8 +7,14 @@
   },
   "2": {
     "title": "Content Curator",
-    "duration": "Oct 2023-now",
+    "duration": "Oct 2023-Mar 2024",
     "description": "Private Content Curator about Software for individuals.",
+    "percentage": "15%"
+  },
+  "3": {
+    "title": "Internship - Web Developer",
+    "duration": "Apr 2024",
+    "description": "Development of an employee-only internal website for Mašek Advokáti.",
     "percentage": "5%"
   }
 }
