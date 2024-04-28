@@ -20,8 +20,8 @@ export default function Contact() {
             <main className={styles.main}>
                 <Navbar/>
                 <h1 className={styles.contact_header} data-aos="fade-up">Contact</h1>
-                <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="50"><Link className={styles.url} href="/resume/junior-java-developer.pdf">Resume (Java)</Link></div>
-                <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="100"><Link className={styles.url} href="/resume/web-developer.pdf">Resume (Web)</Link></div>
+                <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="50"><Link className={styles.url} href="/resume/java.pdf">Resume (Java)</Link></div>
+                <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="100"><Link className={styles.url} href="/resume/web.pdf">Resume (Web)</Link></div>
                 <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="150"><Link className={styles.url} href="https://github.com/lukassobotik/personal-website">Source Code</Link></div>
                 <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="200"><Link className={styles.url} href="https://www.buymeacoffee.com/lukassobotik">Buy me a coffee</Link></div>
                 <div className={styles.main_contact_item} data-aos="fade-up" data-aos-delay="250"><Link className={styles.url} href="https://github.com/lukassobotik">Github</Link></div>
