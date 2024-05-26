@@ -7,6 +7,6 @@
 </p>
 
 ### Overview
-This is the source code for my portfolio website where you can find my projects or contact me there.
+This is the source code for my portfolio website where you can find my projects or places to contact me.
 I use it to showcase my projects and to learn new technologies. I also store other files like my resume there.
 It is built with TypeScript, Next.js, and React. 
