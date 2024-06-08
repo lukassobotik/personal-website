@@ -1,7 +1,9 @@
-import styles from "./styles/Home.module.css";
+import styles from "./styles/timeline.module.css";
 // @ts-ignore
 import AOS from 'aos';
 import {useCallback, useEffect, useState} from "react";
+import Xarrow, {useXarrow, Xwrapper} from "react-xarrows";
+import { format, addMonths, parse } from 'date-fns';
 
 export interface TimelineItem {
     title: string;
@@ -14,6 +16,9 @@ export default function Timeline() {
     const [timelineItems, setTimelineItems] = useState<TimelineItem[]>([]);
     const [leftItems, setLeftItems] = useState<TimelineItem[]>([]);
     const [rightItems, setRightItems] = useState<TimelineItem[]>([]);
+    const [months, setMonths] = useState<string[]>([]);
+
+    const updateXarrow = useXarrow();
 
     const splitItemsEvenly = useCallback(() => {
         let leftItems: TimelineItem[] = [];
@@ -47,20 +52,52 @@ export default function Timeline() {
         });
     }, [splitItemsEvenly, timelineItems.length]);
 
+    useEffect(() => {
+        getMonthsUntilNow("Jan 2024");
+    }, []);
+
     async function fetchData() {
         const res = await fetch('/experience.json');
         const data = await res.json();
         return Object.values<TimelineItem>(data);
     }
 
+    const getMonthsUntilNow = (startDate: string): string[] => {
+        // Parse the input start date
+        const parsedDate = parse(startDate, 'MMM yyyy', new Date());
+        const result: string[] = [];
+
+        let currentDate = parsedDate;
+        const now = new Date();
+
+        while (currentDate <= now) {
+            // Format the current date to 'MMM yyyy'
+            const formattedDate = format(currentDate, 'MMM_yyyy');
+            result.push(formattedDate);
+            currentDate = addMonths(currentDate, 1);
+        }
+
+        const returnValue = Array.from(new Set(result));
+        setMonths(returnValue);
+        return returnValue;
+    };
+
     return (
         <div data-aos="fade-up" data-aos-once={true}>
             <h1 className={styles.timeline_heading}>Job Experience Timeline</h1>
             <div className={styles.timeline}>
                 <div className={styles.timeline_container}>
-                    <div>
+                    {/* Doesn't work because it tries to load it before it exists (display after it has been loaded) */}
+                    <Xwrapper>
+                        <div className={styles.months}>
+                            {months.map((month, id) => {
+                                return (<div id={String(id)} key={id}>{month}</div>)
+                            })}
+                            <div id="end"> </div>
+                            <Xarrow showHead={true} start={'1'} end="end"/>
+                        </div>
 
-                    </div>
+                    </Xwrapper>
                 </div>
                 {rightItems.map((item, index) => {
                     return (
