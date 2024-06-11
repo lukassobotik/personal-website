@@ -63,9 +63,21 @@
     height: 100%;
 }
 
-#end {
-    left: -10vw;
-    padding-left: -10vw;
+.month {
+    display: flex;
+    transform: translateX(-8vw);
+}
+
+.month_branch_left {
+    margin-top: 7vw;
+    margin-bottom: 7vw;
+    margin-right: 8vw;
+}
+
+.month_branch_right {
+    margin-top: 7vw;
+    margin-bottom: 7vw;
+    margin-left: 8vw;
 }
 
 .months div {

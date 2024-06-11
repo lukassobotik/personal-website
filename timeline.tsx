@@ -87,17 +87,22 @@ export default function Timeline() {
             <h1 className={styles.timeline_heading}>Job Experience Timeline</h1>
             <div className={styles.timeline}>
                 <div className={styles.timeline_container}>
-                    {/* Doesn't work because it tries to load it before it exists (display after it has been loaded) */}
-                    <Xwrapper>
+                    {months !== null && months.length !== 0 ? <Xwrapper>
                         <div className={styles.months}>
                             {months.map((month, id) => {
-                                return (<div id={String(id)} key={id}>{month}</div>)
+                                return (<div key={id}>
+                                    <div id={month}>{month}</div>
+                                    <div className={styles.month}>
+                                        <div className={styles.month_branch_left}> . </div>
+                                        <div id={month + "_b"} className={styles.month_branch_right}> . </div>
+                                    </div>
+                                </div>)
                             })}
-                            <div id="end"> </div>
-                            <Xarrow showHead={true} start={'1'} end="end"/>
+                            <Xarrow showHead={false} start="Jan_2024" end="Jan_2024_b"/>
+                            <Xarrow showHead={false} start="Jan_2024_b" end="Apr_2024_b"/>
+                            <Xarrow showHead={false} start="Apr_2024_b" end="May_2024"/>
                         </div>
-
-                    </Xwrapper>
+                    </Xwrapper> : null}
                 </div>
                 {rightItems.map((item, index) => {
                     return (
