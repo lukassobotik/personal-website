@@ -1,20 +1,26 @@
 {
   "1": {
     "title": "Work on my own projects",
-    "duration": "Dec 2021-now",
+    "start": "Dec 2021",
+    "end": "now",
     "description": "Work on my own projects, including a personal website, and open-source projects. I'm also learning new technologies and improving my skills.",
+    "branch": "a",
     "percentage": "95%"
   },
   "2": {
     "title": "Content Curator",
-    "duration": "Oct 2023-Mar 2024",
+    "start": "Oct 2023",
+    "end": "Mar 2024",
     "description": "Private Content Curator about Software for individuals.",
+    "branch": "b",
     "percentage": "15%"
   },
   "3": {
     "title": "Internship - Web Developer",
-    "duration": "Apr 2024",
+    "start": "Apr 2024",
+    "end": "Apr 2024",
     "description": "Development of an employee-only internal website for Mašek advokáti.",
+    "branch": "b",
     "percentage": "5%"
   }
 }

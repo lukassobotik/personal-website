@@ -3,12 +3,15 @@ import styles from "./styles/timeline.module.css";
 import AOS from 'aos';
 import {useCallback, useEffect, useState} from "react";
 import Xarrow, {useXarrow, Xwrapper} from "react-xarrows";
-import { format, addMonths, parse } from 'date-fns';
+import {format, addMonths, parse, differenceInMonths} from 'date-fns';
+import {func} from "prop-types";
 
 export interface TimelineItem {
     title: string;
-    duration: string;
+    start: string;
+    end: string;
     description: string;
+    branch: string;
     percentage: string;
 }
 
@@ -53,55 +56,62 @@ export default function Timeline() {
     }, [splitItemsEvenly, timelineItems.length]);
 
     useEffect(() => {
-        getMonthsUntilNow("Jan 2024");
+        let arr : Date[] = [];
+        fetchData().then((items) => {
+            let strings : string[] = [];
+            let containsNow = false;
+            items.forEach((item) => {
+                arr.push(parse(item.start, 'MMM yyyy', new Date()))
+                if (item.start !== "now") strings.push(item.start);
+                if (item.end !== "now") strings.push(item.end);
+                if (item.end === "now" || item.start === "now") containsNow = true;
+            })
+            if (containsNow) strings.push(format(new Date(), "MMM yyyy"));
+
+            arr?.sort((a, b) => a.getTime() - b.getTime());
+            console.log("arr: ", arr);
+            console.log("strings: ", strings);
+
+            setMonths(Array.from(new Set(strings)));
+        })
     }, []);
 
+    function dateCheck(date : string) : string{
+        if (date === "now") {
+            return format(new Date(), "MMM yyyy")
+        } else {
+            return date;
+        }
+    }
     async function fetchData() {
         const res = await fetch('/experience.json');
         const data = await res.json();
         return Object.values<TimelineItem>(data);
     }
 
-    const getMonthsUntilNow = (startDate: string): string[] => {
-        // Parse the input start date
-        const parsedDate = parse(startDate, 'MMM yyyy', new Date());
-        const result: string[] = [];
-
-        let currentDate = parsedDate;
-        const now = new Date();
-
-        while (currentDate <= now) {
-            // Format the current date to 'MMM yyyy'
-            const formattedDate = format(currentDate, 'MMM_yyyy');
-            result.push(formattedDate);
-            currentDate = addMonths(currentDate, 1);
-        }
-
-        const returnValue = Array.from(new Set(result));
-        setMonths(returnValue);
-        return returnValue;
-    };
-
     return (
         <div data-aos="fade-up" data-aos-once={true}>
             <h1 className={styles.timeline_heading}>Job Experience Timeline</h1>
             <div className={styles.timeline}>
                 <div className={styles.timeline_container}>
-                    {months !== null && months.length !== 0 ? <Xwrapper>
+                    {months?.length !== 0 ? <Xwrapper>
                         <div className={styles.months}>
                             {months.map((month, id) => {
                                 return (<div key={id}>
                                     <div id={month}>{month}</div>
                                     <div className={styles.month}>
-                                        <div className={styles.month_branch_left}> . </div>
+                                        <div id={month + "_a"} className={styles.month_branch_left}> . </div>
                                         <div id={month + "_b"} className={styles.month_branch_right}> . </div>
                                     </div>
                                 </div>)
                             })}
-                            <Xarrow showHead={false} start="Jan_2024" end="Jan_2024_b"/>
-                            <Xarrow showHead={false} start="Jan_2024_b" end="Apr_2024_b"/>
-                            <Xarrow showHead={false} start="Apr_2024_b" end="May_2024"/>
                         </div>
+                        {timelineItems?.map((item, id) => {
+                            return (<div key={id}>
+                                <Xarrow showHead={false} start={dateCheck(item.start)} end={dateCheck(item.start) + "_" + item.branch}/>
+                                <Xarrow showHead={false} start={dateCheck(item.start) + "_" + item.branch} end={item.end === "now" ? (dateCheck(item.end) + "_" + item.branch) : dateCheck(item.end)}/>
+                            </div>)
+                        })}
                     </Xwrapper> : null}
                 </div>
                 {rightItems.map((item, index) => {
@@ -111,7 +121,7 @@ export default function Timeline() {
 
                             </div>
                             <div className={styles.timeline_right_item_content}>
-                                <p className={styles.timeline_item_duration}>{item.duration}</p>
+                                <p className={styles.timeline_item_duration}>{item.start}</p>
                                 <h2>{item.title}</h2>
                                 <p className={styles.timeline_item_paragraph}>{item.description}</p>
                             </div>
@@ -125,7 +135,7 @@ export default function Timeline() {
 
                             </div>
                             <div className={styles.timeline_left_item_content}>
-                                <p className={styles.timeline_item_duration}>{item.duration}</p>
+                                <p className={styles.timeline_item_duration}>{item.start}</p>
                                 <h2>{item.title}</h2>
                                 <p className={styles.timeline_item_paragraph}>{item.description}</p>
                             </div>
