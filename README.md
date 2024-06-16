@@ -8,5 +8,5 @@
 
 ### Overview
 This is the source code for my portfolio website where you can find my projects or places to contact me.
-I use it to showcase my projects and to show my job experience and anything related to my profession. I also store other files like my resume there.
+I use it to showcase my projects, job experience, and anything related to my profession. I also store other files like my resume there.
 It is built with TypeScript, Next.js, and React. 
