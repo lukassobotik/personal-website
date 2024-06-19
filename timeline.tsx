@@ -10,6 +10,7 @@ export interface TimelineItem {
     title: string;
     start: string;
     end: string;
+    singleMonth: boolean;
     description: string;
     branch: string;
     percentage: string;
@@ -98,7 +99,11 @@ export default function Timeline() {
                         <div className={styles.months}>
                             {months.map((month, id) => {
                                 return (<div key={id}>
-                                    <div id={month}>{month}</div>
+                                    <div className={styles.month_parent}>
+                                        <div id={month}>{month}</div>
+                                        <div id={month + "_text_a"} className={styles.month_text_branch_left}> . </div>
+                                        <div id={month + "_text_b"} className={styles.month_text_branch_right}> . </div>
+                                    </div>
                                     <div className={styles.month}>
                                         <div id={month + "_a"} className={styles.month_branch_left}> . </div>
                                         <div id={month + "_b"} className={styles.month_branch_right}> . </div>
@@ -107,9 +112,13 @@ export default function Timeline() {
                             })}
                         </div>
                         {timelineItems?.map((item, id) => {
-                            return (<div key={id}>
-                                <Xarrow showHead={false} start={dateCheck(item.start)} end={dateCheck(item.start) + "_" + item.branch}/>
-                                <Xarrow showHead={false} start={dateCheck(item.start) + "_" + item.branch} end={item.end === "now" ? (dateCheck(item.end) + "_" + item.branch) : dateCheck(item.end)}/>
+                            if (!item.singleMonth) return (<div key={id}>
+                                <Xarrow color="#0089ff" strokeWidth={10} showHead={false} start={dateCheck(item.start)} end={dateCheck(item.start) + "_" + item.branch} endAnchor={"top"}/>
+                                <Xarrow color="#0089ff" strokeWidth={10} showHead={false} start={dateCheck(item.start) + "_" + item.branch} end={item.end === "now" ? (dateCheck(item.end) + "_" + item.branch) : dateCheck(item.end)} startAnchor={"bottom"}/>
+                            </div>)
+                            else return (<div key={id}>
+                                <Xarrow color="#0089ff" strokeWidth={10} showHead={false} start={dateCheck(item.start)} end={dateCheck(item.start) + "_text_" + item.branch} startAnchor={"top"} endAnchor={"top"}/>
+                                <Xarrow color="#0089ff" strokeWidth={10} showHead={false} start={dateCheck(item.start) + "_text_" + item.branch} end={item.end === "now" ? (dateCheck(item.end) + "_" + item.branch) : dateCheck(item.end)} startAnchor={"bottom"} endAnchor={"bottom"}/>
                             </div>)
                         })}
                     </Xwrapper> : null}

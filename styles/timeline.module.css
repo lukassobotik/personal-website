@@ -22,15 +22,6 @@
     border-radius: 5rem;
 }
 
-.timeline_container::after {
-    background: white;
-    width: 10%;
-    content: "HELLOOO";
-    position: absolute;
-    top: 50%;
-    left: 5vw
-}
-
 .branches {
     position: relative;
     width: 100%;
@@ -72,12 +63,40 @@
     margin-top: 7vw;
     margin-bottom: 7vw;
     margin-right: 8vw;
+    background: #0089ff;
+    width: 5rem;
+    height: 0;
+    overflow: hidden;
 }
 
 .month_branch_right {
     margin-top: 7vw;
     margin-bottom: 7vw;
     margin-left: 8vw;
+    background: #0089ff;
+    width: 5rem;
+    height: 0;
+    overflow: hidden;
+}
+
+.month_text_branch_left {
+    margin-right: 8vw;
+    background: #0089ff;
+    width: 5rem;
+    height: 0;
+    overflow: hidden;
+}
+
+.month_text_branch_right {
+    background: #0089ff;
+    width: 5rem;
+    height: 0;
+    overflow: hidden;
+}
+
+.month_parent {
+    display: flex;
+    align-items: center;
 }
 
 .months div {

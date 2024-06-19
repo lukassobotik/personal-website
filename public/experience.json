@@ -3,6 +3,7 @@
     "title": "Work on my own projects",
     "start": "Dec 2021",
     "end": "now",
+    "singleMonth": false,
     "description": "Work on my own projects, including a personal website, and open-source projects. I'm also learning new technologies and improving my skills.",
     "branch": "a",
     "percentage": "95%"
@@ -11,6 +12,7 @@
     "title": "Content Curator",
     "start": "Oct 2023",
     "end": "Mar 2024",
+    "singleMonth": false,
     "description": "Private Content Curator about Software for individuals.",
     "branch": "b",
     "percentage": "15%"
@@ -19,6 +21,7 @@
     "title": "Internship - Web Developer",
     "start": "Apr 2024",
     "end": "Apr 2024",
+    "singleMonth": true,
     "description": "Development of an employee-only internal website for Mašek advokáti.",
     "branch": "b",
     "percentage": "5%"
