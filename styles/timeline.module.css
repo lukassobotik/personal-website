@@ -49,9 +49,12 @@
 }
 
 .months {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     width: 100%;
     height: 100%;
+    align-items: center;
 }
 
 .month {
@@ -80,7 +83,6 @@
 }
 
 .month_text_branch_left {
-    margin-right: 8vw;
     background: #0089ff;
     width: 5rem;
     height: 0;
@@ -94,9 +96,17 @@
     overflow: hidden;
 }
 
-.month_parent {
+.month_text_parent {
+    width: fit-content;
     display: flex;
     align-items: center;
+}
+
+.month_parent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .months div {

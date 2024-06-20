@@ -98,10 +98,10 @@ export default function Timeline() {
                     {months?.length !== 0 ? <Xwrapper>
                         <div className={styles.months}>
                             {months.map((month, id) => {
-                                return (<div key={id}>
-                                    <div className={styles.month_parent}>
-                                        <div id={month}>{month}</div>
+                                return (<div key={id} className={styles.month_parent}>
+                                    <div className={styles.month_text_parent}>
                                         <div id={month + "_text_a"} className={styles.month_text_branch_left}> . </div>
+                                        <div id={month}>{month}</div>
                                         <div id={month + "_text_b"} className={styles.month_text_branch_right}> . </div>
                                     </div>
                                     <div className={styles.month}>
