@@ -5,6 +5,7 @@ import {useCallback, useEffect, useState} from "react";
 import Xarrow, {useXarrow, Xwrapper} from "react-xarrows";
 import {format, addMonths, parse, differenceInMonths} from 'date-fns';
 import {func} from "prop-types";
+import Mermaid from "./Mermaid";
 
 export interface TimelineItem {
     title: string;

@@ -9,6 +9,8 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import LazyLoadingImage from "../LazyLoadingImage";
 import Timeline from "../timeline";
+import dynamic from "next/dynamic";
+const Mermaid = dynamic(() => import('../Mermaid'), { ssr: false });
 
 export async function fetcher(url: string) {
   const res = await fetch(url);
@@ -149,6 +151,7 @@ export default function Home() {
             </div>
           </div>
           <Timeline/>
+          <Mermaid/>
           <div className={styles.section_header} data-aos="fade-up" data-aos-once={true}>Featured Projects</div>
           <FetchProjects onlyFeatured/>
           <div className={styles.main_other_projects} data-aos="fade-up" data-aos-once={true}>

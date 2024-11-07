@@ -345,6 +345,20 @@
   transition: background-color 200ms;
 }
 
+.experience_graph_parent {
+  display: flex;
+  height: auto;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.experience_graph {
+  width: 100%;
+  height: 100%;
+  max-width: 1000%;
+}
+
 @keyframes tag-fade-in {
   0% { background-color: #131313; }
   100% { background-color: #505050; }

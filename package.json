@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lightenna/react-mermaid-diagram": "^1.0.17",
     "@next/font": "13.1.1",
     "@octokit/rest": "^19.0.13",
     "@types/node": "18.11.18",
@@ -19,6 +20,7 @@
     "date-fns": "^3.6.0",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
+    "mermaid": "^11.3.0",
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
