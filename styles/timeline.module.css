@@ -1,32 +1,66 @@
 
 
 .timelineContainer {
-    --linegap: 5rem;
+    --line-gap: 5rem;
+    --line-width: 0.5rem;
+    --dot-size: 1.5rem;
+
     position: relative;
-    max-width: 800px;
     margin: 0 auto;
     padding: 2rem 4rem;
-    background-color: #1a1a1a;
+    font-size: 1.5vh;
     color: white;
+    width: 100%;
 }
 
 .mainLine {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 2px;
+    width: var(--line-width);
     height: 100%;
     background-color: #eab308;
     top: 0;
+
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), color-stop(90%, rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+    -webkit-mask-size: 100% 100%, 100% 100%;
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    -webkit-mask-composite: destination-in;
+    -webkit-mask-position: 0 0, 0 0;
+
+    mask-image:
+            linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%),
+            linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+    mask-size: 100% 100%, 100% 100%;
+    mask-repeat: no-repeat, no-repeat;
+    mask-composite: intersect;
+    mask-position: 0 0, 0 0;
+
+    overflow: hidden;
 }
 
 .workExperienceLine {
     position: absolute;
-    width: 2px;
+    width: var(--line-width);
     left: 50%;
-    margin-left: var(--linegap);
+    margin-left: var(--line-gap);
     transform: translateX(-50%);
     background-color: #a855f7;
+
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), color-stop(90%, rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+    -webkit-mask-size: 100% 100%, 100% 100%;
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    -webkit-mask-composite: destination-in;
+    -webkit-mask-position: 0 0, 0 0;
+
+    mask-image:
+            linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+    mask-size: 100% 100%, 100% 100%;
+    mask-repeat: no-repeat, no-repeat;
+    mask-composite: intersect;
+    mask-position: 0 0, 0 0;
+
+    overflow: hidden;
 }
 
 .timelineItem {
@@ -40,8 +74,8 @@
 .workConnector {
     position: absolute;
     right: -0.5rem;
-    width: var(--linegap);
-    height: 2px;
+    width: var(--line-gap);
+    height: var(--line-width);
     background-color: #a855f7;
     top: 50%;
     left: 50%;
@@ -62,14 +96,14 @@
 }
 
 .title {
-    font-size: 0.875rem;
+    font-size: 1.5rem;
     font-weight: 500;
     margin: 0;
     color: #fff;
 }
 
 .date {
-    font-size: 0.75rem;
+    font-size: 1rem;
     color: #9ca3af;
     margin: 0.25rem 0 0 0;
 }
@@ -79,11 +113,11 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 12px;
-    height: 12px;
+    width: var(--dot-size);
+    height: var(--dot-size);
     border-radius: 50%;
     background-color: #eab308;
-    border: 3px solid #1a1a1a;
+    border: calc(var(--dot-size) * 0.2) solid #1a1a1a;
 }
 
 .workDot {
@@ -91,12 +125,12 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    margin-left: var(--linegap);
-    width: 12px;
-    height: 12px;
+    margin-left: var(--line-gap);
+    width: var(--dot-size);
+    height: var(--dot-size);
     border-radius: 50%;
     background-color: #a855f7;
-    border: 3px solid #1a1a1a;
+    border: calc(var(--dot-size) * 0.2) solid #1a1a1a;
     z-index: 2;
 }
 
