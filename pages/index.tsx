@@ -148,7 +148,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <Timeline/>
+          <div className={styles.section_header} data-aos="fade-up" data-aos-once={true}>Experience</div>
+          <Timeline data-aos="fade-up" data-aos-once={true}/>
           <div className={styles.section_header} data-aos="fade-up" data-aos-once={true}>Featured Projects</div>
           <FetchProjects onlyFeatured/>
           <div className={styles.main_other_projects} data-aos="fade-up" data-aos-once={true}>

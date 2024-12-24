@@ -1,20 +1,69 @@
 {
-  "1": {
-    "title": "Work on my own projects",
-    "duration": "Dec 2021-now",
-    "description": "Work on my own projects, including a personal website, and open-source projects. I'm also learning new technologies and improving my skills.",
-    "percentage": "95%"
+  "1":{
+    "title": "myQuotes",
+    "date": "Sep 2022",
+    "description": "Android application made for managing your quotes.",
+    "url": "/project/myQuotes",
+    "type": "project"
   },
-  "2": {
+  "2":{
+    "title": "MyFavMovies",
+    "date": "Dec 2022",
+    "description": "Movie recommendation website based on your ratings, with detailed movie information.",
+    "url": "/project/MyFavMovies",
+    "type": "project"
+  },
+  "3":{
+    "title": "Schedule Change Notifier",
+    "date": "Jan 2023",
+    "description": "Java application to alert you of schedule changes on a website.",
+    "url": "/project/schedule-change-notifier",
+    "type": "project"
+  },
+  "4":{
+    "title": "WidgetSchedule",
+    "date": "Jun 2023",
+    "description": "Android application that turns online schedules into widgets.",
+    "url": "/project/WidgetSchedule",
+    "type": "project"
+  },
+  "5":{
     "title": "Content Curator",
-    "duration": "Oct 2023-Mar 2024",
+    "date": "Oct 2023 - Mar 2024",
     "description": "Private Content Curator about Software for individuals.",
-    "percentage": "15%"
+    "type": "work",
+    "first": true
   },
-  "3": {
+  "6":{
+    "title": "SightlessKnight",
+    "date": "Oct 2023",
+    "description": "Chess website that helps people learn chess blindfolded.",
+    "url": "/project/SightlessKnight",
+    "type": "project"
+  },
+  "7":{
+    "title": "CropThatImage!",
+    "date": "Feb 2024",
+    "description": "Website that automatically crops the edges of an Image!",
+    "url": "/project/CropThatImage",
+    "type": "project"
+  },
+  "8":{
     "title": "Internship - Web Developer",
-    "duration": "Apr 2024",
+    "date": "Apr 2024",
     "description": "Development of an employee-only internal website for Mašek advokáti.",
-    "percentage": "5%"
+    "type": "work"
+  },
+  "9":{
+    "title": "Excel Sheet Enhancements for a Private Client",
+    "date": "May 2024, June 2024",
+    "description": "Modified and enhanced existing Excel sheets to add new functionality.",
+    "type": "work"
+  },
+  "10":{
+    "title": "VBA Macro Developer, I-Xon a.s.",
+    "date": "Jun 2024 – Sep 2024",
+    "description": "Expanded an existing VBA macro that converted HTML files into Excel, enhancing its functionality to support additional files.",
+    "type": "work"
   }
 }

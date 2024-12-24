@@ -345,67 +345,29 @@
   transition: background-color 200ms;
 }
 
-.timeline_heading {
-  font-weight: bold;
-  font-size: 5vh;
-  margin-top: 10vh;
-  margin-bottom: 2vh;
-}
-
-.timeline {
-  position: relative;
-  height: 60vh;
-  width: 1rem;
-  margin: auto;
-}
-
-.timeline_container {
+.experience_graph_parent {
   display: flex;
-  flex-direction: column;
+  height: auto;
+  width: 100%;
   align-items: center;
-  background: linear-gradient(to bottom, #464646, #bdbdbd, #464646);
+  justify-content: center;
+}
+
+.experience_graph {
   width: 100%;
   height: 100%;
-  border-radius: 5rem;
+  /*display: flex;*/
+  /*justify-content: center;*/
 }
 
-.timeline_item_point {
-  position: absolute;
-  width: 2rem;
-  background: #ffffff;
-  border-radius: 100%;
-  aspect-ratio: 1/1;
-  left: -.5rem;
-  border: 3px solid #000000;
+.experience_graph svg {
+  background: #0089ff;
+  width: 100vw;
+  max-width: 100vw;
 }
 
-.timeline_right_item_content {
-  position: absolute;
-  left: 2rem;
-  width: 45vw;
-  bottom: 0;
-  transform: translateY(75%);
-}
-
-.timeline_left_item_content {
-  position: absolute;
-  text-align: right;
-  right: 2rem;
-  width: 30vw;
-  bottom: 0;
-  transform: translateY(70%);
-}
-
-.timeline_item {
-  position: absolute;
-}
-
-.timeline_item_duration {
-  color: #999999;
-}
-
-.timeline_item_paragraph {
-  color: #999999;
+.experience_graph_parent svg[id^="mermaid-"] {
+  width: 1000px;
 }
 
 @keyframes tag-fade-in {

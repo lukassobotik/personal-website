@@ -1,0 +1,191 @@
+
+
+.timelineContainer {
+    --line-gap: 5rem;
+    --line-width: 0.5rem;
+    --dot-size: 1.5rem;
+
+    position: relative;
+    margin: 0 auto;
+    padding: 2rem 4rem;
+    font-size: 1.5vh;
+    color: white;
+    width: 100%;
+}
+
+.mainLine {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: var(--line-width);
+    height: 100%;
+    background-color: #eab308;
+    top: 0;
+    z-index: 1;
+
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), color-stop(90%, rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+    -webkit-mask-size: 100% 100%, 100% 100%;
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    -webkit-mask-composite: destination-in;
+    -webkit-mask-position: 0 0, 0 0;
+
+    mask-image:
+            linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%),
+            linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+    mask-size: 100% 100%, 100% 100%;
+    mask-repeat: no-repeat, no-repeat;
+    mask-composite: intersect;
+    mask-position: 0 0, 0 0;
+
+    overflow: hidden;
+}
+
+.workExperienceLine {
+    position: absolute;
+    width: var(--line-width);
+    left: 50%;
+    margin-left: var(--line-gap);
+    transform: translateX(-50%);
+    background-color: #a855f7;
+    z-index: 0;
+
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), color-stop(90%, rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+    -webkit-mask-size: 100% 100%, 100% 100%;
+    -webkit-mask-repeat: no-repeat, no-repeat;
+    -webkit-mask-composite: destination-in;
+    -webkit-mask-position: 0 0, 0 0;
+
+    mask-image:
+            linear-gradient(to top, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 90%, rgba(0, 0, 0, 0) 100%);
+    mask-size: 100% 100%, 100% 100%;
+    mask-repeat: no-repeat, no-repeat;
+    mask-composite: intersect;
+    mask-position: 0 0, 0 0;
+
+    overflow: hidden;
+}
+
+.timelineItem {
+    position: relative;
+    margin-bottom: 3rem;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.workConnector {
+    position: absolute;
+    right: -0.5rem;
+    width: var(--line-gap);
+    height: var(--line-width);
+    background-color: #a855f7;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+}
+
+.content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 50%;
+    width: 100%;
+    text-align: right;
+}
+
+.workContent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: calc(50% + var(--line-gap) + 2rem);
+    width: 100%;
+}
+
+.textContent {
+    padding-right: 2rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+    color: #fff;
+}
+
+.date {
+    font-size: 1rem;
+    color: #9ca3af;
+    margin: 0.25rem 0 0 0;
+}
+
+.dot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border-radius: 50%;
+    background-color: #eab308;
+    border: calc(var(--dot-size) * 0.2) solid #1a1a1a;
+    z-index: 2;
+}
+
+.workDot {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: var(--line-gap);
+    width: var(--dot-size);
+    height: var(--dot-size);
+    border-radius: 50%;
+    background-color: #a855f7;
+    border: calc(var(--dot-size) * 0.2) solid #1a1a1a;
+    z-index: 2;
+}
+
+.legend {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.legendItem:first-child {
+    margin-right: 5rem;
+}
+
+.legendItem:last-child {
+    margin-left: 5rem;
+}
+
+.legendDot {
+    width: 12px;
+    height: 12px;
+    border-radius: 4px;
+}
+
+.legendDotYellow {
+    background-color: #eab308;
+}
+
+.legendDotPurple {
+    background-color: #a855f7;
+}
+
+.legendText {
+    font-size: 0.875rem;
+}
+
+.url:hover {
+    text-decoration: underline;
+}
