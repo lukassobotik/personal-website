@@ -185,3 +185,7 @@
 .legendText {
     font-size: 0.875rem;
 }
+
+.url:hover {
+    text-decoration: underline;
+}

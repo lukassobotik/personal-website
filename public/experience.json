@@ -3,24 +3,28 @@
     "title": "myQuotes",
     "date": "Sep 2022",
     "description": "Android application made for managing your quotes.",
+    "url": "/project/myQuotes",
     "type": "project"
   },
   "2":{
     "title": "MyFavMovies",
     "date": "Dec 2022",
     "description": "Movie recommendation website based on your ratings, with detailed movie information.",
+    "url": "/project/MyFavMovies",
     "type": "project"
   },
   "3":{
     "title": "Schedule Change Notifier",
     "date": "Jan 2023",
     "description": "Java application to alert you of schedule changes on a website.",
+    "url": "/project/schedule-change-notifier",
     "type": "project"
   },
   "4":{
     "title": "WidgetSchedule",
     "date": "Jun 2023",
     "description": "Android application that turns online schedules into widgets.",
+    "url": "/project/WidgetSchedule",
     "type": "project"
   },
   "5":{
@@ -34,12 +38,14 @@
     "title": "SightlessKnight",
     "date": "Oct 2023",
     "description": "Chess website that helps people learn chess blindfolded.",
+    "url": "/project/SightlessKnight",
     "type": "project"
   },
   "7":{
     "title": "CropThatImage!",
     "date": "Feb 2024",
     "description": "Website that automatically crops the edges of an Image!",
+    "url": "/project/CropThatImage",
     "type": "project"
   },
   "8":{

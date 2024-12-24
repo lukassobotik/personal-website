@@ -1,9 +1,12 @@
 // types.ts
+import Link from "next/link";
+
 export interface TimelineItem {
     title: string;
     date: string;
     description: string;
     type: 'work' | 'project';
+    url?: string;
     first?: null | boolean;
 }
 
@@ -75,7 +78,7 @@ const Timeline: React.FC = () => {
                     <div className={item.type === "work" ? styles.workContent : styles.content}>
                         <div className={styles.textContent}>
                             <p className={styles.date}>{item.date}</p>
-                            <h3 className={styles.title}>{item.title}</h3>
+                            <h3 className={styles.title}>{item.url ? <Link href={item.url} className={styles.url}>{item.title}</Link> : item.title}</h3>
                             <p className={styles.date}>{item.description}</p>
                         </div>
                         {item.type !== "work" && <div className={styles.dot} />}
