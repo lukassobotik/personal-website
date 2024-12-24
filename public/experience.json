@@ -1,63 +1,63 @@
 {
   "1":{
-    "title": "VBA Macro Developer, I-Xon a.s.",
-    "date": "Jun 2024 – Sep 2024",
-    "description": "Expanded an existing VBA macro that converted HTML files into Excel, enhancing its functionality to support additional files.",
-    "type": "work"
+    "title": "myQuotes",
+    "date": "Sep 2022",
+    "description": "Android application made for managing your quotes.",
+    "type": "project"
   },
   "2":{
-    "title": "Excel Sheet Enhancements for a Private Client",
-    "date": "May 2024, June 2024",
-    "description": "Modified and enhanced existing Excel sheets to add new functionality.",
-    "type": "work"
+    "title": "MyFavMovies",
+    "date": "Dec 2022",
+    "description": "Movie recommendation website based on your ratings, with detailed movie information.",
+    "type": "project"
   },
   "3":{
-    "title": "Internship - Web Developer",
-    "date": "Apr 2024",
-    "description": "Development of an employee-only internal website for Mašek advokáti.",
-    "type": "work"
+    "title": "Schedule Change Notifier",
+    "date": "Jan 2023",
+    "description": "Java application to alert you of schedule changes on a website.",
+    "type": "project"
   },
   "4":{
-    "title": "CropThatImage!",
-    "date": "Feb 2024",
-    "description": "Website that automatically crops the edges of an Image!",
+    "title": "WidgetSchedule",
+    "date": "Jun 2023",
+    "description": "Android application that turns online schedules into widgets.",
     "type": "project"
   },
   "5":{
-    "title": "SightlessKnight",
-    "date": "Oct 2023",
-    "description": "Chess website that helps people learn chess blindfolded.",
-    "type": "project"
-  },
-  "6":{
     "title": "Content Curator",
     "date": "Oct 2023 - Mar 2024",
     "description": "Private Content Curator about Software for individuals.",
     "type": "work",
     "first": true
   },
+  "6":{
+    "title": "SightlessKnight",
+    "date": "Oct 2023",
+    "description": "Chess website that helps people learn chess blindfolded.",
+    "type": "project"
+  },
   "7":{
-    "title": "WidgetSchedule",
-    "date": "Jun 2023",
-    "description": "Android application that turns online schedules into widgets.",
+    "title": "CropThatImage!",
+    "date": "Feb 2024",
+    "description": "Website that automatically crops the edges of an Image!",
     "type": "project"
   },
   "8":{
-    "title": "Schedule Change Notifier",
-    "date": "Jan 2023",
-    "description": "Java application to alert you of schedule changes on a website.",
-    "type": "project"
+    "title": "Internship - Web Developer",
+    "date": "Apr 2024",
+    "description": "Development of an employee-only internal website for Mašek advokáti.",
+    "type": "work"
   },
   "9":{
-    "title": "MyFavMovies",
-    "date": "Dec 2022",
-    "description": "Movie recommendation website based on your ratings, with detailed movie information.",
-    "type": "project"
+    "title": "Excel Sheet Enhancements for a Private Client",
+    "date": "May 2024, June 2024",
+    "description": "Modified and enhanced existing Excel sheets to add new functionality.",
+    "type": "work"
   },
   "10":{
-    "title": "myQuotes",
-    "date": "Sep 2022",
-    "description": "Android application made for managing your quotes.",
-    "type": "project"
+    "title": "VBA Macro Developer, I-Xon a.s.",
+    "date": "Jun 2024 – Sep 2024",
+    "description": "Expanded an existing VBA macro that converted HTML files into Excel, enhancing its functionality to support additional files.",
+    "type": "work"
   }
 }

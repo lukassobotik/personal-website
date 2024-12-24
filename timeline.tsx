@@ -50,7 +50,7 @@ const Timeline: React.FC = () => {
         
         fetchData().then((data) => {
             console.log(data);
-            setTimelineData(data);
+            setTimelineData(data?.reverse());
 
             updateLinePosition();
         });
