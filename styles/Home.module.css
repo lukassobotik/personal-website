@@ -356,7 +356,18 @@
 .experience_graph {
   width: 100%;
   height: 100%;
-  max-width: 1000%;
+  /*display: flex;*/
+  /*justify-content: center;*/
+}
+
+.experience_graph svg {
+  background: #0089ff;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+.experience_graph_parent svg[id^="mermaid-"] {
+  width: 1000px;
 }
 
 @keyframes tag-fade-in {

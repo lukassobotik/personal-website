@@ -1,158 +1,138 @@
-import styles from "./styles/timeline.module.css";
-// @ts-ignore
-import AOS from 'aos';
-import {useCallback, useEffect, useState} from "react";
-import Xarrow, {useXarrow, Xwrapper} from "react-xarrows";
-import {format, addMonths, parse, differenceInMonths} from 'date-fns';
-import {func} from "prop-types";
-import Mermaid from "./Mermaid";
-
+// types.ts
 export interface TimelineItem {
     title: string;
-    start: string;
-    end: string;
-    singleMonth: boolean;
-    description: string;
-    branch: string;
-    percentage: string;
+    date: string;
+    type: 'work' | 'project';
+    first?: null | boolean;
 }
 
-export default function Timeline() {
-    const [timelineItems, setTimelineItems] = useState<TimelineItem[]>([]);
-    const [leftItems, setLeftItems] = useState<TimelineItem[]>([]);
-    const [rightItems, setRightItems] = useState<TimelineItem[]>([]);
-    const [months, setMonths] = useState<string[]>([]);
+// Timeline.tsx
+import React, {useEffect, useRef} from 'react';
+import styles from '/styles/timeline.module.css';
 
-    const updateXarrow = useXarrow();
+const timelineData: TimelineItem[] = [
+    {
+        title: "VBA Macro Developer, I-Xon a.s.",
+        date: "Now",
+        type: "work",
+    },
+    {
+        title: "Excel Sheet Enhancements for a Private Client",
+        date: "June 2024",
+        type: "work"
+    },
+    {
+        title: "Excel Sheet Enhancements for a Private Client",
+        date: "May 2024",
+        type: "work"
+    },
+    {
+        title: "Internship - Web Developer",
+        date: "Apr 2024",
+        type: "work"
+    },
+    {
+        title: "CropThatImage!",
+        date: "Feb 2024",
+        type: "project"
+    },
+    {
+        title: "SightlessKnight",
+        date: "Oct 2023",
+        type: "project"
+    },
+    {
+        title: "Content Curator",
+        date: "Oct 2023",
+        type: "work",
+        first: true
+    },
+    {
+        title: "WidgetSchedule",
+        date: "Jun 2023",
+        type: "project"
+    },
+    {
+        title: "Schedule Change Notifier",
+        date: "Jan 2023",
+        type: "project"
+    },
+    {
+        title: "MyFavMovies",
+        date: "Dec 2022",
+        type: "project"
+    },
+    {
+        title: "myQuotes",
+        date: "Sep 2022",
+        type: "project"
+    }
+];
 
-    const splitItemsEvenly = useCallback(() => {
-        let leftItems: TimelineItem[] = [];
-        let rightItems: TimelineItem[] = [];
+const Timeline: React.FC = () => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const workExperienceLineRef = useRef<HTMLDivElement>(null);
 
-        for (let i = 0; i < timelineItems.length; i++) {
-            if (i % 2 === 0) {
-                leftItems.push(timelineItems[i]);
-            } else {
-                rightItems.push(timelineItems[i]);
+    useEffect(() => {
+        if (containerRef.current && workExperienceLineRef.current) {
+            const workItems = timelineData.filter(item => item.type === 'work');
+            if (workItems.length > 0) {
+                const container = containerRef.current;
+                const allItems = container.querySelectorAll(`.${styles.timelineItem}`);
+
+                // Find the indices of the first and last work items
+                const firstWorkIndex = timelineData.findIndex(item => item.type === 'work');
+                const lastWorkIndex = timelineData.length - 1 - [...timelineData].reverse().findIndex(item => item.type === 'work');
+
+                const firstWorkItem = allItems[firstWorkIndex] as HTMLElement;
+                const lastWorkItem = allItems[lastWorkIndex] as HTMLElement;
+
+                if (firstWorkItem && lastWorkItem) {
+                    // const lineStart = firstWorkItem.offsetTop + firstWorkItem.offsetHeight / 2;
+                    const lineEnd = lastWorkItem.offsetTop + lastWorkItem.offsetHeight / 2;
+
+                    const line = workExperienceLineRef.current;
+                    line.style.top = `0px`;
+                    line.style.height = `${lineEnd}px`;
+                }
             }
         }
-
-        setLeftItems(leftItems);
-        setRightItems(rightItems);
-    }, [timelineItems]);
-
-    useEffect(() => {
-        AOS.init();
-
-        if (timelineItems.length > 0) {
-            console.log("Timeline items already fetched");
-            splitItemsEvenly();
-            return;
-        }
-
-        fetchData().then((data) => {
-            console.log(data);
-            setTimelineItems(data);
-            splitItemsEvenly();
-        });
-    }, [splitItemsEvenly, timelineItems.length]);
-
-    useEffect(() => {
-        let arr : Date[] = [];
-        fetchData().then((items) => {
-            let strings : string[] = [];
-            let containsNow = false;
-            items.forEach((item) => {
-                arr.push(parse(item.start, 'MMM yyyy', new Date()))
-                if (item.start !== "now") strings.push(item.start);
-                if (item.end !== "now") strings.push(item.end);
-                if (item.end === "now" || item.start === "now") containsNow = true;
-            })
-            if (containsNow) strings.push(format(new Date(), "MMM yyyy"));
-
-            arr?.sort((a, b) => a.getTime() - b.getTime());
-            console.log("arr: ", arr);
-            console.log("strings: ", strings);
-
-            setMonths(Array.from(new Set(strings)));
-        })
     }, []);
 
-    function dateCheck(date : string) : string{
-        if (date === "now") {
-            return format(new Date(), "MMM yyyy")
-        } else {
-            return date;
-        }
-    }
-    async function fetchData() {
-        const res = await fetch('/experience.json');
-        const data = await res.json();
-        return Object.values<TimelineItem>(data);
-    }
-
     return (
-        <div data-aos="fade-up" data-aos-once={true}>
-            <h1 className={styles.timeline_heading}>Job Experience Timeline</h1>
-            <div className={styles.timeline}>
-                <div className={styles.timeline_container}>
-                    {months?.length !== 0 ? <Xwrapper>
-                        <div className={styles.months}>
-                            {months.map((month, id) => {
-                                return (<div key={id} className={styles.month_parent}>
-                                    <div className={styles.month_text_parent}>
-                                        <div id={month + "_text_a"} className={styles.month_text_branch_left}> . </div>
-                                        <div id={month}>{month}</div>
-                                        <div id={month + "_text_b"} className={styles.month_text_branch_right}> . </div>
-                                    </div>
-                                    <div className={styles.month}>
-                                        <div id={month + "_a"} className={styles.month_branch_left}> . </div>
-                                        <div id={month + "_b"} className={styles.month_branch_right}> . </div>
-                                    </div>
-                                </div>)
-                            })}
+        <div className={styles.timelineContainer} ref={containerRef}>
+            <div className={styles.mainLine} />
+            <div className={styles.workExperienceLine} ref={workExperienceLineRef} />
+
+            {timelineData.map((item, index) => (
+                <div key={index} className={styles.timelineItem}>
+                    <div className={styles.content}>
+                        <div className={styles.textContent}>
+                            <h3 className={styles.title}>{item.title}</h3>
+                            <p className={styles.date}>{item.date}</p>
                         </div>
-                        {timelineItems?.map((item, id) => {
-                            if (!item.singleMonth) return (<div key={id}>
-                                <Xarrow color="#0089ff" strokeWidth={10} showHead={false} start={dateCheck(item.start)} end={dateCheck(item.start) + "_" + item.branch} endAnchor={"top"}/>
-                                <Xarrow color="#0089ff" strokeWidth={10} showHead={false} start={dateCheck(item.start) + "_" + item.branch} end={item.end === "now" ? (dateCheck(item.end) + "_" + item.branch) : dateCheck(item.end)} startAnchor={"bottom"}/>
-                            </div>)
-                            else return (<div key={id}>
-                                <Xarrow color="#0089ff" strokeWidth={10} showHead={false} start={dateCheck(item.start)} end={dateCheck(item.start) + "_text_" + item.branch} startAnchor={"top"} endAnchor={"top"}/>
-                                <Xarrow color="#0089ff" strokeWidth={10} showHead={false} start={dateCheck(item.start) + "_text_" + item.branch} end={item.end === "now" ? (dateCheck(item.end) + "_" + item.branch) : dateCheck(item.end)} startAnchor={"bottom"} endAnchor={"bottom"}/>
-                            </div>)
-                        })}
-                    </Xwrapper> : null}
+                        {item.type !== "work" && <div className={styles.dot} />}
+                    </div>
+                    {item.type === "work" && (
+                        <>
+                            {item.first === true && <div className={styles.workConnector} />}
+                            <div className={styles.workDot} />
+                        </>
+                    )}
                 </div>
-                {rightItems.map((item, index) => {
-                    return (
-                        <div key={100 + index} style={{top: item.percentage}} className={styles.timeline_item}>
-                            <div className={styles.timeline_item_point}>
+            ))}
 
-                            </div>
-                            <div className={styles.timeline_right_item_content}>
-                                <p className={styles.timeline_item_duration}>{item.start}</p>
-                                <h2>{item.title}</h2>
-                                <p className={styles.timeline_item_paragraph}>{item.description}</p>
-                            </div>
-                        </div>
-                    )
-                })}
-                {leftItems.map((item, index) => {
-                    return (
-                        <div key={-100 + index} style={{top: item.percentage}} className={styles.timeline_item}>
-                            <div className={styles.timeline_item_point}>
-
-                            </div>
-                            <div className={styles.timeline_left_item_content}>
-                                <p className={styles.timeline_item_duration}>{item.start}</p>
-                                <h2>{item.title}</h2>
-                                <p className={styles.timeline_item_paragraph}>{item.description}</p>
-                            </div>
-                        </div>
-                    )
-                })}
+            <div className={styles.legend}>
+                <div className={styles.legendItem}>
+                    <div className={`${styles.legendDot} ${styles.legendDotYellow}`} />
+                    <span className={styles.legendText}>Significant Projects</span>
+                </div>
+                <div className={styles.legendItem}>
+                    <div className={`${styles.legendDot} ${styles.legendDotPurple}`} />
+                    <span className={styles.legendText}>Work Experience</span>
+                </div>
             </div>
         </div>
-    )
-}
+    );
+};
+export default Timeline;

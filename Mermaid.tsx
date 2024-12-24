@@ -9,7 +9,7 @@ export default function Mermaid() {
             `%%{init: { 'logLevel': 'debug', 'theme': 'base', 'themeVariables': {
               'commitLabelColor': '#ffffff',
               'commitLabelBackground': '#171717',
-              'commitLabelFontSize': '16px'}, 'gitGraph': {'showBranches': true, 'showCommitLabel':true,'mainBranchName': 'Significant Projects', 'rotateCommitLabel': false}} }%%
+              'commitLabelFontSize': '16px'}, 'gitGraph': {'showBranches': true, 'showCommitLabel':true,'mainBranchName': 'Significant Projects', 'rotateCommitLabel': false, 'labelPosition': 'center', 'useMaxWidth': true, 'wrap': true}} }%%
                   gitGraph BT:
                     commit id:"myQuotes - Sep 2022"
                     commit id:"MyFavMovies - Dec 2022"
