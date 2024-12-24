@@ -73,7 +73,7 @@ const Timeline: React.FC = () => {
     const containerRef = useRef<HTMLDivElement>(null);
     const workExperienceLineRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
+    const updateLinePosition = () => {
         if (containerRef.current && workExperienceLineRef.current) {
             const workItems = timelineData.filter(item => item.type === 'work');
             if (workItems.length > 0) {
@@ -88,7 +88,6 @@ const Timeline: React.FC = () => {
                 const lastWorkItem = allItems[lastWorkIndex] as HTMLElement;
 
                 if (firstWorkItem && lastWorkItem) {
-                    // const lineStart = firstWorkItem.offsetTop + firstWorkItem.offsetHeight / 2;
                     const lineEnd = lastWorkItem.offsetTop + lastWorkItem.offsetHeight / 2;
 
                     const line = workExperienceLineRef.current;
@@ -97,7 +96,24 @@ const Timeline: React.FC = () => {
                 }
             }
         }
-    }, []);
+    };
+
+    useEffect(() => {
+        // Initial calculation
+        updateLinePosition();
+
+        // Add resize event listener
+        const handleResize = () => {
+            updateLinePosition();
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup the event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []); // Empty dependency array ensures it runs only once
 
     return (
         <div className={styles.timelineContainer} ref={containerRef}>
@@ -106,7 +122,7 @@ const Timeline: React.FC = () => {
 
             {timelineData.map((item, index) => (
                 <div key={index} className={styles.timelineItem}>
-                    <div className={styles.content}>
+                    <div className={item.type === "work" ? styles.workContent : styles.content}>
                         <div className={styles.textContent}>
                             <h3 className={styles.title}>{item.title}</h3>
                             <p className={styles.date}>{item.date}</p>

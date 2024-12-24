@@ -86,8 +86,18 @@
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: flex-end;
     padding-right: 50%;
+    width: 100%;
+    text-align: right;
+}
+
+.workContent {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: calc(50% + var(--line-gap) + 2rem);
     width: 100%;
 }
 
