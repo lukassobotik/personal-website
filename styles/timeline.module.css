@@ -21,6 +21,7 @@
     height: 100%;
     background-color: #eab308;
     top: 0;
+    z-index: 1;
 
     -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), color-stop(90%, rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
     -webkit-mask-size: 100% 100%, 100% 100%;
@@ -46,6 +47,7 @@
     margin-left: var(--line-gap);
     transform: translateX(-50%);
     background-color: #a855f7;
+    z-index: 0;
 
     -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), color-stop(90%, rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
     -webkit-mask-size: 100% 100%, 100% 100%;
@@ -128,6 +130,7 @@
     border-radius: 50%;
     background-color: #eab308;
     border: calc(var(--dot-size) * 0.2) solid #1a1a1a;
+    z-index: 2;
 }
 
 .workDot {
