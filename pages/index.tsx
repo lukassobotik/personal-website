@@ -127,8 +127,6 @@ export default function Home() {
               <div className={styles.general_section_content_item}><Link className={styles.url} href={"https://www.imdb.com/user/ur150332429/"}>Movies</Link></div>
               <div className={styles.general_section_content_item}>Cinematography</div>
               <div className={styles.general_section_content_item}><Link className={styles.url} href={"https://www.chess.com/member/lukassobotik"}>Chess</Link></div>
-              <div className={styles.general_section_content_item}>Writing</div>
-              <div className={styles.general_section_content_item}>Boxing</div>
             </div>
           </div>
           <div className={styles.general_section} data-aos="fade-up" data-aos-once={true}>
