@@ -1,7 +1,7 @@
 <p align="center">
 <img style="align:center;" src="/public/favicon.ico" alt="" width="100" />
 <h1 align="center"><a href="https://lukassobotik.dev">lukassobotik.dev</a></h1>
-<h3 align="center">My Personal Website</h3>
+<h3 align="center">My projects website</h3>
 <p align="center">
 <a href="https://lukassobotik.dev">Website</a> | <a href="https://lukassobotik.dev/resume/java.pdf">CV</a> | <a href="https://www.buymeacoffee.com/lukassobotik">Support Me</a> | <a href="https://www.linkedin.com/in/lukassobotik/">LinkedIn</a> | <a href="https://github.com/lukassobotik/personal-website/blob/main/LICENSE">License</a>
 </p>
