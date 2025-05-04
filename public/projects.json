@@ -1,4 +1,32 @@
 {
+  "FOSS-QoL": {
+    "featured": true,
+    "id": "foss-qol",
+    "github_id": "foss-qol",
+    "year": "2025",
+    "logoUrl": "/images/FOSS-QoL/logo.png",
+    "name": "FOSS QoL",
+    "technologies": {
+      "1": "Kotlin",
+      "2": "Android",
+      "3": "Compose"
+    },
+    "shortDescription": {
+      "1": "Free & Open Source Quality of Life improvements for Android!"
+    },
+    "description": {
+      "1": "Free & Open Source Quality of Life improvements for Android!"
+    },
+    "links": {
+      "1": {
+        "name": "Source Code",
+        "url": "https://github.com/lukassobotik/foss-qol"
+      }
+    },
+    "hasHorizontalScreenshots": false,
+    "hasVerticalScreenshots": false
+  },
+
   "myQuotes": {
     "featured": true,
     "id": "myQuotes",
