@@ -25,14 +25,12 @@ const Timeline: React.FC = () => {
         return Object.values<TimelineItem>(data);
     }
 
-    // Fetch data only once on mount
     useEffect(() => {
         fetchData().then((data) => {
             setTimelineData(data?.reverse());
         });
-    }, []); // no dependencies -> run only once
+    }, []);
 
-// Update DOM (line position) when timelineData changes
     useEffect(() => {
         const updateLinePosition = () => {
             if (containerRef.current && workExperienceLineRef.current) {

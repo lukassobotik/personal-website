@@ -46,6 +46,24 @@ export default function Home() {
   }
 
   /**
+   * The `getCorrectAgeArticle` function determines the correct indefinite article ("a" or "an")
+   * to use before an age value based on how the number is typically pronounced in English.
+   *
+   * It uses a predefined list of age values that start with vowel sounds (such as 8, 18, 80, etc.)
+   * and returns "an" for those cases. For all other age values, it returns "a".
+   *
+   * This function helps generate grammatically correct phrases such as
+   * "I am an 18-year-old" or "I am a 21-year-old".
+   *
+   * @param {number} age - The age to evaluate for article selection.
+   * @returns {string} The correct indefinite article ("a" or "an") for the given age.
+   */
+  function getCorrectAgeArticle(age: number): string {
+    const vowelSoundStartAges = [8, 11, 18, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89];
+    return vowelSoundStartAges.includes(age) ? 'an' : 'a';
+  }
+
+  /**
    * The `decryptEffect` function is responsible for creating a decrypting text effect on the webpage.
    * It selects an element with the id "content_main_line" and replaces its content with a string of random characters,
    * gradually revealing the original text ("Hi, I'm Lukáš") in a decrypting-like animation.
@@ -91,7 +109,7 @@ export default function Home() {
             <div className={styles.main_image} data-aos="fade-right"><LazyLoadingImage alt="." src={"/images/banner.jpg"} width={800} height={1200}/></div>
             <div className={styles.content_main}>
               <div className={styles.content_main_line} id={"content_main_line"} onMouseEnter={decryptEffect}>Hi, I&apos;m Lukáš</div>
-              <div className={styles.content_main_short_summary} data-aos="fade-up">I am a {calculateAge()}-year-old student from the Czech Republic.
+              <div className={styles.content_main_short_summary} data-aos="fade-up">I am {getCorrectAgeArticle(calculateAge())} {calculateAge()}-year-old student from the Czech Republic.
                 My interest is programming, and currently, I&#39;m open to any job or internship opportunities.
                 I am now learning Java, and I have minor knowledge of JavaScript and C#.
                 Since December 2021, I&#39;ve been actively programming.
