@@ -7,6 +7,6 @@
 </p>
 
 ### Overview
-This is my portfolio website where you can find my projects or my contact.
+This is my portfolio website where you can find my projects or my contact info.
 It's used to showcase my projects, job experience, and anything related to my profession. It also stores other files like my resume there.
 It is built with TypeScript, Next.js, and React and is hosted on Vercel.
