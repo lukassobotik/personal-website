@@ -25,6 +25,14 @@ const Timeline: React.FC = () => {
         return Object.values<TimelineItem>(data);
     }
 
+    // Fetch data only once on mount
+    useEffect(() => {
+        fetchData().then((data) => {
+            setTimelineData(data?.reverse());
+        });
+    }, []); // no dependencies -> run only once
+
+// Update DOM (line position) when timelineData changes
     useEffect(() => {
         const updateLinePosition = () => {
             if (containerRef.current && workExperienceLineRef.current) {
@@ -33,7 +41,6 @@ const Timeline: React.FC = () => {
                     const container = containerRef.current;
                     const allItems = container.querySelectorAll(`.${styles.timelineItem}`);
 
-                    // Find the indices of the first and last work items
                     const firstWorkIndex = timelineData.findIndex(item => item.type === 'work');
                     const lastWorkIndex = timelineData.length - 1 - [...timelineData].reverse().findIndex(item => item.type === 'work');
 
@@ -42,7 +49,6 @@ const Timeline: React.FC = () => {
 
                     if (firstWorkItem && lastWorkItem) {
                         const lineEnd = lastWorkItem.offsetTop + lastWorkItem.offsetHeight / 2;
-
                         const line = workExperienceLineRef.current;
                         line.style.top = `0px`;
                         line.style.height = `${lineEnd}px`;
@@ -50,22 +56,11 @@ const Timeline: React.FC = () => {
                 }
             }
         };
-        
-        fetchData().then((data) => {
-            console.log(data);
-            setTimelineData(data?.reverse());
 
-            updateLinePosition();
-        });
-
-        const handleResize = () => {
-            updateLinePosition();
-        };
-
-        window.addEventListener('resize', handleResize);
-
+        updateLinePosition();
+        window.addEventListener('resize', updateLinePosition);
         return () => {
-            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('resize', updateLinePosition);
         };
     }, [timelineData]);
     return (
